@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C3B29EFC-22D7-4649-85DC-D9137563B6C8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Theranos.Automation.ME.API</RootNamespace>
+    <AssemblyName>Theranos.Automation.ME.API</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\References\Internal\MEAPI\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.2.13.5.0\lib\net40-client\CsvHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\..\..\References\Internal\AutoStack\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Selenium.WebDriverBackedSelenium">
+      <HintPath>..\packages\Selenium.WebDriverBackedSelenium.2.53.0\lib\net40\Selenium.WebDriverBackedSelenium.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="TestStack.White">
+      <HintPath>..\..\..\References\Internal\AutoStack\TestStack.White.dll</HintPath>
+    </Reference>
+    <Reference Include="Theranos.Automation.AutoStack">
+      <HintPath>..\..\..\References\Internal\AutoStack\Theranos.Automation.AutoStack.dll</HintPath>
+    </Reference>
+    <Reference Include="Theranos.Automation.ME.Web">
+      <HintPath>..\..\..\References\Internal\.ME Web\Theranos.Automation.ME.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Theranos.Mailtemplate">
+      <HintPath>..\..\..\Mailtemplate\Theranos.Mailtemplate\obj\Debug\Theranos.Mailtemplate.dll</HintPath>
+    </Reference>
+    <Reference Include="ThoughtWorks.Selenium.Core">
+      <HintPath>..\packages\Selenium.RC.2.53.0\lib\net40\ThoughtWorks.Selenium.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver">
+      <HintPath>..\packages\Selenium.WebDriver.2.53.0\lib\net40\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support">
+      <HintPath>..\packages\Selenium.Support.2.53.0\lib\net40\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="BoundaryTests\BoundaryTests.cs" />
+    <Compile Include="DataClasses1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\ExcelValues.cs" />
+    <Compile Include="Library\ReadExcel.cs" />
+    <Compile Include="Library\RestSharpLib.cs" />
+    <Compile Include="Model\API\Account\Request\AuthRequest.cs" />
+    <Compile Include="Model\API\Account\Request\ChangeSecurityQuestionsRequest.cs" />
+    <Compile Include="Model\API\Account\Request\ContactInfoUpdateRequest.cs" />
+    <Compile Include="Model\API\Account\Request\FindUserByEmailRequest.cs" />
+    <Compile Include="Model\API\Account\Request\GetSecurityQuestionsRequest.cs" />
+    <Compile Include="Model\API\Account\Request\SendActivationEmailRequest.cs" />
+    <Compile Include="Model\API\Account\Request\SendEmailForPasswordReset.cs" />
+    <Compile Include="Model\API\Account\Request\SendEmailForRetrieveUserNameRequest.cs" />
+    <Compile Include="Model\API\Account\Response\GetSecurityQuestionsResponse.cs" />
+    <Compile Include="Model\API\Account\Response\UserMessageResponse.cs" />
+    <Compile Include="Model\API\Appointments\CancelAppointmentRequest.cs" />
+    <Compile Include="Model\API\Appointments\CancelEarlyCheckInRequest.cs" />
+    <Compile Include="Model\API\Appointments\GeoCheckInPatientRequest.cs" />
+    <Compile Include="Model\API\Appointments\GetAvailableTimeSlotsRequest.cs" />
+    <Compile Include="Model\API\Appointments\GetAvailableTimeSlotsResponse.cs" />
+    <Compile Include="Model\API\Appointments\GetFastingInfoResponse.cs" />
+    <Compile Include="Model\API\Appointments\GetListOfServicesRequest.cs" />
+    <Compile Include="Model\API\Appointments\GetListOfServicesResponse.cs" />
+    <Compile Include="Model\API\Appointments\GetPatientAppointmentsResponse.cs" />
+    <Compile Include="Model\API\Appointments\SaveAppointmentRequest.cs" />
+    <Compile Include="Model\API\Appointments\SaveAppointmentResponse.cs" />
+    <Compile Include="Model\API\Appointments\SaveCheckInConsentFormRequest.cs" />
+    <Compile Include="Model\API\Appointments\UpdateEarlyCheckInRequest.cs" />
+    <Compile Include="Model\API\Locations\DeletePatientFavoriteLocationRequest.cs" />
+    <Compile Include="Model\API\Appointments\EarlyCheckInPatientRequest.cs" />
+    <Compile Include="Model\API\Appointments\EarlyCheckInPatientResponse.cs" />
+    <Compile Include="Model\API\Locations\GetHolidayInfoRequest.cs" />
+    <Compile Include="Model\API\Locations\GetHolidayInfoResponse.cs" />
+    <Compile Include="Model\API\Locations\GetLocationsRequest.cs" />
+    <Compile Include="Model\API\Locations\GetRecentlyVisitedLocationsResponse.cs" />
+    <Compile Include="Model\API\Locations\GetStoreLocationsRequest.cs" />
+    <Compile Include="Model\API\Locations\GetStoreLocationsResponse.cs" />
+    <Compile Include="Model\API\Locations\SetPatientFavoriteLocationRequest.cs" />
+    <Compile Include="Model\API\Orders\Request\DeleteLabOrderRequest.cs" />
+    <Compile Include="Model\API\Orders\Request\GetLabOrdersRequest.cs" />
+    <Compile Include="Model\API\Orders\Request\GetPatientOrderableTestsRequest.cs" />
+    <Compile Include="Model\API\Orders\Request\RemoveRejectedLabOrderFromListRequest.cs" />
+    <Compile Include="Model\API\Orders\Request\SubmitLabOrderImageRequest.cs" />
+    <Compile Include="Model\API\Orders\Request\SubmitPatientTestsRequest.cs" />
+    <Compile Include="Model\API\Orders\Response\DisplayPatientLabOrder.cs" />
+    <Compile Include="Model\API\Orders\Response\GetLabOrdersResponse.cs" />
+    <Compile Include="Model\API\Orders\Response\GetPatientOrderableTestsResponse.cs" />
+    <Compile Include="Model\API\Orders\Response\GetSelfOrderableStatesResponse.cs" />
+    <Compile Include="Model\API\Orders\Response\SubmitLabOrderImageResponse.cs" />
+    <Compile Include="Model\API\Orders\Response\SubmitPatientTestsResponse.cs" />
+    <Compile Include="Model\API\Others\GetTextCatalogItemsRequest.cs" />
+    <Compile Include="Model\API\Others\GetTextCatalogItemsResponse.cs" />
+    <Compile Include="Model\API\Others\TextContentResponse.cs" />
+    <Compile Include="Model\API\Physicians\GetPhysiciansRequest.cs" />
+    <Compile Include="Model\API\Physicians\PhysicianResponse.cs" />
+    <Compile Include="Model\API\Profile\Request\DeleteEmergencyContactRequest.cs" />
+    <Compile Include="Model\API\Profile\Request\SetPatientEmergencyContactsRequest.cs" />
+    <Compile Include="Model\API\Profile\Request\SetPatientGuardianInfoRequest.cs" />
+    <Compile Include="Model\API\Profile\Request\SetPatientInsuranceRequest.cs" />
+    <Compile Include="Model\API\Profile\Request\UpdatePatientEmailAddressRequest.cs" />
+    <Compile Include="Model\API\Profile\Response\GetEmergencyContactsResponse.cs" />
+    <Compile Include="Model\API\Profile\Response\GetGuardianInfoResponse.cs" />
+    <Compile Include="Model\API\Profile\Response\GetMedicalHistoryResponse.cs" />
+    <Compile Include="Model\API\Profile\Response\GetPatientDoctors.cs" />
+    <Compile Include="Model\API\Profile\Response\GetPatientInsuranceImageResponse.cs" />
+    <Compile Include="Model\API\Profile\Response\SetPatientEmergencyContactsResponse.cs" />
+    <Compile Include="Model\API\Profile\Response\SetPatientGuardianInfoResponse.cs" />
+    <Compile Include="Model\API\Profile\Response\SetPatientInsuranceImageResponse.cs" />
+    <Compile Include="Model\API\Profile\Response\SetPatientInsuranceResponse.cs" />
+    <Compile Include="Model\API\Results\Request\GetPatientLabResultsRequest.cs" />
+    <Compile Include="Model\API\Results\Request\GetPatientVisitInfoDetailsRequest.cs" />
+    <Compile Include="Model\API\Results\Request\GetResultReportRequest.cs" />
+    <Compile Include="Model\API\Results\Request\GetVisitLabOrderTurnaroundTimeRequest.cs" />
+    <Compile Include="Model\API\Results\Request\GetVisitPaymentSummaryRequest.cs" />
+    <Compile Include="Model\API\Results\Request\MarkResultAsReadRequest.cs" />
+    <Compile Include="Model\API\Results\Response\GetVisitLabOrderTurnaroundTimeResponse.cs" />
+    <Compile Include="Model\API\Results\Response\GetVisitPaymentSummaryResponse.cs" />
+    <Compile Include="Model\External\DisplayPatientVisitDetails.cs" />
+    <Compile Include="Model\API\Results\Response\GetPatientLabResultsDisplayResponse.cs" />
+    <Compile Include="Model\API\Results\Response\GetPatientVisitInfoDetailsResponse.cs" />
+    <Compile Include="Model\API\Results\Response\GetResultReportResponse.cs" />
+    <Compile Include="Model\Common\AvailableServices.cs" />
+    <Compile Include="Model\Common\AvailableTimeSlots.cs" />
+    <Compile Include="Model\Common\DisplayEnumResultValue.cs" />
+    <Compile Include="Model\Common\DisplayQuantResultValue.cs" />
+    <Compile Include="Model\Common\DisplayResultInfo.cs" />
+    <Compile Include="Model\Common\DisplaySegmentResult.cs" />
+    <Compile Include="Model\Common\DisplayTestResult.cs" />
+    <Compile Include="Model\API\Appointments\GetFastingInfoRequest.cs" />
+    <Compile Include="Model\Common\MeAppService\CommAddressType.cs" />
+    <Compile Include="Model\Common\MeAppService\EnumResultValue.cs" />
+    <Compile Include="Model\Common\MeAppService\GetRecentlyVisitedLocations_Result.cs" />
+    <Compile Include="Model\Common\MeAppService\HolidayDescription.cs" />
+    <Compile Include="Model\Common\MeAppService\HolidayInfo.cs" />
+    <Compile Include="Model\Common\MeAppService\ImageInfo.cs" />
+    <Compile Include="Model\Common\MeAppService\PatientCommInfo.cs" />
+    <Compile Include="Model\Common\MeAppService\PatientSelfTest.cs" />
+    <Compile Include="Model\Common\MeAppService\PatientVisitDetails.cs" />
+    <Compile Include="Model\Common\MeAppService\QuantResultValue.cs" />
+    <Compile Include="Model\Common\MeAppService\ResultRangeInfo.cs" />
+    <Compile Include="Model\Common\MeAppService\RetailLocation.cs" />
+    <Compile Include="Model\Common\MeAppService\TestResult.cs" />
+    <Compile Include="Model\Common\MeAppService\TimeZoneData.cs" />
+    <Compile Include="Model\Common\MeAppService\UserIDType.cs" />
+    <Compile Include="Model\Common\Models\ObjectId.cs" />
+    <Compile Include="Model\Common\Models\TextCatalogItem.cs" />
+    <Compile Include="Model\Common\Models\TextCatalogItemRequest.cs" />
+    <Compile Include="Model\Common\PatientAppointment.cs" />
+    <Compile Include="Model\Data\PatientBasicInfoData.cs" />
+    <Compile Include="Model\EndPoint\AccountURNs.cs" />
+    <Compile Include="Library\HttpClientHelper.cs" />
+    <Compile Include="Library\ObjectDumper.cs" />
+    <Compile Include="Model\API\Account\Request\UserIdPassword.cs" />
+    <Compile Include="Model\API\Account\Request\WebLoginRequest.cs" />
+    <Compile Include="Model\API\Account\Request\WebLoginWithPinRequest.cs" />
+    <Compile Include="Model\API\Account\Response\LoginResponse.cs" />
+    <Compile Include="Model\API\General\Response\BaseResponse.cs" />
+    <Compile Include="Model\API\General\Response\CommunicateToUserResponse.cs" />
+    <Compile Include="Model\API\Profile\Request\GetDoctorListRequest.cs" />
+    <Compile Include="Model\API\Profile\Request\GetInsuranceCompaniesRequest.cs" />
+    <Compile Include="Model\API\Profile\Request\SetBasicPatientInfoRequest.cs" />
+    <Compile Include="Model\API\Profile\Response\GetDoctorListResponse.cs" />
+    <Compile Include="Model\API\Profile\Response\GetInsuranceCompaniesResponse.cs" />
+    <Compile Include="Model\API\Profile\Response\GetPatientDataResponse.cs" />
+    <Compile Include="Model\API\Profile\Response\GetPatientInsurancesResponse.cs" />
+    <Compile Include="Model\API\Tests\Request\GetAdvertisedTestsRequest.cs" />
+    <Compile Include="Model\API\Tests\Request\GetAllTestsRequest.cs" />
+    <Compile Include="Model\API\Tests\Request\GetCptInfoRequest.cs" />
+    <Compile Include="Model\API\Tests\Request\GetCptPanelMembersRequest.cs" />
+    <Compile Include="Model\API\Tests\Request\GetPanelDetailsRequest.cs" />
+    <Compile Include="Model\API\Tests\Response\GetAdvertisedTestsResponse.cs" />
+    <Compile Include="Model\API\Tests\Response\GetAllTestsResponse.cs" />
+    <Compile Include="Model\API\Tests\Response\GetCptInfoResponse.cs" />
+    <Compile Include="Model\API\Tests\Response\GetCptPanelMembersResponse.cs" />
+    <Compile Include="Model\API\Tests\Response\GetPanelDetailsResponse.cs" />
+    <Compile Include="Model\Common\AuthenticationService\SecurityQuestion.cs" />
+    <Compile Include="Model\Common\AuthenticationService\UserInfo.cs" />
+    <Compile Include="Model\Common\EmergencyContact.cs" />
+    <Compile Include="Model\Common\ErrorCodes.cs" />
+    <Compile Include="Model\Common\MeAppService\CPTInfo.cs" />
+    <Compile Include="Model\Common\MeAppService\Doctor.cs" />
+    <Compile Include="Model\Common\MeAppService\GuardianInfo.cs" />
+    <Compile Include="Model\Common\MeAppService\InsuranceCo.cs" />
+    <Compile Include="Model\Common\MeAppService\MEAppInfo.cs" />
+    <Compile Include="Model\Common\MeAppService\PanelInfo.cs" />
+    <Compile Include="Model\Common\MeAppService\PatientDiagnostics.cs" />
+    <Compile Include="Model\Common\MeAppService\PatientInsurance.cs" />
+    <Compile Include="Model\Common\MeAppService\Specialty.cs" />
+    <Compile Include="Model\Common\MeAppService\UserDeviceInfo.cs" />
+    <Compile Include="Model\Common\Models\CustomPanel.cs" />
+    <Compile Include="Model\Common\Models\TestInfo.cs" />
+    <Compile Include="Model\API\Account\Response\GetAccountEmailAddressResponse.cs" />
+    <Compile Include="Model\API\General\Request\AuthRequest.cs" />
+    <Compile Include="Model\Common\UserCreationInfo.cs" />
+    <Compile Include="Model\Common\MeAppService\PatientLabOrder.cs" />
+    <Compile Include="Model\Common\MeAppService\PatientLabTest.cs" />
+    <Compile Include="Model\Common\MeAppService\PatientAddressInfo.cs" />
+    <Compile Include="Model\Common\MeAppService\PatientBasicInfo.cs" />
+    <Compile Include="Model\Data\BasicInfo.cs" />
+    <Compile Include="Model\API\Account\Request\LoginRequest.cs" />
+    <Compile Include="Model\API\Account\Response\WebLoginResponse.cs" />
+    <Compile Include="Model\Data\UserInfo.cs" />
+    <Compile Include="Model\EndPoint\AppointmentsURN.cs" />
+    <Compile Include="Model\EndPoint\LocationsURN.cs" />
+    <Compile Include="Model\EndPoint\OrdersURN.cs" />
+    <Compile Include="Model\EndPoint\OthersURN.cs" />
+    <Compile Include="Model\EndPoint\ProfileURNs.cs" />
+    <Compile Include="Model\EndPoint\ResultsURN.cs" />
+    <Compile Include="Model\EndPoint\TestsURN.cs" />
+    <Compile Include="Model\External\DisplayPatientLabTest.cs" />
+    <Compile Include="Model\External\TestSetInfo.cs" />
+    <Compile Include="Model\External\TestType.cs" />
+    <Compile Include="Model\SetMethods\SetEmergencyContactData.cs" />
+    <Compile Include="Model\SetMethods\SetGuardianInfoData.cs" />
+    <Compile Include="Model\SetMethods\submitPatientTests_AddToCart.cs" />
+    <Compile Include="Model\SetMethods\UnitTestsUserAccount.cs" />
+    <Compile Include="Model\SetMethods\UserAccount.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Regression\OrderTests.cs" />
+    <Compile Include="Scenarios\AccountScenarios.cs" />
+    <Compile Include="Scenarios\AppointmentScenarios.cs" />
+    <Compile Include="Scenarios\CreateProvisionalAccount.cs" />
+    <Compile Include="Scenarios\LocationScenarios.cs" />
+    <Compile Include="Scenarios\OrdersScenarios.cs" />
+    <Compile Include="Scenarios\OthersScenarios.cs" />
+    <Compile Include="Scenarios\ProfileScenarios.cs" />
+    <Compile Include="Scenarios\ResultsScenarios.cs" />
+    <Compile Include="Scenarios\TestsScenarios.cs" />
+    <Compile Include="Scenarios\UserAccountDataPopulator.cs" />
+    <Compile Include="Scripts\AccountScripts.cs" />
+    <Compile Include="Library\LibrarySettings.cs" />
+    <Compile Include="Scripts\AppointmentScripts.cs" />
+    <Compile Include="Scripts\LocationsScripts.cs" />
+    <Compile Include="Scripts\OrdersScripts.cs" />
+    <Compile Include="Scripts\OthersScripts.cs" />
+    <Compile Include="Scripts\ProfileScripts.cs" />
+    <Compile Include="Scripts\ResultsScripts.cs" />
+    <Compile Include="Scripts\Scripts.cs" />
+    <Compile Include="Scripts\TestsScripts.cs" />
+    <Compile Include="Scripts\MailConfigu.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="API-v4-Regression.orderedtest" />
+    <None Include="API-v5-UnitTests.orderedtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="API-v4-UnitTests.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MEAPI.testsettings" />
+    <None Include="API-28-04-2016.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

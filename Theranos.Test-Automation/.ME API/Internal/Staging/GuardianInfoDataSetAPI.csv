@@ -1,0 +1,3 @@
+emailAddress,emergencyContactId,firstName,homePhoneNo,lastName,middleName,mobilePhoneNo,relationship,workPhoneNo,dob,guardianId
+email@yopmail.com,88525421-3207-4265-b175-b4d8459f9181,FirstNameString,9998889444,LastnameString,MiddleNameString,9871141230,oth,,11/10/1990,88525421-3207-4265-b175-b4d8459f9181
+secondrow@yopmail.com,88525421-3207-4265-b175-b4d8459f9181,firstName2ndRow,2222222222,Lastname2ndRow,MiddleNameString2,5854212345,fnd,,12/11/1990,f6d25883-6ba5-424f-8a6f-e626daae6296

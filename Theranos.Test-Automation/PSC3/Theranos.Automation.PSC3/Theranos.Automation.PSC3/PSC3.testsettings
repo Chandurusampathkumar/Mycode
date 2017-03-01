@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestSettings name="Ordered" id="0ff02913-65df-4d22-9e59-8e72ded59a87" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Description>Build Version 3.0.0.127</Description>
+  <Deployment enabled="false" />
+  <Execution>
+    <Timeouts testTimeout="0" />
+    <TestTypeSpecific>
+      <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+        <AssemblyResolution>
+          <TestDirectory useLoadContext="true" />
+        </AssemblyResolution>
+      </UnitTestRunConfig>
+    </TestTypeSpecific>
+    <AgentRule name="LocalMachineDefaultRole"></AgentRule>
+  </Execution>
+  <Properties />
+</TestSettings>

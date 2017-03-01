@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.GuestSearch" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.GuestSearch" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd10" namespace="http://schemas.theranos.com/psc/perform" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.WorkFlowStates" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="GuestSearchResultInPerform">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.theranos.com/psc/perform" base="q1:GuestPendingActionInPerform">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HasAnyReturnContainer" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GuestSearchResultInPerform" nillable="true" type="tns:GuestSearchResultInPerform" />
+  <xs:complexType name="GuestSearchResult">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.theranos.com/psc/perform" base="q2:GuestAbtractBase">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.WorkFlowStates" minOccurs="0" name="ActiveVisitState" nillable="true" type="q3:GuestVisitState">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DateOfBirth" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="Gender" type="q4:Gender">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GuestId" type="ser:guid">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="HasReturnContainer" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="HomeNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsBalancePending" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IsMeUser" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MiddleInitial" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NumberOfVisits" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NumberOfVisitsCompletedToday" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="VisitId" nillable="true" type="ser:guid">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GuestSearchResult" nillable="true" type="tns:GuestSearchResult" />
+  <xs:complexType name="GuestSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Dob" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GuestSearchCriteria" nillable="true" type="tns:GuestSearchCriteria" />
+  <xs:complexType name="ArrayOfGuestSearchResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GuestSearchResult" nillable="true" type="tns:GuestSearchResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGuestSearchResult" nillable="true" type="tns:ArrayOfGuestSearchResult" />
+  <xs:complexType name="ArrayOfGuestSearchResultInPerform">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GuestSearchResultInPerform" nillable="true" type="tns:GuestSearchResultInPerform" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGuestSearchResultInPerform" nillable="true" type="tns:ArrayOfGuestSearchResultInPerform" />
+</xs:schema>

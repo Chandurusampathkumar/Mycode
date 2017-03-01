@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="orderedsuite" storage="c:\users\omkar.krishnamurthy\source\workspaces\theranos.test-automation\.mewebnew\theranos.automation.me.web\theranos.automation.me.web\webtestscripts\all_ordertest_suits\orderedsuite.orderedtest" id="5193291c-f552-419d-98b3-751e193bbfd9" continueAfterFailure="true" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="adcc5ee3-ebcd-2f6a-9498-12a7ca94d316" name="accountLinkingOrdersPageResendCode_Scenario" storage="..\..\bin\debug\theranos.automation.me.web.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="08813bdd-58a3-9bf0-b6f6-4e962d44b219" name="orderFromUnlinkedAccount_Scenario" storage="..\..\bin\debug\theranos.automation.me.web.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="fc30af86-5131-427e-1194-1ca5a5515d71" name="ordersFromLinkedAccount_scenario" storage="..\..\bin\debug\theranos.automation.me.web.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="08bff1df-9615-3ac2-efc2-4981040a0f7c" name="deleteorderfromorderpage_scenario" storage="..\..\bin\debug\theranos.automation.me.web.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

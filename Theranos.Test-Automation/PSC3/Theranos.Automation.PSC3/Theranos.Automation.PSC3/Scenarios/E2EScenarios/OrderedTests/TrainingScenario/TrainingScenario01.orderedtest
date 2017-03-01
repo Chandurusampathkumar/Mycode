@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="TrainingScenario01" storage="c:\users\selangovan\source\workspaces\theranos.test-automation\psc3\theranos.automation.psc3\theranos.automation.psc3\scenarios\e2escenarios\orderedtests\trainingscenario\trainingscenario01.orderedtest" id="e279c070-dedc-4737-b7ab-f0efb2f32870" continueAfterFailure="true" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="eddb65df-eb93-a430-2ad6-4334571f3d34" name="InsuranceToSelfPay1" storage="..\..\..\..\bin\debug\theranos.automation.psc3.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="5838f808-989b-f3b6-9ba7-1ed51398f881" name="InsuranceToSelfPay2" storage="..\..\..\..\bin\debug\theranos.automation.psc3.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

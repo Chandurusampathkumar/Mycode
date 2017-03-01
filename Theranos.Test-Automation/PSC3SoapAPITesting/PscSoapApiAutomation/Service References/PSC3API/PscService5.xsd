@@ -1,0 +1,2847 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Perform" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Perform.VisitReport" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Dashboard" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd10" namespace="http://schemas.theranos.com/psc/perform" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.GuestSearch" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.WorkFlowStates" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.GuestOrder" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd7" namespace="http://schemas.theranos.com/psc" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.PaymentSummary" />
+  <xs:complexType name="CollectionTypeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BloodTestRemoved" nillable="true" type="tns:ArrayOfCptSummary" />
+      <xs:element minOccurs="0" name="BloodTestsReAdded" nillable="true" type="tns:ArrayOfCptSummary" />
+      <xs:element minOccurs="0" name="HasActiveBloodTests" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasBloodTests" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasStoolTests" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasSwabTests" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasUrineTests" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Selection" nillable="true" type="tns:CollectionTypeSelection" />
+      <xs:element minOccurs="0" name="StoolTestsReAdded" nillable="true" type="tns:ArrayOfCptSummary" />
+      <xs:element minOccurs="0" name="StoolTestsRemoved" nillable="true" type="tns:ArrayOfCptSummary" />
+      <xs:element minOccurs="0" name="SwabTestsReAdded" nillable="true" type="tns:ArrayOfCptSummary" />
+      <xs:element minOccurs="0" name="SwabTestsRemoved" nillable="true" type="tns:ArrayOfCptSummary" />
+      <xs:element minOccurs="0" name="UrineTestsReAdded" nillable="true" type="tns:ArrayOfCptSummary" />
+      <xs:element minOccurs="0" name="UrineTestsRemoved" nillable="true" type="tns:ArrayOfCptSummary" />
+      <xs:element minOccurs="0" name="VisitId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CollectionTypeInfo" nillable="true" type="tns:CollectionTypeInfo" />
+  <xs:complexType name="ArrayOfCptSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CptSummary" nillable="true" type="tns:CptSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCptSummary" nillable="true" type="tns:ArrayOfCptSummary" />
+  <xs:complexType name="CptSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CptCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CptCodeId" type="xs:int" />
+      <xs:element minOccurs="0" name="FastingHours" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IsSelectedForVisit" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTestAvailableAtTheranos" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Price" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ShortDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Specimen" nillable="true" type="tns:Specimen" />
+      <xs:element minOccurs="0" name="TestId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CptSummary" nillable="true" type="tns:CptSummary" />
+  <xs:complexType name="Specimen">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SpecimenType" type="tns:SpecimenType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Specimen" nillable="true" type="tns:Specimen" />
+  <xs:simpleType name="SpecimenType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Blood" />
+      <xs:enumeration value="Urine" />
+      <xs:enumeration value="Swab" />
+      <xs:enumeration value="Stool" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SpecimenType" nillable="true" type="tns:SpecimenType" />
+  <xs:complexType name="CollectionTypeSelection">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DrawType" type="tns:DrawTypeSelection" />
+      <xs:element minOccurs="0" name="GttDrawType" type="tns:DrawTypeSelection" />
+      <xs:element minOccurs="0" name="IsDrawTypeNotOverridable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsStoolSelected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSwabSelected" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUrineSelected" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CollectionTypeSelection" nillable="true" type="tns:CollectionTypeSelection" />
+  <xs:simpleType name="DrawTypeSelection">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Neither" />
+      <xs:enumeration value="FingerStick" />
+      <xs:enumeration value="VenousDraw" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DrawTypeSelection" nillable="true" type="tns:DrawTypeSelection" />
+  <xs:complexType name="ServiceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ResponseCode" type="tns:ResponseCodeEnum">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceResponse" nillable="true" type="tns:ServiceResponse" />
+  <xs:simpleType name="ResponseCodeEnum">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="short" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="InternalApplicationError" />
+      <xs:enumeration value="InvalidParameterValues" />
+      <xs:enumeration value="AuthenticationFailed" />
+      <xs:enumeration value="GuestNotFound" />
+      <xs:enumeration value="InvalidGender" />
+      <xs:enumeration value="ProviderNotActive" />
+      <xs:enumeration value="ProviderLocationNotActive" />
+      <xs:enumeration value="WorkstationNotRegisteredAndUserIsNotAdmin" />
+      <xs:enumeration value="UserNotAuthorizedToPscLocation" />
+      <xs:enumeration value="InvalidTerminalId" />
+      <xs:enumeration value="UserNotAuthorizedToPscApplication" />
+      <xs:enumeration value="ResetPasswordFailed" />
+      <xs:enumeration value="ChangePasswordFailed" />
+      <xs:enumeration value="ProviderLocationNotFound" />
+      <xs:enumeration value="ErrorFetchingPerformerDetails" />
+      <xs:enumeration value="ErrorInsuranceAlreadyExists" />
+      <xs:enumeration value="PaymentProcessingError" />
+      <xs:enumeration value="InvalidLabOrderErrorStatus" />
+      <xs:enumeration value="ErrorGuestHasNotProviderMobileNumber" />
+      <xs:enumeration value="ErrorFailedToSendTextMessage" />
+      <xs:enumeration value="AuthenticationFailedUserLockedOut" />
+      <xs:enumeration value="InvalidCouponCode" />
+      <xs:enumeration value="InsuranceEligibilityCheckFailed" />
+      <xs:enumeration value="CouponNotYetActive" />
+      <xs:enumeration value="CouponExpired" />
+      <xs:enumeration value="CouponNotValidForThisProvider" />
+      <xs:enumeration value="CouponNotValidForThisGuest" />
+      <xs:enumeration value="MoreThanOneCouponCannotBeUsedInAVisit" />
+      <xs:enumeration value="CouponAlreadyUsed" />
+      <xs:enumeration value="CouponUsageLimitOver" />
+      <xs:enumeration value="InvalidMultiVisitCoupon" />
+      <xs:enumeration value="MultiVisitCouponUsageLimitOver" />
+      <xs:enumeration value="InsuranceIsInUse" />
+      <xs:enumeration value="AuthenticationFailedPasswordChangeRequiredForLastReset" />
+      <xs:enumeration value="AuthenticationFailedUserDoesntHaveAccessToLocation" />
+      <xs:enumeration value="ResetPasswordFailedUserLockedOutOrInactive" />
+      <xs:enumeration value="AuthenticationFailedUserNotFound" />
+      <xs:enumeration value="BarcodeAlreadyInUse" />
+      <xs:enumeration value="InvalidBarcode" />
+      <xs:enumeration value="NotDropOffContainer" />
+      <xs:enumeration value="FailedToSaveGuestPicture" />
+      <xs:enumeration value="InvalidMethodCall" />
+      <xs:enumeration value="ErrorStoringPaymentSummarySnapShot" />
+      <xs:enumeration value="ErrorFailedToSendEmailVerificationCode" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ResponseCodeEnum" nillable="true" type="tns:ResponseCodeEnum" />
+  <xs:complexType name="ServiceResponseOfArrayOfContainerMetadata">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfContainerMetadata" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfContainerMetadata">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfContainerMetadata" nillable="true" type="tns:ServiceResponseOfArrayOfContainerMetadata" />
+  <xs:complexType name="ArrayOfContainerMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContainerMetadata" nillable="true" type="tns:ContainerMetadata" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContainerMetadata" nillable="true" type="tns:ArrayOfContainerMetadata" />
+  <xs:complexType name="ContainerMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContainerId" type="xs:int" />
+      <xs:element minOccurs="0" name="ContainerType" type="tns:ContainerType" />
+      <xs:element minOccurs="0" name="DisplayOrder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SpecimenType" type="tns:SpecimenType" />
+      <xs:element minOccurs="0" name="UserToBePromptedForTakeHomeContainer" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContainerMetadata" nillable="true" type="tns:ContainerMetadata" />
+  <xs:simpleType name="ContainerType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ctn" />
+      <xs:enumeration value="Vacutainer" />
+      <xs:enumeration value="Other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ContainerType" nillable="true" type="tns:ContainerType" />
+  <xs:complexType name="ContainerMetadataWithImage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContainerMetadata">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContainerMetadataWithImage" nillable="true" type="tns:ContainerMetadataWithImage" />
+  <xs:complexType name="ServiceResponseOfArrayOfContainerImage">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfContainerImage" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfContainerImage">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfContainerImage" nillable="true" type="tns:ServiceResponseOfArrayOfContainerImage" />
+  <xs:complexType name="ArrayOfContainerImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContainerImage" nillable="true" type="tns:ContainerImage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContainerImage" nillable="true" type="tns:ArrayOfContainerImage" />
+  <xs:complexType name="ContainerImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContainerId" type="xs:int" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContainerImage" nillable="true" type="tns:ContainerImage" />
+  <xs:complexType name="ContainerImageWithType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ContainerImage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImageType" type="tns:ContainerImageType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ContainerImageWithType" nillable="true" type="tns:ContainerImageWithType" />
+  <xs:simpleType name="ContainerImageType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Small" />
+      <xs:enumeration value="Medium" />
+      <xs:enumeration value="Large" />
+      <xs:enumeration value="ActivatedSmall" />
+      <xs:enumeration value="ActivatedMedium" />
+      <xs:enumeration value="ActivatedLarge" />
+      <xs:enumeration value="GroupSmall" />
+      <xs:enumeration value="GroupMedium" />
+      <xs:enumeration value="GroupLarge" />
+      <xs:enumeration value="GroupDiscard" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ContainerImageType" nillable="true" type="tns:ContainerImageType" />
+  <xs:complexType name="ServiceResponseOfArrayOfContainerImageWithType">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfContainerImageWithType" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfContainerImageWithType">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfContainerImageWithType" nillable="true" type="tns:ServiceResponseOfArrayOfContainerImageWithType" />
+  <xs:complexType name="ArrayOfContainerImageWithType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContainerImageWithType" nillable="true" type="tns:ContainerImageWithType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContainerImageWithType" nillable="true" type="tns:ArrayOfContainerImageWithType" />
+  <xs:complexType name="ArrayOfVisitContainer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VisitContainer" nillable="true" type="tns:VisitContainer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVisitContainer" nillable="true" type="tns:ArrayOfVisitContainer" />
+  <xs:complexType name="VisitContainer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BarcodeNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CollectionEndTime" nillable="true" type="q1:DateTimeOffset" />
+      <xs:element minOccurs="0" name="CollectionNotes" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CollectionStartTime" nillable="true" type="q2:DateTimeOffset" />
+      <xs:element minOccurs="0" name="DiscardTubeType" type="tns:DiscardTubeType" />
+      <xs:element minOccurs="0" name="DisplayOrder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsExclusive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsQftContainer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsTakeHomeContainer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Metadata" nillable="true" type="tns:ContainerMetadata" />
+      <xs:element minOccurs="0" name="PostCollectionInstructions" nillable="true" type="tns:PostCollectionInstruction" />
+      <xs:element minOccurs="0" name="PostScanInstructions" nillable="true" type="tns:PostScanInstruction" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Perform" minOccurs="0" name="Status" type="q3:VisitContainerStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VisitContainer" nillable="true" type="tns:VisitContainer" />
+  <xs:simpleType name="DiscardTubeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Original" />
+      <xs:enumeration value="MintTop" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DiscardTubeType" nillable="true" type="tns:DiscardTubeType" />
+  <xs:complexType name="PostCollectionInstruction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PostCollectionInstruction" nillable="true" type="tns:PostCollectionInstruction" />
+  <xs:complexType name="Shake10TimePostCollectionInstruction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PostCollectionInstruction">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Shake10TimePostCollectionInstruction" nillable="true" type="tns:Shake10TimePostCollectionInstruction" />
+  <xs:complexType name="Invert8TimesPostCollectionInstruction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PostCollectionInstruction">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Invert8TimesPostCollectionInstruction" nillable="true" type="tns:Invert8TimesPostCollectionInstruction" />
+  <xs:complexType name="Invert3To4TimesPostCollectionInstruction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PostCollectionInstruction">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Invert3To4TimesPostCollectionInstruction" nillable="true" type="tns:Invert3To4TimesPostCollectionInstruction" />
+  <xs:complexType name="Invert5TimesPostCollectionInstruction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PostCollectionInstruction">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Invert5TimesPostCollectionInstruction" nillable="true" type="tns:Invert5TimesPostCollectionInstruction" />
+  <xs:complexType name="NoPostCollectionInstruction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PostCollectionInstruction">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NoPostCollectionInstruction" nillable="true" type="tns:NoPostCollectionInstruction" />
+  <xs:complexType name="PostScanInstruction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StabilityTimeInHours" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PostScanInstruction" nillable="true" type="tns:PostScanInstruction" />
+  <xs:complexType name="CentrifugePostScanInstruction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PostScanInstruction">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CentrifugePostScanInstruction" nillable="true" type="tns:CentrifugePostScanInstruction" />
+  <xs:complexType name="NoPostScanInstruction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PostScanInstruction">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NoPostScanInstruction" nillable="true" type="tns:NoPostScanInstruction" />
+  <xs:complexType name="RefrigeratePostScanInstruction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PostScanInstruction">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RefrigeratePostScanInstruction" nillable="true" type="tns:RefrigeratePostScanInstruction" />
+  <xs:complexType name="QftPostScanInstruction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PostScanInstruction">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="QftPostScanInstruction" nillable="true" type="tns:QftPostScanInstruction" />
+  <xs:complexType name="ClotAndCentrifugePostScanInstruction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PostScanInstruction">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClotAndCentrifugePostScanInstruction" nillable="true" type="tns:ClotAndCentrifugePostScanInstruction" />
+  <xs:complexType name="RoomTempPostScanInstruction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PostScanInstruction">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RoomTempPostScanInstruction" nillable="true" type="tns:RoomTempPostScanInstruction" />
+  <xs:complexType name="ServiceResponseOfboolean">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfboolean" nillable="true" type="tns:ServiceResponseOfboolean" />
+  <xs:complexType name="ArrayOfGttWorkflowStep">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GttWorkflowStep" nillable="true" type="tns:GttWorkflowStep" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGttWorkflowStep" nillable="true" type="tns:ArrayOfGttWorkflowStep" />
+  <xs:complexType name="GttWorkflowStep">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="EndTime" type="q4:DateTimeOffset" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="ExpirationTime" type="q5:DateTimeOffset" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="SampleCollectionTime" nillable="true" type="q6:DateTimeOffset" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="StartTime" type="q7:DateTimeOffset" />
+      <xs:element minOccurs="0" name="StepName" type="tns:GttStepName" />
+      <xs:element minOccurs="0" name="StepNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="StepStatus" type="tns:GttStepStatus" />
+      <xs:element minOccurs="0" name="WorkflowId" type="xs:long" />
+      <xs:element minOccurs="0" name="WorkflowStepId" nillable="true" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GttWorkflowStep" nillable="true" type="tns:GttWorkflowStep" />
+  <xs:simpleType name="GttStepName">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="T0" />
+      <xs:enumeration value="T1" />
+      <xs:enumeration value="T2" />
+      <xs:enumeration value="T3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GttStepName" nillable="true" type="tns:GttStepName" />
+  <xs:simpleType name="GttStepStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Expired" />
+      <xs:enumeration value="Completed" />
+      <xs:enumeration value="Cancelled" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GttStepStatus" nillable="true" type="tns:GttStepStatus" />
+  <xs:complexType name="GuestPhoto2">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImageData" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="TheranosSupportUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VisitId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GuestPhoto2" nillable="true" type="tns:GuestPhoto2" />
+  <xs:complexType name="ServiceResponseOfGuestPhoto2">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="GuestPhoto2" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:GuestPhoto2">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfGuestPhoto2" nillable="true" type="tns:ServiceResponseOfGuestPhoto2" />
+  <xs:complexType name="ServiceResponseOfArrayOfVisitReportItem">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfVisitReportItem" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Perform.VisitReport" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Perform.VisitReport" minOccurs="0" name="ResponseData" nillable="true" type="q8:ArrayOfVisitReportItem">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfVisitReportItem" nillable="true" type="tns:ServiceResponseOfArrayOfVisitReportItem" />
+  <xs:simpleType name="Gender">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="short" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Male" />
+      <xs:enumeration value="Female" />
+      <xs:enumeration value="Other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Gender" nillable="true" type="tns:Gender" />
+  <xs:complexType name="ServiceResponseOfGuestVisitReport">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="GuestVisitReport" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Perform.VisitReport" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Perform.VisitReport" minOccurs="0" name="ResponseData" nillable="true" type="q9:GuestVisitReport">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfGuestVisitReport" nillable="true" type="tns:ServiceResponseOfGuestVisitReport" />
+  <xs:complexType name="ServiceResponseOfint">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfint" nillable="true" type="tns:ServiceResponseOfint" />
+  <xs:complexType name="ServiceResponseOfArrayOfLookupItem">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfLookupItem" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfLookupItem">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfLookupItem" nillable="true" type="tns:ServiceResponseOfArrayOfLookupItem" />
+  <xs:complexType name="ArrayOfLookupItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LookupItem" nillable="true" type="tns:LookupItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLookupItem" nillable="true" type="tns:ArrayOfLookupItem" />
+  <xs:complexType name="LookupItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Order" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LookupItem" nillable="true" type="tns:LookupItem" />
+  <xs:complexType name="ServiceResponseOfArrayOfVisitTime">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfVisitTime" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfVisitTime">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfVisitTime" nillable="true" type="tns:ServiceResponseOfArrayOfVisitTime" />
+  <xs:complexType name="ArrayOfVisitTime">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VisitTime" nillable="true" type="tns:VisitTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVisitTime" nillable="true" type="tns:ArrayOfVisitTime" />
+  <xs:complexType name="VisitTime">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CompletedOn" nillable="true" type="q10:DateTimeOffset" />
+      <xs:element minOccurs="0" name="VisitId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VisitTime" nillable="true" type="tns:VisitTime" />
+  <xs:complexType name="ServiceResponseOfAuthenticationResult">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="AuthenticationResult" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:AuthenticationResult">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfAuthenticationResult" nillable="true" type="tns:ServiceResponseOfAuthenticationResult" />
+  <xs:complexType name="AuthenticationResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IsRegisteredDevice" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IsRequiredToSetupSecurityQuestionAndAnswers" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ProviderId" type="ser:guid">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ProviderLocationId" type="ser:guid">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Roles" nillable="true" type="q11:ArrayOfstring">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="UserId" type="ser:guid">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthenticationResult" nillable="true" type="tns:AuthenticationResult" />
+  <xs:complexType name="ServiceResponseOfArrayOfstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfstring" Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ResponseData" nillable="true" type="q12:ArrayOfstring">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfstring" nillable="true" type="tns:ServiceResponseOfArrayOfstring" />
+  <xs:complexType name="SecurityQuestionAnswer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Answer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Question" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecurityQuestionAnswer" nillable="true" type="tns:SecurityQuestionAnswer" />
+  <xs:complexType name="ArrayOfSecurityQuestionAnswer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SecurityQuestionAnswer" nillable="true" type="tns:SecurityQuestionAnswer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSecurityQuestionAnswer" nillable="true" type="tns:ArrayOfSecurityQuestionAnswer" />
+  <xs:complexType name="ServiceResponseOfPscProviderLocationSettings">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PscProviderLocationSettings" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:PscProviderLocationSettings">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfPscProviderLocationSettings" nillable="true" type="tns:ServiceResponseOfPscProviderLocationSettings" />
+  <xs:complexType name="PscProviderLocationSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AcceptsDirectTestingOrders" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CourierEmailTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfCheckinRefrigerators" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfPerformRefrigerators" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfRooms" type="xs:int" />
+      <xs:element minOccurs="0" name="ProviderLocationId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PscProviderLocationSettings" nillable="true" type="tns:PscProviderLocationSettings" />
+  <xs:simpleType name="DeviceRole">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="short" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:list>
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CheckIn">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Perform">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="Kiosk">
+            <xs:annotation>
+              <xs:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:list>
+  </xs:simpleType>
+  <xs:element name="DeviceRole" nillable="true" type="tns:DeviceRole" />
+  <xs:complexType name="ServiceResponseOfPscProviderLocation">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="PscProviderLocation" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:PscProviderLocation">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfPscProviderLocation" nillable="true" type="tns:ServiceResponseOfPscProviderLocation" />
+  <xs:complexType name="PscProviderLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:Address" />
+      <xs:element minOccurs="0" name="DeviceRole" type="tns:DeviceRole" />
+      <xs:element minOccurs="0" name="ProviderId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ProviderLocationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ProviderLocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RetailId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PscProviderLocation" nillable="true" type="tns:PscProviderLocation" />
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="CountryId" nillable="true" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Id" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IsBillingAddress" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IsMailingAddress" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Street1" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Street2" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address" />
+  <xs:complexType name="ServiceResponseOfArrayOfGuestAppointment">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfGuestAppointment" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Dashboard" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Dashboard" minOccurs="0" name="ResponseData" nillable="true" type="q13:ArrayOfGuestAppointment">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfGuestAppointment" nillable="true" type="tns:ServiceResponseOfArrayOfGuestAppointment" />
+  <xs:complexType name="Name">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="MiddleInitial" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Name" nillable="true" type="tns:Name" />
+  <xs:complexType name="ServiceResponseOfArrayOfGuestPendingAction">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfGuestPendingAction" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Dashboard" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Dashboard" minOccurs="0" name="ResponseData" nillable="true" type="q14:ArrayOfGuestPendingAction">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfGuestPendingAction" nillable="true" type="tns:ServiceResponseOfArrayOfGuestPendingAction" />
+  <xs:simpleType name="HasFasted">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSure" />
+      <xs:enumeration value="Yes" />
+      <xs:enumeration value="No" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HasFasted" nillable="true" type="tns:HasFasted" />
+  <xs:complexType name="ServiceResponseOfArrayOfGuestPendingPerform">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfGuestPendingPerform" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Dashboard" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Dashboard" minOccurs="0" name="ResponseData" nillable="true" type="q15:ArrayOfGuestPendingPerform">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfGuestPendingPerform" nillable="true" type="tns:ServiceResponseOfArrayOfGuestPendingPerform" />
+  <xs:complexType name="ServiceResponseOfArrayOfGuestAbtractBase">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfGuestAbtractBase" Namespace="http://schemas.theranos.com/psc/perform" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q16="http://schemas.theranos.com/psc/perform" minOccurs="0" name="ResponseData" nillable="true" type="q16:ArrayOfGuestAbtractBase">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfGuestAbtractBase" nillable="true" type="tns:ServiceResponseOfArrayOfGuestAbtractBase" />
+  <xs:complexType name="ServiceResponseOfArrayOfGuestInPerform">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfGuestInPerform" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Dashboard" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Dashboard" minOccurs="0" name="ResponseData" nillable="true" type="q17:ArrayOfGuestInPerform">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfGuestInPerform" nillable="true" type="tns:ServiceResponseOfArrayOfGuestInPerform" />
+  <xs:complexType name="ServiceResponseOfArrayOfGuestSearchResult">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfGuestSearchResult" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.GuestSearch" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.GuestSearch" minOccurs="0" name="ResponseData" nillable="true" type="q18:ArrayOfGuestSearchResult">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfGuestSearchResult" nillable="true" type="tns:ServiceResponseOfArrayOfGuestSearchResult" />
+  <xs:complexType name="ServiceResponseOfGuestVisitState">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="GuestVisitState" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.WorkFlowStates" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.WorkFlowStates" minOccurs="0" name="ResponseData" nillable="true" type="q19:GuestVisitState">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfGuestVisitState" nillable="true" type="tns:ServiceResponseOfGuestVisitState" />
+  <xs:complexType name="GuestBasicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Dob" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gender" type="tns:Gender" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="tns:Name" />
+      <xs:element minOccurs="0" name="Phone1" nillable="true" type="tns:Phone" />
+      <xs:element minOccurs="0" name="Phone2" nillable="true" type="tns:Phone" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GuestBasicInfo" nillable="true" type="tns:GuestBasicInfo" />
+  <xs:complexType name="Phone">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Number" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberType" type="tns:PhoneNumberType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Phone" nillable="true" type="tns:Phone" />
+  <xs:simpleType name="PhoneNumberType">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="short" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Mobile" />
+      <xs:enumeration value="Home" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PhoneNumberType" nillable="true" type="tns:PhoneNumberType" />
+  <xs:complexType name="ServiceResponseOfguid">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="guid" Namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" type="ser:guid">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfguid" nillable="true" type="tns:ServiceResponseOfguid" />
+  <xs:complexType name="Page">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ScannedCopy" nillable="true" type="xs:base64Binary">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ScannedImageExtension" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ScannedImageName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Page" nillable="true" type="tns:Page" />
+  <xs:complexType name="GuestLabOrderTranscription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CptCodes" nillable="true" type="tns:ArrayOfCptCodeFastingHours" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="OrderDate" type="q20:DateTimeOffset" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GuestLabOrderTranscription" nillable="true" type="tns:GuestLabOrderTranscription" />
+  <xs:complexType name="ArrayOfCptCodeFastingHours">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CptCodeFastingHours" nillable="true" type="tns:CptCodeFastingHours" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCptCodeFastingHours" nillable="true" type="tns:ArrayOfCptCodeFastingHours" />
+  <xs:complexType name="CptCodeFastingHours">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CptCodeId" type="xs:int" />
+      <xs:element minOccurs="0" name="FastingHours" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CptCodeFastingHours" nillable="true" type="tns:CptCodeFastingHours" />
+  <xs:simpleType name="DrawType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unspecified" />
+      <xs:enumeration value="FingerStick" />
+      <xs:enumeration value="VenousDraw" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DrawType" nillable="true" type="tns:DrawType" />
+  <xs:simpleType name="TimeFrame">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Day" />
+      <xs:enumeration value="Week" />
+      <xs:enumeration value="Month" />
+      <xs:enumeration value="Year" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TimeFrame" nillable="true" type="tns:TimeFrame" />
+  <xs:complexType name="ServiceResponseOfArrayOfLabOrder">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfLabOrder" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.GuestOrder" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.GuestOrder" minOccurs="0" name="ResponseData" nillable="true" type="q21:ArrayOfLabOrder">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfLabOrder" nillable="true" type="tns:ServiceResponseOfArrayOfLabOrder" />
+  <xs:simpleType name="TransciptionActionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="RescanOrder" />
+      <xs:enumeration value="NoActionRequired" />
+      <xs:enumeration value="DeleteOrderAndCallTheranosSupport" />
+      <xs:enumeration value="ContactTheranosSupport" />
+      <xs:enumeration value="TheranosSupportReachingOut" />
+      <xs:enumeration value="PleaseWait5Min" />
+      <xs:enumeration value="EditAndRescanOrder" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TransciptionActionType" nillable="true" type="tns:TransciptionActionType" />
+  <xs:simpleType name="TranscriptionError">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="DelayGuestConfirmationPending" />
+      <xs:enumeration value="DelayGuestToConfirmPhysician" />
+      <xs:enumeration value="DelayClarifyOrder" />
+      <xs:enumeration value="DelayConfirmPhysician" />
+      <xs:enumeration value="DelayStatNotAvailable" />
+      <xs:enumeration value="DelayUnsupportedTests" />
+      <xs:enumeration value="ErrorImageBlurry" />
+      <xs:enumeration value="ErrorImageCutOff" />
+      <xs:enumeration value="ErrorGuestNameDoesnotMatch" />
+      <xs:enumeration value="ErrorGuestNameMisspelled" />
+      <xs:enumeration value="ErrorGuestFirstAndLastNameSwapped" />
+      <xs:enumeration value="ErrorPagesAppearToBeMissing" />
+      <xs:enumeration value="ErrorSoftware" />
+      <xs:enumeration value="ErrorHardware" />
+      <xs:enumeration value="ErrorDuplicateOrderOrderReceivedViaEmr" />
+      <xs:enumeration value="ErrorDuplicateOrderOrderReceivedViaFax" />
+      <xs:enumeration value="ErrorDuplicateOrderOrderReceivedViaMobile" />
+      <xs:enumeration value="ErrorDuplicateOrderOrderReceivedViaPaper" />
+      <xs:enumeration value="ErrorDuplicateOrderMultipleDoctors" />
+      <xs:enumeration value="ErrorNotValidLabOrder" />
+      <xs:enumeration value="ErrorNotValidClinician" />
+      <xs:enumeration value="ErrorUnableToConfirmClinician" />
+      <xs:enumeration value="ErrorInvalidSignature" />
+      <xs:enumeration value="ErrorImageInAppropriate" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TranscriptionError" nillable="true" type="tns:TranscriptionError" />
+  <xs:simpleType name="TranscriptionStatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="InProgress" />
+      <xs:enumeration value="Completed" />
+      <xs:enumeration value="Delayed" />
+      <xs:enumeration value="Rejected" />
+      <xs:enumeration value="ScanReceived" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TranscriptionStatusType" nillable="true" type="tns:TranscriptionStatusType" />
+  <xs:complexType name="ServiceResponseOfArrayOfTranscriptionStatus">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfTranscriptionStatus" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfTranscriptionStatus">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfTranscriptionStatus" nillable="true" type="tns:ServiceResponseOfArrayOfTranscriptionStatus" />
+  <xs:complexType name="ArrayOfTranscriptionStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TranscriptionStatus" nillable="true" type="tns:TranscriptionStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTranscriptionStatus" nillable="true" type="tns:ArrayOfTranscriptionStatus" />
+  <xs:complexType name="TranscriptionStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Action" type="tns:TransciptionActionType" />
+      <xs:element minOccurs="0" name="Error" type="tns:TranscriptionError" />
+      <xs:element minOccurs="0" name="LabOrderId" type="ser:guid" />
+      <xs:element minOccurs="0" name="StatusType" type="tns:TranscriptionStatusType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TranscriptionStatus" nillable="true" type="tns:TranscriptionStatus" />
+  <xs:complexType name="ServiceResponseOfArrayOfIcdInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfIcdInfo" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfIcdInfo">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfIcdInfo" nillable="true" type="tns:ServiceResponseOfArrayOfIcdInfo" />
+  <xs:complexType name="ArrayOfIcdInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IcdInfo" nillable="true" type="tns:IcdInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIcdInfo" nillable="true" type="tns:ArrayOfIcdInfo" />
+  <xs:complexType name="IcdInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsIcd9Code" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IcdInfo" nillable="true" type="tns:IcdInfo" />
+  <xs:complexType name="ServiceResponseOfArrayOfCptInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfCptInfo" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfCptInfo">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfCptInfo" nillable="true" type="tns:ServiceResponseOfArrayOfCptInfo" />
+  <xs:complexType name="ArrayOfCptInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CptInfo" nillable="true" type="tns:CptInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCptInfo" nillable="true" type="tns:ArrayOfCptInfo" />
+  <xs:complexType name="CptInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FastingHours" type="xs:short" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsTestAvailableAtTheranos" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Price" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CptInfo" nillable="true" type="tns:CptInfo" />
+  <xs:complexType name="ServiceResponseOfArrayOfProviderLocation">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfProviderLocation" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfProviderLocation">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfProviderLocation" nillable="true" type="tns:ServiceResponseOfArrayOfProviderLocation" />
+  <xs:complexType name="ArrayOfProviderLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProviderLocation" nillable="true" type="tns:ProviderLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProviderLocation" nillable="true" type="tns:ArrayOfProviderLocation" />
+  <xs:complexType name="ProviderLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProviderLocation" nillable="true" type="tns:ProviderLocation" />
+  <xs:complexType name="ServiceResponseOfArrayOfProvider">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfProvider" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfProvider">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfProvider" nillable="true" type="tns:ServiceResponseOfArrayOfProvider" />
+  <xs:complexType name="ArrayOfProvider">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Provider" nillable="true" type="tns:Provider" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProvider" nillable="true" type="tns:ArrayOfProvider" />
+  <xs:complexType name="Provider">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProviderId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ProviderName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Provider" nillable="true" type="tns:Provider" />
+  <xs:complexType name="ServiceResponseOfArrayOfDoctorInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfDoctorInfo" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfDoctorInfo">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfDoctorInfo" nillable="true" type="tns:ServiceResponseOfArrayOfDoctorInfo" />
+  <xs:complexType name="ArrayOfDoctorInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DoctorInfo" nillable="true" type="tns:DoctorInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDoctorInfo" nillable="true" type="tns:ArrayOfDoctorInfo" />
+  <xs:complexType name="DoctorInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultLocationId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Locations" nillable="true" type="tns:ArrayOfProviderLocation" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="tns:Name" />
+      <xs:element minOccurs="0" name="Npi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProviderId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DoctorInfo" nillable="true" type="tns:DoctorInfo" />
+  <xs:complexType name="ServiceResponseOfArrayOfZipCodeInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfZipCodeInfo" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfZipCodeInfo">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfZipCodeInfo" nillable="true" type="tns:ServiceResponseOfArrayOfZipCodeInfo" />
+  <xs:complexType name="ArrayOfZipCodeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ZipCodeInfo" nillable="true" type="tns:ZipCodeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfZipCodeInfo" nillable="true" type="tns:ArrayOfZipCodeInfo" />
+  <xs:complexType name="ZipCodeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="County" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Latitude" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Longitude" type="xs:decimal" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StateAbbreviation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZipCodeInfo" nillable="true" type="tns:ZipCodeInfo" />
+  <xs:complexType name="ServiceResponseOflong">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="long" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" type="xs:long">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOflong" nillable="true" type="tns:ServiceResponseOflong" />
+  <xs:complexType name="ContactInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanResultsBeShared" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsEmergencyContact" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsGuardian" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="tns:Name" />
+      <xs:element minOccurs="0" name="NextOfKinId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="tns:Phone" />
+      <xs:element minOccurs="0" name="Relationship" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactInfo" nillable="true" type="tns:ContactInfo" />
+  <xs:complexType name="ServiceResponseOfContactIdNextOfKinId">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ContactIdNextOfKinId" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ContactIdNextOfKinId">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfContactIdNextOfKinId" nillable="true" type="tns:ServiceResponseOfContactIdNextOfKinId" />
+  <xs:complexType name="ContactIdNextOfKinId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContactId" type="ser:guid" />
+      <xs:element minOccurs="0" name="NextOfKinId" nillable="true" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContactIdNextOfKinId" nillable="true" type="tns:ContactIdNextOfKinId" />
+  <xs:complexType name="Insurance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Coverage" type="tns:CoverageType" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="InsuranceProvider" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InsuranceProviderId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PlanName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subscriber" nillable="true" type="tns:Name" />
+      <xs:element minOccurs="0" name="SubscriberDob" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Insurance" nillable="true" type="tns:Insurance" />
+  <xs:simpleType name="CoverageType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Primary" />
+      <xs:enumeration value="Secondary" />
+      <xs:enumeration value="Tertiary" />
+      <xs:enumeration value="Other" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CoverageType" nillable="true" type="tns:CoverageType" />
+  <xs:complexType name="InsuranceImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImageBytes" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ImageExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageType" type="tns:InsuranceImageType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InsuranceImage" nillable="true" type="tns:InsuranceImage" />
+  <xs:simpleType name="InsuranceImageType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Front" />
+      <xs:enumeration value="Back" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="InsuranceImageType" nillable="true" type="tns:InsuranceImageType" />
+  <xs:complexType name="ServiceResponseOfArrayOfguid">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfguid" Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ResponseData" nillable="true" type="q22:ArrayOfguid">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfguid" nillable="true" type="tns:ServiceResponseOfArrayOfguid" />
+  <xs:complexType name="ServiceResponseOfGuestBasicInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="GuestBasicInfo" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:GuestBasicInfo">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfGuestBasicInfo" nillable="true" type="tns:ServiceResponseOfGuestBasicInfo" />
+  <xs:complexType name="ServiceResponseOfArrayOfAddress">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfAddress" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfAddress">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfAddress" nillable="true" type="tns:ServiceResponseOfArrayOfAddress" />
+  <xs:complexType name="ArrayOfAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:Address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAddress" nillable="true" type="tns:ArrayOfAddress" />
+  <xs:complexType name="ServiceResponseOfArrayOfInsurance">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfInsurance" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfInsurance">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfInsurance" nillable="true" type="tns:ServiceResponseOfArrayOfInsurance" />
+  <xs:complexType name="ArrayOfInsurance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Insurance" nillable="true" type="tns:Insurance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInsurance" nillable="true" type="tns:ArrayOfInsurance" />
+  <xs:complexType name="ServiceResponseOfArrayOfInsuranceImage">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfInsuranceImage" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfInsuranceImage">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfInsuranceImage" nillable="true" type="tns:ServiceResponseOfArrayOfInsuranceImage" />
+  <xs:complexType name="ArrayOfInsuranceImage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InsuranceImage" nillable="true" type="tns:InsuranceImage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInsuranceImage" nillable="true" type="tns:ArrayOfInsuranceImage" />
+  <xs:complexType name="ServiceResponseOfArrayOfContactInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfContactInfo" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfContactInfo">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfContactInfo" nillable="true" type="tns:ServiceResponseOfArrayOfContactInfo" />
+  <xs:complexType name="ArrayOfContactInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContactInfo" nillable="true" type="tns:ContactInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContactInfo" nillable="true" type="tns:ArrayOfContactInfo" />
+  <xs:complexType name="ServiceResponseOfArrayOfFormStatus">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfFormStatus" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfFormStatus">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfFormStatus" nillable="true" type="tns:ServiceResponseOfArrayOfFormStatus" />
+  <xs:complexType name="ArrayOfFormStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FormStatus" nillable="true" type="tns:FormStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFormStatus" nillable="true" type="tns:ArrayOfFormStatus" />
+  <xs:complexType name="FormStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FormId" nillable="true" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IsSigned" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="SignedOn" nillable="true" type="q23:DateTimeOffset">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormStatus" nillable="true" type="tns:FormStatus" />
+  <xs:simpleType name="FormTypeLanguage">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="English">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1033</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Spanish">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3082</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormTypeLanguage" nillable="true" type="tns:FormTypeLanguage" />
+  <xs:complexType name="ServiceResponseOfForm">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Form" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:Form">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfForm" nillable="true" type="tns:ServiceResponseOfForm" />
+  <xs:complexType name="Form">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FormId" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="FormName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ImageBytes" nillable="true" type="xs:base64Binary">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ImageType" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Form" nillable="true" type="tns:Form" />
+  <xs:simpleType name="FormType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AcknowledgementOfPrivacyPractice" />
+      <xs:enumeration value="NoticeOfPrivacyPractice" />
+      <xs:enumeration value="DirectTesting" />
+      <xs:enumeration value="ManualProcessing" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="FormType" nillable="true" type="tns:FormType" />
+  <xs:complexType name="ServiceResponseOfABNFormDetails">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ABNFormDetails" Namespace="http://schemas.theranos.com/psc" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q24="http://schemas.theranos.com/psc" minOccurs="0" name="ResponseData" nillable="true" type="q24:ABNFormDetails">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfABNFormDetails" nillable="true" type="tns:ServiceResponseOfABNFormDetails" />
+  <xs:complexType name="AbnFormInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ImageBytes" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="ImageExtension" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImageName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignedOn" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbnFormInfo" nillable="true" type="tns:AbnFormInfo" />
+  <xs:complexType name="ServiceResponseOfCollectionTypeInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CollectionTypeInfo" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:CollectionTypeInfo">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfCollectionTypeInfo" nillable="true" type="tns:ServiceResponseOfCollectionTypeInfo" />
+  <xs:complexType name="ServiceResponseOfArrayOfCptSummary">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfCptSummary" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfCptSummary">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfCptSummary" nillable="true" type="tns:ServiceResponseOfArrayOfCptSummary" />
+  <xs:simpleType name="CptDescriptionRequestReason">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GuestRequestToReviewTestDetails" />
+      <xs:enumeration value="GuestRequestToRemoveTests" />
+      <xs:enumeration value="CustomerServiceRequestsToReviewTestDetails" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CptDescriptionRequestReason" nillable="true" type="tns:CptDescriptionRequestReason" />
+  <xs:complexType name="ServiceResponseOfArrayOfCptDetail">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfCptDetail" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfCptDetail">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfCptDetail" nillable="true" type="tns:ServiceResponseOfArrayOfCptDetail" />
+  <xs:complexType name="ArrayOfCptDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CptDetail" nillable="true" type="tns:CptDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCptDetail" nillable="true" type="tns:ArrayOfCptDetail" />
+  <xs:complexType name="CptDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CptCodeId" type="xs:int" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hcpc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReflexTest" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsVisitTest" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TestId" type="xs:long" />
+      <xs:element minOccurs="0" name="TestStatus" type="tns:TestStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CptDetail" nillable="true" type="tns:CptDetail" />
+  <xs:simpleType name="TestStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Scheduled" />
+      <xs:enumeration value="Completed" />
+      <xs:enumeration value="Cancelled" />
+      <xs:enumeration value="ReadyForProcessing" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TestStatus" nillable="true" type="tns:TestStatus" />
+  <xs:simpleType name="AddRemoveTestReason">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Manual" />
+      <xs:enumeration value="ContainerSwitch" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AddRemoveTestReason" nillable="true" type="tns:AddRemoveTestReason" />
+  <xs:complexType name="ServiceResponseOfWorkflowInfo">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="WorkflowInfo" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:WorkflowInfo">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfWorkflowInfo" nillable="true" type="tns:ServiceResponseOfWorkflowInfo" />
+  <xs:complexType name="WorkflowInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CptCodeId" type="xs:int" />
+      <xs:element minOccurs="0" name="CptWorkflowId" type="xs:long" />
+      <xs:element minOccurs="0" name="DefaultWorkflowDetails" nillable="true" type="tns:WorkFlowDetailsBase" />
+      <xs:element minOccurs="0" name="WorkflowName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkflowInfo" nillable="true" type="tns:WorkflowInfo" />
+  <xs:complexType name="WorkFlowDetailsBase">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="WorkFlowDetailsBase" nillable="true" type="tns:WorkFlowDetailsBase" />
+  <xs:complexType name="GTTWorkflowDetails">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:WorkFlowDetailsBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BeverageVolume" type="xs:float" />
+          <xs:element minOccurs="0" name="DurationInMinutes" type="xs:int" />
+          <xs:element minOccurs="0" name="InitialSampleCollectionRequired" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NoOfSamplesRequired" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GTTWorkflowDetails" nillable="true" type="tns:GTTWorkflowDetails" />
+  <xs:complexType name="ServiceResponseOfMeasurement">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Measurement" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:Measurement">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfMeasurement" nillable="true" type="tns:ServiceResponseOfMeasurement" />
+  <xs:complexType name="Measurement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Measurement1" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="Measurement2" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MeasurementCategory" type="tns:MeasurementCategory" />
+      <xs:element minOccurs="0" name="UnitType" type="tns:UnitType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Measurement" nillable="true" type="tns:Measurement" />
+  <xs:simpleType name="MeasurementCategory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Height" />
+      <xs:enumeration value="Weight" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MeasurementCategory" nillable="true" type="tns:MeasurementCategory" />
+  <xs:simpleType name="UnitType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Metric" />
+      <xs:enumeration value="Standard" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UnitType" nillable="true" type="tns:UnitType" />
+  <xs:complexType name="ServiceResponseOfArrayOfLabOrderSummary">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfLabOrderSummary" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfLabOrderSummary">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfLabOrderSummary" nillable="true" type="tns:ServiceResponseOfArrayOfLabOrderSummary" />
+  <xs:complexType name="ArrayOfLabOrderSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LabOrderSummary" nillable="true" type="tns:LabOrderSummary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLabOrderSummary" nillable="true" type="tns:ArrayOfLabOrderSummary" />
+  <xs:complexType name="LabOrderSummary">
+    <xs:sequence>
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.GuestOrder" minOccurs="0" name="LabOrder" nillable="true" type="q25:LabOrder">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OrderedTestsAndPanelsTotal" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.PaymentSummary" minOccurs="0" name="Panels" nillable="true" type="q26:ArrayOfPanel">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PaymentMethod" nillable="true" type="tns:PaymentMethod">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="SelfPayOutOfPocketCost" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Tests" nillable="true" type="tns:ArrayOfCptDetail">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LabOrderSummary" nillable="true" type="tns:LabOrderSummary" />
+  <xs:complexType name="PaymentMethod">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InsuranceInfo" nillable="true" type="tns:ArrayOfInsuranceInfo">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IsSelfPay" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentMethod" nillable="true" type="tns:PaymentMethod" />
+  <xs:complexType name="ArrayOfInsuranceInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InsuranceInfo" nillable="true" type="tns:InsuranceInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInsuranceInfo" nillable="true" type="tns:ArrayOfInsuranceInfo" />
+  <xs:complexType name="InsuranceInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoverageType" type="tns:CoverageType" />
+      <xs:element minOccurs="0" name="InsuranceId" type="xs:int" />
+      <xs:element minOccurs="0" name="OrganizationName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InsuranceInfo" nillable="true" type="tns:InsuranceInfo" />
+  <xs:complexType name="ServiceResponseOfdecimal">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="decimal" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfdecimal" nillable="true" type="tns:ServiceResponseOfdecimal" />
+  <xs:complexType name="ServiceResponseOfVisitPaymentSummary">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="VisitPaymentSummary" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.PaymentSummary" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.PaymentSummary" minOccurs="0" name="ResponseData" nillable="true" type="q27:VisitPaymentSummary">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfVisitPaymentSummary" nillable="true" type="tns:ServiceResponseOfVisitPaymentSummary" />
+  <xs:complexType name="ServiceResponseOfArrayOfPscProviderLocation">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfPscProviderLocation" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:ArrayOfPscProviderLocation">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfPscProviderLocation" nillable="true" type="tns:ServiceResponseOfArrayOfPscProviderLocation" />
+  <xs:complexType name="ArrayOfPscProviderLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PscProviderLocation" nillable="true" type="tns:PscProviderLocation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPscProviderLocation" nillable="true" type="tns:ArrayOfPscProviderLocation" />
+  <xs:complexType name="CreditCardPaymentDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CreditCardName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditCardNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditCardType" type="tns:CreditCardType" />
+      <xs:element minOccurs="0" name="Cvv2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Month" type="xs:int" />
+      <xs:element minOccurs="0" name="Year" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CreditCardPaymentDetails" nillable="true" type="tns:CreditCardPaymentDetails" />
+  <xs:simpleType name="CreditCardType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Visa">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1000</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MasterCard">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1001</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AmericanExpress">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1002</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Discover">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1003</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CreditCardType" nillable="true" type="tns:CreditCardType" />
+  <xs:simpleType name="VisitTimeLogType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CheckinStartTime" />
+      <xs:enumeration value="CheckinEndTime" />
+      <xs:enumeration value="PerformStartTime" />
+      <xs:enumeration value="PerformEndTime" />
+      <xs:enumeration value="PowerPerformEndTime" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="VisitTimeLogType" nillable="true" type="tns:VisitTimeLogType" />
+  <xs:complexType name="ArrayOfTemperatureLogItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TemperatureLogItem" nillable="true" type="tns:TemperatureLogItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTemperatureLogItem" nillable="true" type="tns:ArrayOfTemperatureLogItem" />
+  <xs:complexType name="TemperatureLogItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SourceId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceType" type="tns:TemperatureSourceType" />
+      <xs:element minOccurs="0" name="Temperature" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TemperatureLogItem" nillable="true" type="tns:TemperatureLogItem" />
+  <xs:simpleType name="TemperatureSourceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="RoomTemperature" />
+      <xs:enumeration value="RefrigeratorTemperature" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TemperatureSourceType" nillable="true" type="tns:TemperatureSourceType" />
+  <xs:complexType name="ServiceResponseOfTempLogNotification">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="TempLogNotification" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:TempLogNotification">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfTempLogNotification" nillable="true" type="tns:ServiceResponseOfTempLogNotification" />
+  <xs:complexType name="TempLogNotification">
+    <xs:sequence>
+      <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreatedOn" type="q28:DateTimeOffset" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotificationType" type="tns:NotificationType" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TempLogNotification" nillable="true" type="tns:TempLogNotification" />
+  <xs:simpleType name="NotificationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="Stop" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="NotificationType" nillable="true" type="tns:NotificationType" />
+  <xs:complexType name="ServiceResponseOfstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfstring" nillable="true" type="tns:ServiceResponseOfstring" />
+  <xs:complexType name="ServiceResponseOfArrayOfGuestPendingActionInPerform">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfGuestPendingActionInPerform" Namespace="http://schemas.theranos.com/psc/perform" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q29="http://schemas.theranos.com/psc/perform" minOccurs="0" name="ResponseData" nillable="true" type="q29:ArrayOfGuestPendingActionInPerform">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfGuestPendingActionInPerform" nillable="true" type="tns:ServiceResponseOfArrayOfGuestPendingActionInPerform" />
+  <xs:complexType name="ServiceResponseOfArrayOfGuestInCheckIn">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfGuestInCheckIn" Namespace="http://schemas.theranos.com/psc/perform" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q30="http://schemas.theranos.com/psc/perform" minOccurs="0" name="ResponseData" nillable="true" type="q30:ArrayOfGuestInCheckIn">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfGuestInCheckIn" nillable="true" type="tns:ServiceResponseOfArrayOfGuestInCheckIn" />
+  <xs:complexType name="ServiceResponseOfArrayOfGuestVisitReportStatus">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfGuestVisitReportStatus" Namespace="http://schemas.theranos.com/psc/perform" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q31="http://schemas.theranos.com/psc/perform" minOccurs="0" name="ResponseData" nillable="true" type="q31:ArrayOfGuestVisitReportStatus">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfGuestVisitReportStatus" nillable="true" type="tns:ServiceResponseOfArrayOfGuestVisitReportStatus" />
+  <xs:complexType name="ServiceResponseOfArrayOfGuestSearchResultInPerform">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfGuestSearchResultInPerform" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.GuestSearch" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.GuestSearch" minOccurs="0" name="ResponseData" nillable="true" type="q32:ArrayOfGuestSearchResultInPerform">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfGuestSearchResultInPerform" nillable="true" type="tns:ServiceResponseOfArrayOfGuestSearchResultInPerform" />
+  <xs:complexType name="ServiceResponseOfArrayOfReturnContainer">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfReturnContainer" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Perform" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Perform" minOccurs="0" name="ResponseData" nillable="true" type="q33:ArrayOfReturnContainer">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfArrayOfReturnContainer" nillable="true" type="tns:ServiceResponseOfArrayOfReturnContainer" />
+  <xs:complexType name="ServiceResponseOfReturnContainer">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ReturnContainer" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Perform" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Perform" minOccurs="0" name="ResponseData" nillable="true" type="q34:ReturnContainer">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfReturnContainer" nillable="true" type="tns:ServiceResponseOfReturnContainer" />
+  <xs:complexType name="ServiceResponseOfVisit">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="ServiceResponseOf{0}" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Visit" Namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseData" nillable="true" type="tns:Visit">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceResponseOfVisit" nillable="true" type="tns:ServiceResponseOfVisit" />
+  <xs:complexType name="Visit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Containers" nillable="true" type="tns:ArrayOfVisitContainer" />
+      <xs:element minOccurs="0" name="GttInfo" nillable="true" type="tns:GttInfo" />
+      <xs:element minOccurs="0" name="IsGttOnlyVisit" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VisitId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Visit" nillable="true" type="tns:Visit" />
+  <xs:complexType name="GttInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GttInstructions" nillable="true" type="tns:GTTWorkflowDetails" />
+      <xs:element minOccurs="0" name="GttWorkFlowSteps" nillable="true" type="tns:ArrayOfGttWorkflowStep" />
+      <xs:element minOccurs="0" name="IsGttVisit" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GttInfo" nillable="true" type="tns:GttInfo" />
+</xs:schema>

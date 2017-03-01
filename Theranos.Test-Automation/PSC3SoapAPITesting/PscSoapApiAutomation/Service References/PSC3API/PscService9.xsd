@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.PaymentSummary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.PaymentSummary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+  <xs:complexType name="PaymentSummarySnapShot">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessionNumber" type="xs:long" />
+      <xs:element minOccurs="0" name="GuestId" type="ser:guid" />
+      <xs:element minOccurs="0" name="SnapShot" nillable="true" type="xs:base64Binary" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="VisitCreatedOn" type="q1:DateTimeOffset" />
+      <xs:element minOccurs="0" name="VisitId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentSummarySnapShot" nillable="true" type="tns:PaymentSummarySnapShot" />
+  <xs:complexType name="ArrayOfPanel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Panel" nillable="true" type="tns:Panel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPanel" nillable="true" type="tns:ArrayOfPanel" />
+  <xs:complexType name="Panel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CptCodeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Hcpc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PanelId" type="xs:int" />
+      <xs:element minOccurs="0" name="PanelType" type="tns:PanelType" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ShortDescription" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="Tests" nillable="true" type="q2:ArrayOfCptDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Panel" nillable="true" type="tns:Panel" />
+  <xs:simpleType name="PanelType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Regular" />
+      <xs:enumeration value="Capped" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PanelType" nillable="true" type="tns:PanelType" />
+  <xs:complexType name="VisitPaymentSummary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessionNumber" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="AmountDue" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="AmountPaid" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ClientPaymentInfo" nillable="true" type="tns:ClientPaymentInfo">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Coupons" nillable="true" type="tns:ArrayOfCoupon">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="InsurancePaymentInfo" nillable="true" type="tns:InsurancePaymentInfo">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="InvoiceId" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="RefundAmount" type="xs:decimal">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="SelfPaymentInfo" nillable="true" type="tns:SelfPaymentInfo">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="VisitId" type="ser:guid">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VisitPaymentSummary" nillable="true" type="tns:VisitPaymentSummary" />
+  <xs:complexType name="ClientPaymentInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PaymentInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CapPanels" nillable="true" type="tns:ArrayOfPanel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ClientPaymentInfo" nillable="true" type="tns:ClientPaymentInfo" />
+  <xs:complexType name="PaymentInfo">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="DuplicateTests" nillable="true" type="q3:ArrayOfKeyValuePairOfintdecimal" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System.Collections.Generic" minOccurs="0" name="PrimaryTests" nillable="true" type="q4:ArrayOfKeyValuePairOfintdecimal" />
+      <xs:element minOccurs="0" name="RegularPanels" nillable="true" type="tns:ArrayOfPanel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaymentInfo" nillable="true" type="tns:PaymentInfo" />
+  <xs:complexType name="ArrayOfCoupon">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Coupon" nillable="true" type="tns:Coupon" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCoupon" nillable="true" type="tns:ArrayOfCoupon" />
+  <xs:complexType name="Coupon">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CouponCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CouponId" type="ser:guid" />
+      <xs:element minOccurs="0" name="CouponType" type="tns:CouponType" />
+      <xs:element minOccurs="0" name="DiscountAmount" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Coupon" nillable="true" type="tns:Coupon" />
+  <xs:simpleType name="CouponType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="FreeVisit" />
+      <xs:enumeration value="Volume" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CouponType" nillable="true" type="tns:CouponType" />
+  <xs:complexType name="InsurancePaymentInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PaymentInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CopayAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PrimaryInsuranceId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InsurancePaymentInfo" nillable="true" type="tns:InsurancePaymentInfo" />
+  <xs:complexType name="SelfPaymentInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PaymentInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CapPanelDiscount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="CapPanels" nillable="true" type="tns:ArrayOfPanel" />
+          <xs:element minOccurs="0" name="DuplicateTestDiscount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="NetAmount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="OrderedTestsAndPanelsTotal" type="xs:decimal" />
+          <xs:element minOccurs="0" name="RegularPanelDiscount" type="xs:decimal" />
+          <xs:element minOccurs="0" name="SubTotal" type="xs:decimal" />
+          <xs:element minOccurs="0" name="TotalDiscount" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SelfPaymentInfo" nillable="true" type="tns:SelfPaymentInfo" />
+</xs:schema>

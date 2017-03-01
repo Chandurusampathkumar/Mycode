@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="API-v4-Regression" storage="c:\csampathkumar\source\theranos.test-automation\.me api\theranos.automation.me.api\theranos.automation.me.api\api-v4-regression.orderedtest" id="ce2061c1-bd5f-4e7a-8364-aa921cad6ad0" continueAfterFailure="true" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="87e180d2-8aa1-970e-9bef-99832e3e4259" name="verifyOrderCptCode" storage="bin\debug\theranos.automation.me.api.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="e6d382be-2c39-28dd-6a39-5ad4e9010078" name="verifyOrderDate" storage="bin\debug\theranos.automation.me.api.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="0f793649-395f-8761-1611-7c2efd9fce26" name="verifyOrderedTestName" storage="bin\debug\theranos.automation.me.api.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

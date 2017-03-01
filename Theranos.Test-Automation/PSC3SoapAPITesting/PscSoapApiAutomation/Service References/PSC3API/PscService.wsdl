@@ -1,0 +1,3148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PscService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IPscService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd2" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Perform.VisitReport" />
+      <xsd:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+      <xsd:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Perform" />
+      <xsd:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd7" namespace="http://schemas.theranos.com/psc" />
+      <xsd:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.PaymentSummary" />
+      <xsd:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Dashboard" />
+      <xsd:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd10" namespace="http://schemas.theranos.com/psc/perform" />
+      <xsd:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.GuestSearch" />
+      <xsd:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.WorkFlowStates" />
+      <xsd:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd13" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.GuestOrder" />
+      <xsd:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPscService_UpdateCollectionTypeInfoInPerform_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCollectionTypeInfoInPerform" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateCollectionTypeInfoInPerform_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCollectionTypeInfoInPerformResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetPscContainersMetadata_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPscContainersMetadata" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetPscContainersMetadata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPscContainersMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetPscContainersImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPscContainersImage" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetPscContainersImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPscContainersImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetPscContainerImagesWithType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPscContainerImagesWithType" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetPscContainerImagesWithType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPscContainerImagesWithTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveGuestVisitContainers_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGuestVisitContainers" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveGuestVisitContainers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGuestVisitContainersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_ValidateBarcode_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateBarcode" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_ValidateBarcode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateBarcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_TryCompleteVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:TryCompleteVisit" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_TryCompleteVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TryCompleteVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_TryCompleteVisitFromCheckIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:TryCompleteVisitFromCheckIn" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_TryCompleteVisitFromCheckIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TryCompleteVisitFromCheckInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_InitializeGttWorkflowSteps_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitializeGttWorkflowSteps" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_InitializeGttWorkflowSteps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitializeGttWorkflowStepsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateWorkflowSteps_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWorkflowSteps" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateWorkflowSteps_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateWorkflowStepsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_CancelGttDraw_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelGttDraw" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_CancelGttDraw_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelGttDrawResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveGuestPicture_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGuestPicture" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveGuestPicture_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGuestPictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestPicture_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestPicture" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestPicture_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestPictureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetVisitReports_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVisitReports" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetVisitReports_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVisitReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestVisitReportByVisitId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestVisitReportByVisitId" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestVisitReportByVisitId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestVisitReportByVisitIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveGuestVisitReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGuestVisitReport" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveGuestVisitReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGuestVisitReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetVisitTimeDelayReasons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVisitTimeDelayReasons" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetVisitTimeDelayReasons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVisitTimeDelayReasonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetCheckInTimeDelayReasons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheckInTimeDelayReasons" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetCheckInTimeDelayReasons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCheckInTimeDelayReasonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetPerformTimeDelayReasons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformTimeDelayReasons" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetPerformTimeDelayReasons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformTimeDelayReasonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetNumberOfLancetsUsedOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumberOfLancetsUsedOptions" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetNumberOfLancetsUsedOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumberOfLancetsUsedOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetLancetsUsedExceededReasons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLancetsUsedExceededReasons" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetLancetsUsedExceededReasons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLancetsUsedExceededReasonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetITIssuesReasons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetITIssuesReasons" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetITIssuesReasons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetITIssuesReasonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetApplicationIssuesReasons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationIssuesReasons" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetApplicationIssuesReasons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationIssuesReasonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetCustomerSupportIssuesReasons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerSupportIssuesReasons" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetCustomerSupportIssuesReasons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerSupportIssuesReasonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetWaitTimeIssuesReasons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWaitTimeIssuesReasons" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetWaitTimeIssuesReasons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWaitTimeIssuesReasonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetFailedVacutainerReasons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFailedVacutainerReasons" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetFailedVacutainerReasons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFailedVacutainerReasonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetNeedlesExceededReasons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNeedlesExceededReasons" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetNeedlesExceededReasons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNeedlesExceededReasonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetFailedNanotainerSubReasons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFailedNanotainerSubReasons" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetFailedNanotainerSubReasons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFailedNanotainerSubReasonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetNumberOfNeedlesUsedOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumberOfNeedlesUsedOptions" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetNumberOfNeedlesUsedOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumberOfNeedlesUsedOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetLancetUsedOptions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLancetUsedOptions" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetLancetUsedOptions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLancetUsedOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_RecordCourierPickup_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecordCourierPickup" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_RecordCourierPickup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RecordCourierPickupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetLastNVisitTimes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastNVisitTimes" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetLastNVisitTimes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastNVisitTimesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveMaxVisitApprovalInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMaxVisitApprovalInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveMaxVisitApprovalInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMaxVisitApprovalInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SavePaymentSummarySnapShot_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePaymentSummarySnapShot" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SavePaymentSummarySnapShot_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePaymentSummarySnapShotResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SendEmailVerificationCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmailVerificationCode" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SendEmailVerificationCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmailVerificationCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetSecurityQuestions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSecurityQuestions" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetSecurityQuestions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSecurityQuestionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_ValidateSecurityQuestionAnswer_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateSecurityQuestionAnswer" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_ValidateSecurityQuestionAnswer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateSecurityQuestionAnswerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_ResetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_ResetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateSecurityQuestionAnswers_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSecurityQuestionAnswers" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateSecurityQuestionAnswers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSecurityQuestionAnswersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetSecurityQuestionsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSecurityQuestionsList" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetSecurityQuestionsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSecurityQuestionsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetProviderLocationSettings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderLocationSettings" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetProviderLocationSettings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderLocationSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveCurrentProviderLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCurrentProviderLocation" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveCurrentProviderLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCurrentProviderLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetCurrentProviderLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentProviderLocation" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetCurrentProviderLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentProviderLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestsAppointments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestsAppointments" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestsAppointments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestsAppointmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestsPendingAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestsPendingAction" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestsPendingAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestsPendingActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestsPendingPerform_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestsPendingPerform" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestsPendingPerform_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestsPendingPerformResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestPendingActionInCombinedMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestPendingActionInCombinedMode" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestPendingActionInCombinedMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestPendingActionInCombinedModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestsInPerform_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestsInPerform" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestsInPerform_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestsInPerformResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindGuests_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindGuests" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindGuests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindGuestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_CancelGuestVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelGuestVisit" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_CancelGuestVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelGuestVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestVisitState_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestVisitState" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestVisitState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestVisitStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdatedGuestVisitState_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatedGuestVisitState" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdatedGuestVisitState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatedGuestVisitStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetVisitCancellationReasons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVisitCancellationReasons" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetVisitCancellationReasons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVisitCancellationReasonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddNewGuest_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewGuest" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddNewGuest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewGuestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateGuestBasicinfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGuestBasicinfo" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateGuestBasicinfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGuestBasicinfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_CreateGuestVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGuestVisit" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_CreateGuestVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGuestVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_CreateGuestVisitAndMarkAppointmentAsComplete_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGuestVisitAndMarkAppointmentAsComplete" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_CreateGuestVisitAndMarkAppointmentAsComplete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGuestVisitAndMarkAppointmentAsCompleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_CreateGuestVisitGeoCheckedInGuest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGuestVisitGeoCheckedInGuest" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_CreateGuestVisitGeoCheckedInGuest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGuestVisitGeoCheckedInGuestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_CreateLabRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLabRequest" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_CreateLabRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateLabRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddLabOrderToVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLabOrderToVisit" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddLabOrderToVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLabOrderToVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddOpenLabOrdersToVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOpenLabOrdersToVisit" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddOpenLabOrdersToVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOpenLabOrdersToVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddLabOrderImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLabOrderImage" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddLabOrderImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLabOrderImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SubmitManualTranscriptionForGuestLabOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitManualTranscriptionForGuestLabOrder" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SubmitManualTranscriptionForGuestLabOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitManualTranscriptionForGuestLabOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SubmitManualTranscriptionForPhysicianLabOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitManualTranscriptionForPhysicianLabOrder" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SubmitManualTranscriptionForPhysicianLabOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitManualTranscriptionForPhysicianLabOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetOpenLabOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenLabOrders" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetOpenLabOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOpenLabOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetVisitLabOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVisitLabOrders" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetVisitLabOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVisitLabOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_RemoveLabOrdersFromVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLabOrdersFromVisit" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_RemoveLabOrdersFromVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveLabOrdersFromVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_DeleteLabOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLabOrder" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_DeleteLabOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLabOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetTranscriptionStatuses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTranscriptionStatuses" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetTranscriptionStatuses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTranscriptionStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindIcd9Info_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindIcd9Info" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindIcd9Info_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindIcd9InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindIcd10Info_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindIcd10Info" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindIcd10Info_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindIcd10InfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindCptCodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindCptCodes" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindCptCodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindCptCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindProviderLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProviderLocations" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindProviderLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProviderLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindProviders_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProviders" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindProviders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProvidersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindProvidersByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProvidersByUserId" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindProvidersByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProvidersByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindDoctors_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindDoctors" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindDoctors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindDoctorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetPhysicianFavoriteTests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhysicianFavoriteTests" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetPhysicianFavoriteTests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPhysicianFavoriteTestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetFrequencyTimeIntervals_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFrequencyTimeIntervals" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetFrequencyTimeIntervals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFrequencyTimeIntervalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindInsuranceCompanies_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindInsuranceCompanies" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindInsuranceCompanies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindInsuranceCompaniesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetRelationshipList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationshipList" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetRelationshipList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelationshipListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetCountryCodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryCodes" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetCountryCodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetAllFormTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFormTypes" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetAllFormTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllFormTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetFieldReportSubjectList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldReportSubjectList" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetFieldReportSubjectList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFieldReportSubjectListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetTextMessageSubjectList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTextMessageSubjectList" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetTextMessageSubjectList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTextMessageSubjectListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetTextMessageSubjectListForPerform_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTextMessageSubjectListForPerform" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetTextMessageSubjectListForPerform_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTextMessageSubjectListForPerformResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetAllZipCodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllZipCodes" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetAllZipCodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllZipCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetZipCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetZipCode" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetZipCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetZipCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateMailingAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMailingAddress" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateMailingAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMailingAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateBillingAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBillingAddress" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateBillingAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBillingAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateContactInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContactInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateContactInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContactInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_RemoveContactInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveContactInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_RemoveContactInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveContactInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateInsurance_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInsurance" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateInsurance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateInsuranceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddInsuranceImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddInsuranceImage" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddInsuranceImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddInsuranceImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_DeleteGuestInsurance_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGuestInsurance" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_DeleteGuestInsurance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGuestInsuranceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetAccompanyingGuardians_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccompanyingGuardians" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetAccompanyingGuardians_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccompanyingGuardiansResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddAccompaniedByGuardian_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAccompaniedByGuardian" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddAccompaniedByGuardian_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAccompaniedByGuardianResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_RemoveAccompaniedByGuardian_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAccompaniedByGuardian" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_RemoveAccompaniedByGuardian_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAccompaniedByGuardianResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestBasicInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestBasicInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestBasicInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestBasicInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestAddresses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestAddresses" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestAddresses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestInsuranceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestInsuranceInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestInsuranceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestInsuranceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestInsuranceImages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestInsuranceImages" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestInsuranceImages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestInsuranceImagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestContacts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestContacts" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestContacts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestContactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetFormSignatureStatuses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormSignatureStatuses" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetFormSignatureStatuses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormSignatureStatusesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetForm_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetForm" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetForm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetFormByType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormByType" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetFormByType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetAbnFormDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAbnFormDetails" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetAbnFormDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAbnFormDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveAbnFormInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAbnFormInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveAbnFormInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAbnFormInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateFormSignatureStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFormSignatureStatus" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateFormSignatureStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFormSignatureStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetCollectionTypeInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionTypeInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetCollectionTypeInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionTypeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetCollectionTypesForDefaults_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionTypesForDefaults" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetCollectionTypesForDefaults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionTypesForDefaultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateCollectionTypeInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCollectionTypeInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateCollectionTypeInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCollectionTypeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AuditContainerSwitch_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuditContainerSwitch" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AuditContainerSwitch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuditContainerSwitchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AuditManuallyRemovedTests_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuditManuallyRemovedTests" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AuditManuallyRemovedTests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuditManuallyRemovedTestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetLabOrderCptSummaries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLabOrderCptSummaries" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetLabOrderCptSummaries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLabOrderCptSummariesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_RemoveTestsIncludedInVisitButNotAvailableAtTheranos_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTestsIncludedInVisitButNotAvailableAtTheranos" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_RemoveTestsIncludedInVisitButNotAvailableAtTheranos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTestsIncludedInVisitButNotAvailableAtTheranosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_CheckAndRemoveChlamydiaGonorrheaSwabCollectionTestIfGuestIsUnderEighteenYears_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAndRemoveChlamydiaGonorrheaSwabCollectionTestIfGuestIsUnderEighteenYears" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_CheckAndRemoveChlamydiaGonorrheaSwabCollectionTestIfGuestIsUnderEighteenYears_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAndRemoveChlamydiaGonorrheaSwabCollectionTestIfGuestIsUnderEighteenYearsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetLabOrderCptDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLabOrderCptDetails" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetLabOrderCptDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLabOrderCptDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_RemoveTestsFromVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTestsFromVisit" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_RemoveTestsFromVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTestsFromVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddTestsToVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTestsToVisit" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddTestsToVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTestsToVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_IsGuestSignatureRequiredOnAbnForm_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsGuestSignatureRequiredOnAbnForm" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_IsGuestSignatureRequiredOnAbnForm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsGuestSignatureRequiredOnAbnFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGttWorkflowDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGttWorkflowDetails" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGttWorkflowDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGttWorkflowDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_VisitContainsMoreThanOneDistinctGttTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:VisitContainsMoreThanOneDistinctGttTest" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_VisitContainsMoreThanOneDistinctGttTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VisitContainsMoreThanOneDistinctGttTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_IsRequiredToCollectGuestHeightInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsRequiredToCollectGuestHeightInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_IsRequiredToCollectGuestHeightInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsRequiredToCollectGuestHeightInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestHeightInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestHeightInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestHeightInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestHeightInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddOrUpdateGuestHeightInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateGuestHeightInfo" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddOrUpdateGuestHeightInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddOrUpdateGuestHeightInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetLabOrdersSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLabOrdersSummary" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetLabOrdersSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLabOrdersSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdatePaymentMethod_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePaymentMethod" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdatePaymentMethod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePaymentMethodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_ApplyCouponCodeToVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyCouponCodeToVisit" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_ApplyCouponCodeToVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyCouponCodeToVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_DeleteCouponCodeFromVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCouponCodeFromVisit" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_DeleteCouponCodeFromVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCouponCodeFromVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestVisitPaymentSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestVisitPaymentSummary" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestVisitPaymentSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestVisitPaymentSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetProviderLocationsForCurrentProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderLocationsForCurrentProvider" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetProviderLocationsForCurrentProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderLocationsForCurrentProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetProviderLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderLocations" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetProviderLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProviderLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_ProcessCreditCardPaymentForVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessCreditCardPaymentForVisit" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_ProcessCreditCardPaymentForVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessCreditCardPaymentForVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_RegisterCashPaymentForVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterCashPaymentForVisit" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_RegisterCashPaymentForVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterCashPaymentForVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_RegisterBillMeLaterForVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterBillMeLaterForVisit" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_RegisterBillMeLaterForVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterBillMeLaterForVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_ProcessRefundForVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRefundForVisit" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_ProcessRefundForVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessRefundForVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveCheckinTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCheckinTime" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveCheckinTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCheckinTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveVisitLogTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVisitLogTime" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveVisitLogTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVisitLogTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_BeginAutoTranscription_InputMessage">
+    <wsdl:part name="parameters" element="tns:BeginAutoTranscription" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_BeginAutoTranscription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BeginAutoTranscriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddTempLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTempLog" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddTempLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTempLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddTempLogs_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTempLogs" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddTempLogs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTempLogsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_CheckTempNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTempNotification" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_CheckTempNotification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTempNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddFieldReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFieldReport" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_AddFieldReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFieldReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetVisitPaymentBarcode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVisitPaymentBarcode" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetVisitPaymentBarcode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVisitPaymentBarcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetNewBarcodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewBarcodes" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetNewBarcodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewBarcodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SendTextMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendTextMessage" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SendTextMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendTextMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_Log_InputMessage">
+    <wsdl:part name="parameters" element="tns:Log" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_VerifyInsuranceEligibility_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyInsuranceEligibility" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_VerifyInsuranceEligibility_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyInsuranceEligibilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestActionsPendingInPerform_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestActionsPendingInPerform" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestActionsPendingInPerform_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestActionsPendingInPerformResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestsinCheckin_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestsinCheckin" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestsinCheckin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestsinCheckinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestsVisitReportStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestsVisitReportStatus" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetGuestsVisitReportStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGuestsVisitReportStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_PerformModeVisitCancellationAllowed_InputMessage">
+    <wsdl:part name="parameters" element="tns:PerformModeVisitCancellationAllowed" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_PerformModeVisitCancellationAllowed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PerformModeVisitCancellationAllowedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindGuestsInPerform_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindGuestsInPerform" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindGuestsInPerform_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindGuestsInPerformResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindGuestsInCombinedMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindGuestsInCombinedMode" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_FindGuestsInCombinedMode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindGuestsInCombinedModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetReturnContainersForGuest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReturnContainersForGuest" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetReturnContainersForGuest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReturnContainersForGuestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetReturnContainerByBarcode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReturnContainerByBarcode" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetReturnContainerByBarcode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReturnContainerByBarcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveGuestReturnContainer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGuestReturnContainer" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_SaveGuestReturnContainer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGuestReturnContainerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetContainersForVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContainersForVisit" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetContainersForVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContainersForVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateContainersForVisit_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContainersForVisit" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_UpdateContainersForVisit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContainersForVisitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetCollectionTypeInfoWithPrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionTypeInfoWithPrice" />
+  </wsdl:message>
+  <wsdl:message name="IPscService_GetCollectionTypeInfoWithPrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionTypeInfoWithPriceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPscService">
+    <wsdl:operation name="UpdateCollectionTypeInfoInPerform">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/UpdateCollectionTypeInfoInPerform" message="tns:IPscService_UpdateCollectionTypeInfoInPerform_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/UpdateCollectionTypeInfoInPerformResponse" message="tns:IPscService_UpdateCollectionTypeInfoInPerform_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPscContainersMetadata">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetPscContainersMetadata" message="tns:IPscService_GetPscContainersMetadata_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetPscContainersMetadataResponse" message="tns:IPscService_GetPscContainersMetadata_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPscContainersImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetPscContainersImage" message="tns:IPscService_GetPscContainersImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetPscContainersImageResponse" message="tns:IPscService_GetPscContainersImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPscContainerImagesWithType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetPscContainerImagesWithType" message="tns:IPscService_GetPscContainerImagesWithType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetPscContainerImagesWithTypeResponse" message="tns:IPscService_GetPscContainerImagesWithType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveGuestVisitContainers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/SaveGuestVisitContainers" message="tns:IPscService_SaveGuestVisitContainers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/SaveGuestVisitContainersResponse" message="tns:IPscService_SaveGuestVisitContainers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBarcode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/ValidateBarcode" message="tns:IPscService_ValidateBarcode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/ValidateBarcodeResponse" message="tns:IPscService_ValidateBarcode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TryCompleteVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/TryCompleteVisit" message="tns:IPscService_TryCompleteVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/TryCompleteVisitResponse" message="tns:IPscService_TryCompleteVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TryCompleteVisitFromCheckIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/TryCompleteVisitFromCheckIn" message="tns:IPscService_TryCompleteVisitFromCheckIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/TryCompleteVisitFromCheckInResponse" message="tns:IPscService_TryCompleteVisitFromCheckIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InitializeGttWorkflowSteps">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/InitializeGttWorkflowSteps" message="tns:IPscService_InitializeGttWorkflowSteps_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/InitializeGttWorkflowStepsResponse" message="tns:IPscService_InitializeGttWorkflowSteps_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkflowSteps">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/UpdateWorkflowSteps" message="tns:IPscService_UpdateWorkflowSteps_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/UpdateWorkflowStepsResponse" message="tns:IPscService_UpdateWorkflowSteps_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelGttDraw">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/CancelGttDraw" message="tns:IPscService_CancelGttDraw_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/CancelGttDrawResponse" message="tns:IPscService_CancelGttDraw_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveGuestPicture">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/SaveGuestPicture" message="tns:IPscService_SaveGuestPicture_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/SaveGuestPictureResponse" message="tns:IPscService_SaveGuestPicture_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestPicture">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestPicture" message="tns:IPscService_GetGuestPicture_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestPictureResponse" message="tns:IPscService_GetGuestPicture_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitReports">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetVisitReports" message="tns:IPscService_GetVisitReports_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetVisitReportsResponse" message="tns:IPscService_GetVisitReports_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestVisitReportByVisitId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestVisitReportByVisitId" message="tns:IPscService_GetGuestVisitReportByVisitId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestVisitReportByVisitIdResponse" message="tns:IPscService_GetGuestVisitReportByVisitId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveGuestVisitReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/SaveGuestVisitReport" message="tns:IPscService_SaveGuestVisitReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/SaveGuestVisitReportResponse" message="tns:IPscService_SaveGuestVisitReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitTimeDelayReasons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetVisitTimeDelayReasons" message="tns:IPscService_GetVisitTimeDelayReasons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetVisitTimeDelayReasonsResponse" message="tns:IPscService_GetVisitTimeDelayReasons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckInTimeDelayReasons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetCheckInTimeDelayReasons" message="tns:IPscService_GetCheckInTimeDelayReasons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetCheckInTimeDelayReasonsResponse" message="tns:IPscService_GetCheckInTimeDelayReasons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformTimeDelayReasons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetPerformTimeDelayReasons" message="tns:IPscService_GetPerformTimeDelayReasons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetPerformTimeDelayReasonsResponse" message="tns:IPscService_GetPerformTimeDelayReasons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfLancetsUsedOptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetNumberOfLancetsUsedOptions" message="tns:IPscService_GetNumberOfLancetsUsedOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetNumberOfLancetsUsedOptionsResponse" message="tns:IPscService_GetNumberOfLancetsUsedOptions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLancetsUsedExceededReasons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetLancetsUsedExceededReasons" message="tns:IPscService_GetLancetsUsedExceededReasons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetLancetsUsedExceededReasonsResponse" message="tns:IPscService_GetLancetsUsedExceededReasons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetITIssuesReasons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetITIssuesReasons" message="tns:IPscService_GetITIssuesReasons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetITIssuesReasonsResponse" message="tns:IPscService_GetITIssuesReasons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationIssuesReasons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetApplicationIssuesReasons" message="tns:IPscService_GetApplicationIssuesReasons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetApplicationIssuesReasonsResponse" message="tns:IPscService_GetApplicationIssuesReasons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerSupportIssuesReasons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetCustomerSupportIssuesReasons" message="tns:IPscService_GetCustomerSupportIssuesReasons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetCustomerSupportIssuesReasonsResponse" message="tns:IPscService_GetCustomerSupportIssuesReasons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWaitTimeIssuesReasons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetWaitTimeIssuesReasons" message="tns:IPscService_GetWaitTimeIssuesReasons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetWaitTimeIssuesReasonsResponse" message="tns:IPscService_GetWaitTimeIssuesReasons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFailedVacutainerReasons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetFailedVacutainerReasons" message="tns:IPscService_GetFailedVacutainerReasons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetFailedVacutainerReasonsResponse" message="tns:IPscService_GetFailedVacutainerReasons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNeedlesExceededReasons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetNeedlesExceededReasons" message="tns:IPscService_GetNeedlesExceededReasons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetNeedlesExceededReasonsResponse" message="tns:IPscService_GetNeedlesExceededReasons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFailedNanotainerSubReasons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetFailedNanotainerSubReasons" message="tns:IPscService_GetFailedNanotainerSubReasons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetFailedNanotainerSubReasonsResponse" message="tns:IPscService_GetFailedNanotainerSubReasons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfNeedlesUsedOptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetNumberOfNeedlesUsedOptions" message="tns:IPscService_GetNumberOfNeedlesUsedOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetNumberOfNeedlesUsedOptionsResponse" message="tns:IPscService_GetNumberOfNeedlesUsedOptions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLancetUsedOptions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetLancetUsedOptions" message="tns:IPscService_GetLancetUsedOptions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetLancetUsedOptionsResponse" message="tns:IPscService_GetLancetUsedOptions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecordCourierPickup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/RecordCourierPickup" message="tns:IPscService_RecordCourierPickup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/RecordCourierPickupResponse" message="tns:IPscService_RecordCourierPickup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastNVisitTimes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetLastNVisitTimes" message="tns:IPscService_GetLastNVisitTimes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetLastNVisitTimesResponse" message="tns:IPscService_GetLastNVisitTimes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMaxVisitApprovalInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/SaveMaxVisitApprovalInfo" message="tns:IPscService_SaveMaxVisitApprovalInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/SaveMaxVisitApprovalInfoResponse" message="tns:IPscService_SaveMaxVisitApprovalInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePaymentSummarySnapShot">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/SavePaymentSummarySnapShot" message="tns:IPscService_SavePaymentSummarySnapShot_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/SavePaymentSummarySnapShotResponse" message="tns:IPscService_SavePaymentSummarySnapShot_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailVerificationCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/SendEmailVerificationCode" message="tns:IPscService_SendEmailVerificationCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/SendEmailVerificationCodeResponse" message="tns:IPscService_SendEmailVerificationCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/Login" message="tns:IPscService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/LoginResponse" message="tns:IPscService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecurityQuestions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetSecurityQuestions" message="tns:IPscService_GetSecurityQuestions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetSecurityQuestionsResponse" message="tns:IPscService_GetSecurityQuestions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSecurityQuestionAnswer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/ValidateSecurityQuestionAnswer" message="tns:IPscService_ValidateSecurityQuestionAnswer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/ValidateSecurityQuestionAnswerResponse" message="tns:IPscService_ValidateSecurityQuestionAnswer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/ChangePassword" message="tns:IPscService_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/ChangePasswordResponse" message="tns:IPscService_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/ResetPassword" message="tns:IPscService_ResetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/ResetPasswordResponse" message="tns:IPscService_ResetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSecurityQuestionAnswers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/UpdateSecurityQuestionAnswers" message="tns:IPscService_UpdateSecurityQuestionAnswers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/UpdateSecurityQuestionAnswersResponse" message="tns:IPscService_UpdateSecurityQuestionAnswers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecurityQuestionsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetSecurityQuestionsList" message="tns:IPscService_GetSecurityQuestionsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetSecurityQuestionsListResponse" message="tns:IPscService_GetSecurityQuestionsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/Logout" message="tns:IPscService_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/LogoutResponse" message="tns:IPscService_Logout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderLocationSettings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetProviderLocationSettings" message="tns:IPscService_GetProviderLocationSettings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetProviderLocationSettingsResponse" message="tns:IPscService_GetProviderLocationSettings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCurrentProviderLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/SaveCurrentProviderLocation" message="tns:IPscService_SaveCurrentProviderLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/SaveCurrentProviderLocationResponse" message="tns:IPscService_SaveCurrentProviderLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentProviderLocation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetCurrentProviderLocation" message="tns:IPscService_GetCurrentProviderLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetCurrentProviderLocationResponse" message="tns:IPscService_GetCurrentProviderLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestsAppointments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestsAppointments" message="tns:IPscService_GetGuestsAppointments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestsAppointmentsResponse" message="tns:IPscService_GetGuestsAppointments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestsPendingAction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestsPendingAction" message="tns:IPscService_GetGuestsPendingAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestsPendingActionResponse" message="tns:IPscService_GetGuestsPendingAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestsPendingPerform">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestsPendingPerform" message="tns:IPscService_GetGuestsPendingPerform_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestsPendingPerformResponse" message="tns:IPscService_GetGuestsPendingPerform_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestPendingActionInCombinedMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestPendingActionInCombinedMode" message="tns:IPscService_GetGuestPendingActionInCombinedMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestPendingActionInCombinedModeResponse" message="tns:IPscService_GetGuestPendingActionInCombinedMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestsInPerform">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestsInPerform" message="tns:IPscService_GetGuestsInPerform_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestsInPerformResponse" message="tns:IPscService_GetGuestsInPerform_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindGuests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/FindGuests" message="tns:IPscService_FindGuests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/FindGuestsResponse" message="tns:IPscService_FindGuests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelGuestVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/CancelGuestVisit" message="tns:IPscService_CancelGuestVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/CancelGuestVisitResponse" message="tns:IPscService_CancelGuestVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestVisitState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestVisitState" message="tns:IPscService_GetGuestVisitState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestVisitStateResponse" message="tns:IPscService_GetGuestVisitState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatedGuestVisitState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/UpdatedGuestVisitState" message="tns:IPscService_UpdatedGuestVisitState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/UpdatedGuestVisitStateResponse" message="tns:IPscService_UpdatedGuestVisitState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitCancellationReasons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetVisitCancellationReasons" message="tns:IPscService_GetVisitCancellationReasons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetVisitCancellationReasonsResponse" message="tns:IPscService_GetVisitCancellationReasons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewGuest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/AddNewGuest" message="tns:IPscService_AddNewGuest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/AddNewGuestResponse" message="tns:IPscService_AddNewGuest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGuestBasicinfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/UpdateGuestBasicinfo" message="tns:IPscService_UpdateGuestBasicinfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/UpdateGuestBasicinfoResponse" message="tns:IPscService_UpdateGuestBasicinfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateGuestVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/CreateGuestVisit" message="tns:IPscService_CreateGuestVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/CreateGuestVisitResponse" message="tns:IPscService_CreateGuestVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateGuestVisitAndMarkAppointmentAsComplete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/CreateGuestVisitAndMarkAppointmentAsComplete" message="tns:IPscService_CreateGuestVisitAndMarkAppointmentAsComplete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/CreateGuestVisitAndMarkAppointmentAsCompleteResponse" message="tns:IPscService_CreateGuestVisitAndMarkAppointmentAsComplete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateGuestVisitGeoCheckedInGuest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/CreateGuestVisitGeoCheckedInGuest" message="tns:IPscService_CreateGuestVisitGeoCheckedInGuest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/CreateGuestVisitGeoCheckedInGuestResponse" message="tns:IPscService_CreateGuestVisitGeoCheckedInGuest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateLabRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/CreateLabRequest" message="tns:IPscService_CreateLabRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/CreateLabRequestResponse" message="tns:IPscService_CreateLabRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLabOrderToVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/AddLabOrderToVisit" message="tns:IPscService_AddLabOrderToVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/AddLabOrderToVisitResponse" message="tns:IPscService_AddLabOrderToVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOpenLabOrdersToVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/AddOpenLabOrdersToVisit" message="tns:IPscService_AddOpenLabOrdersToVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/AddOpenLabOrdersToVisitResponse" message="tns:IPscService_AddOpenLabOrdersToVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLabOrderImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/AddLabOrderImage" message="tns:IPscService_AddLabOrderImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/AddLabOrderImageResponse" message="tns:IPscService_AddLabOrderImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitManualTranscriptionForGuestLabOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/SubmitManualTranscriptionForGuestLabOrder" message="tns:IPscService_SubmitManualTranscriptionForGuestLabOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/SubmitManualTranscriptionForGuestLabOrderResponse" message="tns:IPscService_SubmitManualTranscriptionForGuestLabOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitManualTranscriptionForPhysicianLabOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/SubmitManualTranscriptionForPhysicianLabOrder" message="tns:IPscService_SubmitManualTranscriptionForPhysicianLabOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/SubmitManualTranscriptionForPhysicianLabOrderResponse" message="tns:IPscService_SubmitManualTranscriptionForPhysicianLabOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenLabOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetOpenLabOrders" message="tns:IPscService_GetOpenLabOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetOpenLabOrdersResponse" message="tns:IPscService_GetOpenLabOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitLabOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetVisitLabOrders" message="tns:IPscService_GetVisitLabOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetVisitLabOrdersResponse" message="tns:IPscService_GetVisitLabOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLabOrdersFromVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/RemoveLabOrdersFromVisit" message="tns:IPscService_RemoveLabOrdersFromVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/RemoveLabOrdersFromVisitResponse" message="tns:IPscService_RemoveLabOrdersFromVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLabOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/DeleteLabOrder" message="tns:IPscService_DeleteLabOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/DeleteLabOrderResponse" message="tns:IPscService_DeleteLabOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTranscriptionStatuses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetTranscriptionStatuses" message="tns:IPscService_GetTranscriptionStatuses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetTranscriptionStatusesResponse" message="tns:IPscService_GetTranscriptionStatuses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindIcd9Info">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/FindIcd9Info" message="tns:IPscService_FindIcd9Info_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/FindIcd9InfoResponse" message="tns:IPscService_FindIcd9Info_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindIcd10Info">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/FindIcd10Info" message="tns:IPscService_FindIcd10Info_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/FindIcd10InfoResponse" message="tns:IPscService_FindIcd10Info_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindCptCodes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/FindCptCodes" message="tns:IPscService_FindCptCodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/FindCptCodesResponse" message="tns:IPscService_FindCptCodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindProviderLocations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/FindProviderLocations" message="tns:IPscService_FindProviderLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/FindProviderLocationsResponse" message="tns:IPscService_FindProviderLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindProviders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/FindProviders" message="tns:IPscService_FindProviders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/FindProvidersResponse" message="tns:IPscService_FindProviders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindProvidersByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/FindProvidersByUserId" message="tns:IPscService_FindProvidersByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/FindProvidersByUserIdResponse" message="tns:IPscService_FindProvidersByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindDoctors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/FindDoctors" message="tns:IPscService_FindDoctors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/FindDoctorsResponse" message="tns:IPscService_FindDoctors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhysicianFavoriteTests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetPhysicianFavoriteTests" message="tns:IPscService_GetPhysicianFavoriteTests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetPhysicianFavoriteTestsResponse" message="tns:IPscService_GetPhysicianFavoriteTests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFrequencyTimeIntervals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetFrequencyTimeIntervals" message="tns:IPscService_GetFrequencyTimeIntervals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetFrequencyTimeIntervalsResponse" message="tns:IPscService_GetFrequencyTimeIntervals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindInsuranceCompanies">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/FindInsuranceCompanies" message="tns:IPscService_FindInsuranceCompanies_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/FindInsuranceCompaniesResponse" message="tns:IPscService_FindInsuranceCompanies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationshipList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetRelationshipList" message="tns:IPscService_GetRelationshipList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetRelationshipListResponse" message="tns:IPscService_GetRelationshipList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCodes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetCountryCodes" message="tns:IPscService_GetCountryCodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetCountryCodesResponse" message="tns:IPscService_GetCountryCodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFormTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetAllFormTypes" message="tns:IPscService_GetAllFormTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetAllFormTypesResponse" message="tns:IPscService_GetAllFormTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldReportSubjectList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetFieldReportSubjectList" message="tns:IPscService_GetFieldReportSubjectList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetFieldReportSubjectListResponse" message="tns:IPscService_GetFieldReportSubjectList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTextMessageSubjectList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetTextMessageSubjectList" message="tns:IPscService_GetTextMessageSubjectList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetTextMessageSubjectListResponse" message="tns:IPscService_GetTextMessageSubjectList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTextMessageSubjectListForPerform">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetTextMessageSubjectListForPerform" message="tns:IPscService_GetTextMessageSubjectListForPerform_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetTextMessageSubjectListForPerformResponse" message="tns:IPscService_GetTextMessageSubjectListForPerform_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllZipCodes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetAllZipCodes" message="tns:IPscService_GetAllZipCodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetAllZipCodesResponse" message="tns:IPscService_GetAllZipCodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZipCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetZipCode" message="tns:IPscService_GetZipCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetZipCodeResponse" message="tns:IPscService_GetZipCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMailingAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/UpdateMailingAddress" message="tns:IPscService_UpdateMailingAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/UpdateMailingAddressResponse" message="tns:IPscService_UpdateMailingAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBillingAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/UpdateBillingAddress" message="tns:IPscService_UpdateBillingAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/UpdateBillingAddressResponse" message="tns:IPscService_UpdateBillingAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/UpdateContactInfo" message="tns:IPscService_UpdateContactInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/UpdateContactInfoResponse" message="tns:IPscService_UpdateContactInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContactInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/RemoveContactInfo" message="tns:IPscService_RemoveContactInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/RemoveContactInfoResponse" message="tns:IPscService_RemoveContactInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInsurance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/UpdateInsurance" message="tns:IPscService_UpdateInsurance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/UpdateInsuranceResponse" message="tns:IPscService_UpdateInsurance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddInsuranceImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/AddInsuranceImage" message="tns:IPscService_AddInsuranceImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/AddInsuranceImageResponse" message="tns:IPscService_AddInsuranceImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGuestInsurance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/DeleteGuestInsurance" message="tns:IPscService_DeleteGuestInsurance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/DeleteGuestInsuranceResponse" message="tns:IPscService_DeleteGuestInsurance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccompanyingGuardians">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetAccompanyingGuardians" message="tns:IPscService_GetAccompanyingGuardians_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetAccompanyingGuardiansResponse" message="tns:IPscService_GetAccompanyingGuardians_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAccompaniedByGuardian">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/AddAccompaniedByGuardian" message="tns:IPscService_AddAccompaniedByGuardian_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/AddAccompaniedByGuardianResponse" message="tns:IPscService_AddAccompaniedByGuardian_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAccompaniedByGuardian">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/RemoveAccompaniedByGuardian" message="tns:IPscService_RemoveAccompaniedByGuardian_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/RemoveAccompaniedByGuardianResponse" message="tns:IPscService_RemoveAccompaniedByGuardian_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestBasicInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestBasicInfo" message="tns:IPscService_GetGuestBasicInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestBasicInfoResponse" message="tns:IPscService_GetGuestBasicInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestAddresses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestAddresses" message="tns:IPscService_GetGuestAddresses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestAddressesResponse" message="tns:IPscService_GetGuestAddresses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestInsuranceInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestInsuranceInfo" message="tns:IPscService_GetGuestInsuranceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestInsuranceInfoResponse" message="tns:IPscService_GetGuestInsuranceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestInsuranceImages">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestInsuranceImages" message="tns:IPscService_GetGuestInsuranceImages_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestInsuranceImagesResponse" message="tns:IPscService_GetGuestInsuranceImages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestContacts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestContacts" message="tns:IPscService_GetGuestContacts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestContactsResponse" message="tns:IPscService_GetGuestContacts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormSignatureStatuses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetFormSignatureStatuses" message="tns:IPscService_GetFormSignatureStatuses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetFormSignatureStatusesResponse" message="tns:IPscService_GetFormSignatureStatuses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetForm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetForm" message="tns:IPscService_GetForm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetFormResponse" message="tns:IPscService_GetForm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormByType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetFormByType" message="tns:IPscService_GetFormByType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetFormByTypeResponse" message="tns:IPscService_GetFormByType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAbnFormDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetAbnFormDetails" message="tns:IPscService_GetAbnFormDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetAbnFormDetailsResponse" message="tns:IPscService_GetAbnFormDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAbnFormInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/SaveAbnFormInfo" message="tns:IPscService_SaveAbnFormInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/SaveAbnFormInfoResponse" message="tns:IPscService_SaveAbnFormInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormSignatureStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/UpdateFormSignatureStatus" message="tns:IPscService_UpdateFormSignatureStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/UpdateFormSignatureStatusResponse" message="tns:IPscService_UpdateFormSignatureStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionTypeInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetCollectionTypeInfo" message="tns:IPscService_GetCollectionTypeInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetCollectionTypeInfoResponse" message="tns:IPscService_GetCollectionTypeInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionTypesForDefaults">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetCollectionTypesForDefaults" message="tns:IPscService_GetCollectionTypesForDefaults_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetCollectionTypesForDefaultsResponse" message="tns:IPscService_GetCollectionTypesForDefaults_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCollectionTypeInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/UpdateCollectionTypeInfo" message="tns:IPscService_UpdateCollectionTypeInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/UpdateCollectionTypeInfoResponse" message="tns:IPscService_UpdateCollectionTypeInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuditContainerSwitch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/AuditContainerSwitch" message="tns:IPscService_AuditContainerSwitch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/AuditContainerSwitchResponse" message="tns:IPscService_AuditContainerSwitch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuditManuallyRemovedTests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/AuditManuallyRemovedTests" message="tns:IPscService_AuditManuallyRemovedTests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/AuditManuallyRemovedTestsResponse" message="tns:IPscService_AuditManuallyRemovedTests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLabOrderCptSummaries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetLabOrderCptSummaries" message="tns:IPscService_GetLabOrderCptSummaries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetLabOrderCptSummariesResponse" message="tns:IPscService_GetLabOrderCptSummaries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTestsIncludedInVisitButNotAvailableAtTheranos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/RemoveTestsIncludedInVisitButNotAvailableAtTheranos" message="tns:IPscService_RemoveTestsIncludedInVisitButNotAvailableAtTheranos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/RemoveTestsIncludedInVisitButNotAvailableAtTheranosResponse" message="tns:IPscService_RemoveTestsIncludedInVisitButNotAvailableAtTheranos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAndRemoveChlamydiaGonorrheaSwabCollectionTestIfGuestIsUnderEighteenYears">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/CheckAndRemoveChlamydiaGonorrheaSwabCollectionTestIfGuestIsUnderEighteenYears" message="tns:IPscService_CheckAndRemoveChlamydiaGonorrheaSwabCollectionTestIfGuestIsUnderEighteenYears_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/CheckAndRemoveChlamydiaGonorrheaSwabCollectionTestIfGuestIsUnderEighteenYearsResponse" message="tns:IPscService_CheckAndRemoveChlamydiaGonorrheaSwabCollectionTestIfGuestIsUnderEighteenYears_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLabOrderCptDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetLabOrderCptDetails" message="tns:IPscService_GetLabOrderCptDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetLabOrderCptDetailsResponse" message="tns:IPscService_GetLabOrderCptDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTestsFromVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/RemoveTestsFromVisit" message="tns:IPscService_RemoveTestsFromVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/RemoveTestsFromVisitResponse" message="tns:IPscService_RemoveTestsFromVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTestsToVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/AddTestsToVisit" message="tns:IPscService_AddTestsToVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/AddTestsToVisitResponse" message="tns:IPscService_AddTestsToVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsGuestSignatureRequiredOnAbnForm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/IsGuestSignatureRequiredOnAbnForm" message="tns:IPscService_IsGuestSignatureRequiredOnAbnForm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/IsGuestSignatureRequiredOnAbnFormResponse" message="tns:IPscService_IsGuestSignatureRequiredOnAbnForm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGttWorkflowDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGttWorkflowDetails" message="tns:IPscService_GetGttWorkflowDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGttWorkflowDetailsResponse" message="tns:IPscService_GetGttWorkflowDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VisitContainsMoreThanOneDistinctGttTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/VisitContainsMoreThanOneDistinctGttTest" message="tns:IPscService_VisitContainsMoreThanOneDistinctGttTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/VisitContainsMoreThanOneDistinctGttTestResponse" message="tns:IPscService_VisitContainsMoreThanOneDistinctGttTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsRequiredToCollectGuestHeightInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/IsRequiredToCollectGuestHeightInfo" message="tns:IPscService_IsRequiredToCollectGuestHeightInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/IsRequiredToCollectGuestHeightInfoResponse" message="tns:IPscService_IsRequiredToCollectGuestHeightInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestHeightInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestHeightInfo" message="tns:IPscService_GetGuestHeightInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestHeightInfoResponse" message="tns:IPscService_GetGuestHeightInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateGuestHeightInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/AddOrUpdateGuestHeightInfo" message="tns:IPscService_AddOrUpdateGuestHeightInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/AddOrUpdateGuestHeightInfoResponse" message="tns:IPscService_AddOrUpdateGuestHeightInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLabOrdersSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetLabOrdersSummary" message="tns:IPscService_GetLabOrdersSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetLabOrdersSummaryResponse" message="tns:IPscService_GetLabOrdersSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePaymentMethod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/UpdatePaymentMethod" message="tns:IPscService_UpdatePaymentMethod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/UpdatePaymentMethodResponse" message="tns:IPscService_UpdatePaymentMethod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyCouponCodeToVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/ApplyCouponCodeToVisit" message="tns:IPscService_ApplyCouponCodeToVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/ApplyCouponCodeToVisitResponse" message="tns:IPscService_ApplyCouponCodeToVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCouponCodeFromVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/DeleteCouponCodeFromVisit" message="tns:IPscService_DeleteCouponCodeFromVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/DeleteCouponCodeFromVisitResponse" message="tns:IPscService_DeleteCouponCodeFromVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestVisitPaymentSummary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestVisitPaymentSummary" message="tns:IPscService_GetGuestVisitPaymentSummary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestVisitPaymentSummaryResponse" message="tns:IPscService_GetGuestVisitPaymentSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderLocationsForCurrentProvider">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetProviderLocationsForCurrentProvider" message="tns:IPscService_GetProviderLocationsForCurrentProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetProviderLocationsForCurrentProviderResponse" message="tns:IPscService_GetProviderLocationsForCurrentProvider_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderLocations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetProviderLocations" message="tns:IPscService_GetProviderLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetProviderLocationsResponse" message="tns:IPscService_GetProviderLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCreditCardPaymentForVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/ProcessCreditCardPaymentForVisit" message="tns:IPscService_ProcessCreditCardPaymentForVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/ProcessCreditCardPaymentForVisitResponse" message="tns:IPscService_ProcessCreditCardPaymentForVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCashPaymentForVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/RegisterCashPaymentForVisit" message="tns:IPscService_RegisterCashPaymentForVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/RegisterCashPaymentForVisitResponse" message="tns:IPscService_RegisterCashPaymentForVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterBillMeLaterForVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/RegisterBillMeLaterForVisit" message="tns:IPscService_RegisterBillMeLaterForVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/RegisterBillMeLaterForVisitResponse" message="tns:IPscService_RegisterBillMeLaterForVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRefundForVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/ProcessRefundForVisit" message="tns:IPscService_ProcessRefundForVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/ProcessRefundForVisitResponse" message="tns:IPscService_ProcessRefundForVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCheckinTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/SaveCheckinTime" message="tns:IPscService_SaveCheckinTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/SaveCheckinTimeResponse" message="tns:IPscService_SaveCheckinTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVisitLogTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/SaveVisitLogTime" message="tns:IPscService_SaveVisitLogTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/SaveVisitLogTimeResponse" message="tns:IPscService_SaveVisitLogTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BeginAutoTranscription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/BeginAutoTranscription" message="tns:IPscService_BeginAutoTranscription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/BeginAutoTranscriptionResponse" message="tns:IPscService_BeginAutoTranscription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTempLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/AddTempLog" message="tns:IPscService_AddTempLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/AddTempLogResponse" message="tns:IPscService_AddTempLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTempLogs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/AddTempLogs" message="tns:IPscService_AddTempLogs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/AddTempLogsResponse" message="tns:IPscService_AddTempLogs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTempNotification">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/CheckTempNotification" message="tns:IPscService_CheckTempNotification_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/CheckTempNotificationResponse" message="tns:IPscService_CheckTempNotification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFieldReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/AddFieldReport" message="tns:IPscService_AddFieldReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/AddFieldReportResponse" message="tns:IPscService_AddFieldReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitPaymentBarcode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetVisitPaymentBarcode" message="tns:IPscService_GetVisitPaymentBarcode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetVisitPaymentBarcodeResponse" message="tns:IPscService_GetVisitPaymentBarcode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewBarcodes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetNewBarcodes" message="tns:IPscService_GetNewBarcodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetNewBarcodesResponse" message="tns:IPscService_GetNewBarcodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendTextMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/SendTextMessage" message="tns:IPscService_SendTextMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/SendTextMessageResponse" message="tns:IPscService_SendTextMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Log">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/Log" message="tns:IPscService_Log_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyInsuranceEligibility">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/VerifyInsuranceEligibility" message="tns:IPscService_VerifyInsuranceEligibility_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/VerifyInsuranceEligibilityResponse" message="tns:IPscService_VerifyInsuranceEligibility_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestActionsPendingInPerform">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestActionsPendingInPerform" message="tns:IPscService_GetGuestActionsPendingInPerform_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestActionsPendingInPerformResponse" message="tns:IPscService_GetGuestActionsPendingInPerform_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestsinCheckin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestsinCheckin" message="tns:IPscService_GetGuestsinCheckin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestsinCheckinResponse" message="tns:IPscService_GetGuestsinCheckin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestsVisitReportStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetGuestsVisitReportStatus" message="tns:IPscService_GetGuestsVisitReportStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetGuestsVisitReportStatusResponse" message="tns:IPscService_GetGuestsVisitReportStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PerformModeVisitCancellationAllowed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/PerformModeVisitCancellationAllowed" message="tns:IPscService_PerformModeVisitCancellationAllowed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/PerformModeVisitCancellationAllowedResponse" message="tns:IPscService_PerformModeVisitCancellationAllowed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindGuestsInPerform">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/FindGuestsInPerform" message="tns:IPscService_FindGuestsInPerform_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/FindGuestsInPerformResponse" message="tns:IPscService_FindGuestsInPerform_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindGuestsInCombinedMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/FindGuestsInCombinedMode" message="tns:IPscService_FindGuestsInCombinedMode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/FindGuestsInCombinedModeResponse" message="tns:IPscService_FindGuestsInCombinedMode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReturnContainersForGuest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetReturnContainersForGuest" message="tns:IPscService_GetReturnContainersForGuest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetReturnContainersForGuestResponse" message="tns:IPscService_GetReturnContainersForGuest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReturnContainerByBarcode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetReturnContainerByBarcode" message="tns:IPscService_GetReturnContainerByBarcode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetReturnContainerByBarcodeResponse" message="tns:IPscService_GetReturnContainerByBarcode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveGuestReturnContainer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/SaveGuestReturnContainer" message="tns:IPscService_SaveGuestReturnContainer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/SaveGuestReturnContainerResponse" message="tns:IPscService_SaveGuestReturnContainer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContainersForVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetContainersForVisit" message="tns:IPscService_GetContainersForVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetContainersForVisitResponse" message="tns:IPscService_GetContainersForVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContainersForVisit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/UpdateContainersForVisit" message="tns:IPscService_UpdateContainersForVisit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/UpdateContainersForVisitResponse" message="tns:IPscService_UpdateContainersForVisit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionTypeInfoWithPrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPscService/GetCollectionTypeInfoWithPrice" message="tns:IPscService_GetCollectionTypeInfoWithPrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPscService/GetCollectionTypeInfoWithPriceResponse" message="tns:IPscService_GetCollectionTypeInfoWithPrice_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPscService" type="tns:IPscService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IPscService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateCollectionTypeInfoInPerform">
+      <soap:operation soapAction="http://tempuri.org/IPscService/UpdateCollectionTypeInfoInPerform" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPscContainersMetadata">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetPscContainersMetadata" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPscContainersImage">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetPscContainersImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPscContainerImagesWithType">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetPscContainerImagesWithType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveGuestVisitContainers">
+      <soap:operation soapAction="http://tempuri.org/IPscService/SaveGuestVisitContainers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateBarcode">
+      <soap:operation soapAction="http://tempuri.org/IPscService/ValidateBarcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryCompleteVisit">
+      <soap:operation soapAction="http://tempuri.org/IPscService/TryCompleteVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryCompleteVisitFromCheckIn">
+      <soap:operation soapAction="http://tempuri.org/IPscService/TryCompleteVisitFromCheckIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitializeGttWorkflowSteps">
+      <soap:operation soapAction="http://tempuri.org/IPscService/InitializeGttWorkflowSteps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateWorkflowSteps">
+      <soap:operation soapAction="http://tempuri.org/IPscService/UpdateWorkflowSteps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelGttDraw">
+      <soap:operation soapAction="http://tempuri.org/IPscService/CancelGttDraw" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveGuestPicture">
+      <soap:operation soapAction="http://tempuri.org/IPscService/SaveGuestPicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestPicture">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestPicture" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitReports">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetVisitReports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestVisitReportByVisitId">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestVisitReportByVisitId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveGuestVisitReport">
+      <soap:operation soapAction="http://tempuri.org/IPscService/SaveGuestVisitReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitTimeDelayReasons">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetVisitTimeDelayReasons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCheckInTimeDelayReasons">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetCheckInTimeDelayReasons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformTimeDelayReasons">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetPerformTimeDelayReasons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfLancetsUsedOptions">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetNumberOfLancetsUsedOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLancetsUsedExceededReasons">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetLancetsUsedExceededReasons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetITIssuesReasons">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetITIssuesReasons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetApplicationIssuesReasons">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetApplicationIssuesReasons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerSupportIssuesReasons">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetCustomerSupportIssuesReasons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWaitTimeIssuesReasons">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetWaitTimeIssuesReasons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailedVacutainerReasons">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetFailedVacutainerReasons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNeedlesExceededReasons">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetNeedlesExceededReasons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFailedNanotainerSubReasons">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetFailedNanotainerSubReasons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfNeedlesUsedOptions">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetNumberOfNeedlesUsedOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLancetUsedOptions">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetLancetUsedOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecordCourierPickup">
+      <soap:operation soapAction="http://tempuri.org/IPscService/RecordCourierPickup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastNVisitTimes">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetLastNVisitTimes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMaxVisitApprovalInfo">
+      <soap:operation soapAction="http://tempuri.org/IPscService/SaveMaxVisitApprovalInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePaymentSummarySnapShot">
+      <soap:operation soapAction="http://tempuri.org/IPscService/SavePaymentSummarySnapShot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailVerificationCode">
+      <soap:operation soapAction="http://tempuri.org/IPscService/SendEmailVerificationCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IPscService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecurityQuestions">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetSecurityQuestions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateSecurityQuestionAnswer">
+      <soap:operation soapAction="http://tempuri.org/IPscService/ValidateSecurityQuestionAnswer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/IPscService/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap:operation soapAction="http://tempuri.org/IPscService/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSecurityQuestionAnswers">
+      <soap:operation soapAction="http://tempuri.org/IPscService/UpdateSecurityQuestionAnswers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSecurityQuestionsList">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetSecurityQuestionsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://tempuri.org/IPscService/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderLocationSettings">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetProviderLocationSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCurrentProviderLocation">
+      <soap:operation soapAction="http://tempuri.org/IPscService/SaveCurrentProviderLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentProviderLocation">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetCurrentProviderLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestsAppointments">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestsAppointments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestsPendingAction">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestsPendingAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestsPendingPerform">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestsPendingPerform" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestPendingActionInCombinedMode">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestPendingActionInCombinedMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestsInPerform">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestsInPerform" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindGuests">
+      <soap:operation soapAction="http://tempuri.org/IPscService/FindGuests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelGuestVisit">
+      <soap:operation soapAction="http://tempuri.org/IPscService/CancelGuestVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestVisitState">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestVisitState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatedGuestVisitState">
+      <soap:operation soapAction="http://tempuri.org/IPscService/UpdatedGuestVisitState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitCancellationReasons">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetVisitCancellationReasons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewGuest">
+      <soap:operation soapAction="http://tempuri.org/IPscService/AddNewGuest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGuestBasicinfo">
+      <soap:operation soapAction="http://tempuri.org/IPscService/UpdateGuestBasicinfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGuestVisit">
+      <soap:operation soapAction="http://tempuri.org/IPscService/CreateGuestVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGuestVisitAndMarkAppointmentAsComplete">
+      <soap:operation soapAction="http://tempuri.org/IPscService/CreateGuestVisitAndMarkAppointmentAsComplete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGuestVisitGeoCheckedInGuest">
+      <soap:operation soapAction="http://tempuri.org/IPscService/CreateGuestVisitGeoCheckedInGuest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateLabRequest">
+      <soap:operation soapAction="http://tempuri.org/IPscService/CreateLabRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLabOrderToVisit">
+      <soap:operation soapAction="http://tempuri.org/IPscService/AddLabOrderToVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOpenLabOrdersToVisit">
+      <soap:operation soapAction="http://tempuri.org/IPscService/AddOpenLabOrdersToVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLabOrderImage">
+      <soap:operation soapAction="http://tempuri.org/IPscService/AddLabOrderImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitManualTranscriptionForGuestLabOrder">
+      <soap:operation soapAction="http://tempuri.org/IPscService/SubmitManualTranscriptionForGuestLabOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitManualTranscriptionForPhysicianLabOrder">
+      <soap:operation soapAction="http://tempuri.org/IPscService/SubmitManualTranscriptionForPhysicianLabOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOpenLabOrders">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetOpenLabOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitLabOrders">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetVisitLabOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveLabOrdersFromVisit">
+      <soap:operation soapAction="http://tempuri.org/IPscService/RemoveLabOrdersFromVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLabOrder">
+      <soap:operation soapAction="http://tempuri.org/IPscService/DeleteLabOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTranscriptionStatuses">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetTranscriptionStatuses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindIcd9Info">
+      <soap:operation soapAction="http://tempuri.org/IPscService/FindIcd9Info" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindIcd10Info">
+      <soap:operation soapAction="http://tempuri.org/IPscService/FindIcd10Info" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindCptCodes">
+      <soap:operation soapAction="http://tempuri.org/IPscService/FindCptCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindProviderLocations">
+      <soap:operation soapAction="http://tempuri.org/IPscService/FindProviderLocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindProviders">
+      <soap:operation soapAction="http://tempuri.org/IPscService/FindProviders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindProvidersByUserId">
+      <soap:operation soapAction="http://tempuri.org/IPscService/FindProvidersByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindDoctors">
+      <soap:operation soapAction="http://tempuri.org/IPscService/FindDoctors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhysicianFavoriteTests">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetPhysicianFavoriteTests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFrequencyTimeIntervals">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetFrequencyTimeIntervals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindInsuranceCompanies">
+      <soap:operation soapAction="http://tempuri.org/IPscService/FindInsuranceCompanies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRelationshipList">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetRelationshipList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryCodes">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetCountryCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFormTypes">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetAllFormTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldReportSubjectList">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetFieldReportSubjectList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTextMessageSubjectList">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetTextMessageSubjectList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTextMessageSubjectListForPerform">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetTextMessageSubjectListForPerform" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllZipCodes">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetAllZipCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZipCode">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetZipCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMailingAddress">
+      <soap:operation soapAction="http://tempuri.org/IPscService/UpdateMailingAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBillingAddress">
+      <soap:operation soapAction="http://tempuri.org/IPscService/UpdateBillingAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContactInfo">
+      <soap:operation soapAction="http://tempuri.org/IPscService/UpdateContactInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveContactInfo">
+      <soap:operation soapAction="http://tempuri.org/IPscService/RemoveContactInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInsurance">
+      <soap:operation soapAction="http://tempuri.org/IPscService/UpdateInsurance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddInsuranceImage">
+      <soap:operation soapAction="http://tempuri.org/IPscService/AddInsuranceImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGuestInsurance">
+      <soap:operation soapAction="http://tempuri.org/IPscService/DeleteGuestInsurance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccompanyingGuardians">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetAccompanyingGuardians" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAccompaniedByGuardian">
+      <soap:operation soapAction="http://tempuri.org/IPscService/AddAccompaniedByGuardian" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAccompaniedByGuardian">
+      <soap:operation soapAction="http://tempuri.org/IPscService/RemoveAccompaniedByGuardian" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestBasicInfo">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestBasicInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestAddresses">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestInsuranceInfo">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestInsuranceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestInsuranceImages">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestInsuranceImages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestContacts">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestContacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormSignatureStatuses">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetFormSignatureStatuses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetForm">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetForm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormByType">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetFormByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAbnFormDetails">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetAbnFormDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAbnFormInfo">
+      <soap:operation soapAction="http://tempuri.org/IPscService/SaveAbnFormInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormSignatureStatus">
+      <soap:operation soapAction="http://tempuri.org/IPscService/UpdateFormSignatureStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionTypeInfo">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetCollectionTypeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionTypesForDefaults">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetCollectionTypesForDefaults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCollectionTypeInfo">
+      <soap:operation soapAction="http://tempuri.org/IPscService/UpdateCollectionTypeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuditContainerSwitch">
+      <soap:operation soapAction="http://tempuri.org/IPscService/AuditContainerSwitch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuditManuallyRemovedTests">
+      <soap:operation soapAction="http://tempuri.org/IPscService/AuditManuallyRemovedTests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabOrderCptSummaries">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetLabOrderCptSummaries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTestsIncludedInVisitButNotAvailableAtTheranos">
+      <soap:operation soapAction="http://tempuri.org/IPscService/RemoveTestsIncludedInVisitButNotAvailableAtTheranos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAndRemoveChlamydiaGonorrheaSwabCollectionTestIfGuestIsUnderEighteenYears">
+      <soap:operation soapAction="http://tempuri.org/IPscService/CheckAndRemoveChlamydiaGonorrheaSwabCollectionTestIfGuestIsUnderEighteenYears" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabOrderCptDetails">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetLabOrderCptDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTestsFromVisit">
+      <soap:operation soapAction="http://tempuri.org/IPscService/RemoveTestsFromVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTestsToVisit">
+      <soap:operation soapAction="http://tempuri.org/IPscService/AddTestsToVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsGuestSignatureRequiredOnAbnForm">
+      <soap:operation soapAction="http://tempuri.org/IPscService/IsGuestSignatureRequiredOnAbnForm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGttWorkflowDetails">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGttWorkflowDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VisitContainsMoreThanOneDistinctGttTest">
+      <soap:operation soapAction="http://tempuri.org/IPscService/VisitContainsMoreThanOneDistinctGttTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsRequiredToCollectGuestHeightInfo">
+      <soap:operation soapAction="http://tempuri.org/IPscService/IsRequiredToCollectGuestHeightInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestHeightInfo">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestHeightInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrUpdateGuestHeightInfo">
+      <soap:operation soapAction="http://tempuri.org/IPscService/AddOrUpdateGuestHeightInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLabOrdersSummary">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetLabOrdersSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePaymentMethod">
+      <soap:operation soapAction="http://tempuri.org/IPscService/UpdatePaymentMethod" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyCouponCodeToVisit">
+      <soap:operation soapAction="http://tempuri.org/IPscService/ApplyCouponCodeToVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCouponCodeFromVisit">
+      <soap:operation soapAction="http://tempuri.org/IPscService/DeleteCouponCodeFromVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestVisitPaymentSummary">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestVisitPaymentSummary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderLocationsForCurrentProvider">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetProviderLocationsForCurrentProvider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProviderLocations">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetProviderLocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCreditCardPaymentForVisit">
+      <soap:operation soapAction="http://tempuri.org/IPscService/ProcessCreditCardPaymentForVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCashPaymentForVisit">
+      <soap:operation soapAction="http://tempuri.org/IPscService/RegisterCashPaymentForVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterBillMeLaterForVisit">
+      <soap:operation soapAction="http://tempuri.org/IPscService/RegisterBillMeLaterForVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessRefundForVisit">
+      <soap:operation soapAction="http://tempuri.org/IPscService/ProcessRefundForVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCheckinTime">
+      <soap:operation soapAction="http://tempuri.org/IPscService/SaveCheckinTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVisitLogTime">
+      <soap:operation soapAction="http://tempuri.org/IPscService/SaveVisitLogTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BeginAutoTranscription">
+      <soap:operation soapAction="http://tempuri.org/IPscService/BeginAutoTranscription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTempLog">
+      <soap:operation soapAction="http://tempuri.org/IPscService/AddTempLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTempLogs">
+      <soap:operation soapAction="http://tempuri.org/IPscService/AddTempLogs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTempNotification">
+      <soap:operation soapAction="http://tempuri.org/IPscService/CheckTempNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFieldReport">
+      <soap:operation soapAction="http://tempuri.org/IPscService/AddFieldReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVisitPaymentBarcode">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetVisitPaymentBarcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewBarcodes">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetNewBarcodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTextMessage">
+      <soap:operation soapAction="http://tempuri.org/IPscService/SendTextMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Log">
+      <soap:operation soapAction="http://tempuri.org/IPscService/Log" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyInsuranceEligibility">
+      <soap:operation soapAction="http://tempuri.org/IPscService/VerifyInsuranceEligibility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestActionsPendingInPerform">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestActionsPendingInPerform" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestsinCheckin">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestsinCheckin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuestsVisitReportStatus">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetGuestsVisitReportStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PerformModeVisitCancellationAllowed">
+      <soap:operation soapAction="http://tempuri.org/IPscService/PerformModeVisitCancellationAllowed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindGuestsInPerform">
+      <soap:operation soapAction="http://tempuri.org/IPscService/FindGuestsInPerform" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindGuestsInCombinedMode">
+      <soap:operation soapAction="http://tempuri.org/IPscService/FindGuestsInCombinedMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReturnContainersForGuest">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetReturnContainersForGuest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReturnContainerByBarcode">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetReturnContainerByBarcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveGuestReturnContainer">
+      <soap:operation soapAction="http://tempuri.org/IPscService/SaveGuestReturnContainer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContainersForVisit">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetContainersForVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContainersForVisit">
+      <soap:operation soapAction="http://tempuri.org/IPscService/UpdateContainersForVisit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionTypeInfoWithPrice">
+      <soap:operation soapAction="http://tempuri.org/IPscService/GetCollectionTypeInfoWithPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PscService">
+    <wsdl:port name="BasicHttpBinding_IPscService" binding="tns:BasicHttpBinding_IPscService">
+      <soap:address location="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="api-28-04-2016" storage="c:\csampathkumar\source\theranos.test-automation\.me api\theranos.automation.me.api\theranos.automation.me.api\api-28-04-2016.orderedtest" id="5d7587bf-9282-438f-8c32-f18fd6794e1b" continueAfterFailure="true" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="733916a5-ce88-824c-840b-6c394841b665" name="setPatientInsuranceImage" storage="..\..\..\references\internal\meapi\theranos.automation.me.api.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="f2011945-f9c2-7781-bf28-a7a38e593265" name="getPatientInsuranceImage" storage="..\..\..\references\internal\meapi\theranos.automation.me.api.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="40c8d93f-4445-bf26-3da1-afc6c3c41ea1" name="submitPatientTests" storage="..\..\..\references\internal\meapi\theranos.automation.me.api.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="e734fa2f-a3b3-69a5-209a-b903969a5bac" name="submitLabOrderImage" storage="..\..\..\references\internal\meapi\theranos.automation.me.api.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Dashboard" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.Dashboard" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.WorkFlowStates" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd10" namespace="http://schemas.theranos.com/psc/perform" />
+  <xs:complexType name="ArrayOfGuestAppointment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GuestAppointment" nillable="true" type="tns:GuestAppointment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGuestAppointment" nillable="true" type="tns:ArrayOfGuestAppointment" />
+  <xs:complexType name="GuestAppointment">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="AppointmentBeginTime" type="q1:DateTimeOffset">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="AppointmentId" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="GuestId" type="ser:guid">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="GuestName" nillable="true" type="q2:Name">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GuestAppointment" nillable="true" type="tns:GuestAppointment" />
+  <xs:complexType name="ArrayOfGuestPendingAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GuestPendingAction" nillable="true" type="tns:GuestPendingAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGuestPendingAction" nillable="true" type="tns:ArrayOfGuestPendingAction" />
+  <xs:complexType name="GuestPendingAction">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.theranos.com/psc/perform" base="q3:GuestAbtractBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateOfBirth" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="Gender" type="q4:Gender">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GuestHasGeoCheckedIn" type="xs:boolean" />
+          <xs:element minOccurs="0" name="GuestId" type="ser:guid">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="HomePhoneNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="KioskUserId" type="ser:guid" />
+          <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="Name" nillable="true" type="q5:Name">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="VisitCreatedTime" type="q6:DateTimeOffset">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="VisitId" type="ser:guid">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.WorkFlowStates" minOccurs="0" name="VisitStatus" nillable="true" type="q7:GuestVisitState" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GuestPendingAction" nillable="true" type="tns:GuestPendingAction" />
+  <xs:complexType name="ArrayOfGuestPendingPerform">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GuestPendingPerform" nillable="true" type="tns:GuestPendingPerform" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGuestPendingPerform" nillable="true" type="tns:ArrayOfGuestPendingPerform" />
+  <xs:complexType name="GuestPendingPerform">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CheckedInTime" type="q8:DateTimeOffset">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="GttWorkflowSteps" nillable="true" type="q9:ArrayOfGttWorkflowStep" />
+      <xs:element minOccurs="0" name="GuestId" type="ser:guid">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IsGttVisit" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MobileNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="Name" nillable="true" type="q10:Name">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="SelfCheckedin" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="TimeOfNextGttCollection" nillable="true" type="q11:DateTimeOffset" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="VisitCreatedOn" type="q12:DateTimeOffset" />
+      <xs:element minOccurs="0" name="VisitId" type="ser:guid">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.WorkFlowStates" minOccurs="0" name="VisitStatus" nillable="true" type="q13:GuestVisitState" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="WaitPeriodStartTime" nillable="true" type="q14:DateTimeOffset" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GuestPendingPerform" nillable="true" type="tns:GuestPendingPerform" />
+  <xs:complexType name="ArrayOfGuestInPerform">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GuestInPerform" nillable="true" type="tns:GuestInPerform" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGuestInPerform" nillable="true" type="tns:ArrayOfGuestInPerform" />
+  <xs:complexType name="GuestInPerform">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GuestId" type="ser:guid">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="Name" nillable="true" type="q15:Name">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PerformerInitial" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="VisitId" type="ser:guid">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.WorkFlowStates" minOccurs="0" name="VisitStatus" nillable="true" type="q16:GuestVisitState" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GuestInPerform" nillable="true" type="tns:GuestInPerform" />
+</xs:schema>

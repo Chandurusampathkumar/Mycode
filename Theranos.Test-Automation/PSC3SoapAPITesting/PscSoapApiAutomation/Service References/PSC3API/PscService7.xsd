@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.WorkFlowStates" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.WorkFlowStates" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+  <xs:complexType name="GuestVisitState">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StateBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Completed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ConfirmOrderState" nillable="true" type="tns:ConfirmOrderState" />
+          <xs:element minOccurs="0" name="GuestFormsState" nillable="true" type="tns:GuestFormsState" />
+          <xs:element minOccurs="0" name="GuestInfoState" nillable="true" type="tns:GuestInfoState" />
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="HasFasted" nillable="true" type="q1:HasFasted" />
+          <xs:element minOccurs="0" name="IsCancellationRequestedInPerform" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsCancelled" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDropOff" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsRefundOrAmountDuePendingInPerform" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LabOrderState" nillable="true" type="tns:LabOrderState" />
+          <xs:element minOccurs="0" name="LabOrderSummaryState" nillable="true" type="tns:LabOrderSummaryState" />
+          <xs:element minOccurs="0" name="OtherState" nillable="true" type="tns:OtherState" />
+          <xs:element minOccurs="0" name="PaymentState" nillable="true" type="tns:PaymentState" />
+          <xs:element minOccurs="0" name="PerformState" nillable="true" type="tns:PeformState" />
+          <xs:element minOccurs="0" name="WorkFlowState" nillable="true" type="tns:WorkFlowState" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GuestVisitState" nillable="true" type="tns:GuestVisitState" />
+  <xs:complexType name="StateBase">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="StateBase" nillable="true" type="tns:StateBase" />
+  <xs:complexType name="PeformState">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StateBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Completed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CurrentDrawNumber" type="tns:DrawNumber" />
+          <xs:element minOccurs="0" name="IsCtnSaveStepCompleted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsOtherContainerSaveStepCompleted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPerformStarted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsVacutainerSaveStepCompleted" type="xs:boolean" />
+          <xs:element minOccurs="0" name="T0DrawUnableToCollectAllContainers" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PeformState" nillable="true" type="tns:PeformState" />
+  <xs:simpleType name="DrawNumber">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="T0" />
+      <xs:enumeration value="T1" />
+      <xs:enumeration value="T2" />
+      <xs:enumeration value="T3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DrawNumber" nillable="true" type="tns:DrawNumber" />
+  <xs:complexType name="OtherState">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StateBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Completed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsGttWorkFlowPending" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPendingVisitCreatedByAdmin" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsSelfCheckIn" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OtherState" nillable="true" type="tns:OtherState" />
+  <xs:complexType name="GuestFormsState">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StateBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Completed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsAcknowledgementofPrivacyPracticesFormCollected" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GuestFormsState" nillable="true" type="tns:GuestFormsState" />
+  <xs:complexType name="WorkFlowState">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StateBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CurrentStep" type="tns:WorkflowStep" />
+          <xs:element minOccurs="0" name="HasGuestBeenInformedOfGttInstructions" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WorkFlowState" nillable="true" type="tns:WorkFlowState" />
+  <xs:simpleType name="WorkflowStep">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LabOrder" />
+      <xs:enumeration value="GuestInfo" />
+      <xs:enumeration value="GuestForms" />
+      <xs:enumeration value="ConfirmOrders" />
+      <xs:enumeration value="Summary" />
+      <xs:enumeration value="Payment" />
+      <xs:enumeration value="PerformVerifyIdentification" />
+      <xs:enumeration value="PerformPrepareContainers" />
+      <xs:enumeration value="PerformCollection" />
+      <xs:enumeration value="PerformVisitSummary" />
+      <xs:enumeration value="Perform" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WorkflowStep" nillable="true" type="tns:WorkflowStep" />
+  <xs:complexType name="LabOrderState">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StateBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Completed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsOrderTransciptionCompletedSucessfully" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsOrderTransciptionStatusNotApplicable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsOrderTranscriptionCompletedWithError" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsOrderTranscriptionDelayed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsOrderTranscriptionInProgress" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsOrderTranscriptionNotStarted" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LabOrderState" nillable="true" type="tns:LabOrderState" />
+  <xs:complexType name="GuestInfoState">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StateBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Completed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsGuestVerified" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GuestInfoState" nillable="true" type="tns:GuestInfoState" />
+  <xs:complexType name="PaymentState">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StateBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Completed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsPaymentCollected" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PaymentState" nillable="true" type="tns:PaymentState" />
+  <xs:complexType name="ConfirmOrderState">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StateBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Completed" type="xs:boolean" />
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="GttDrawType" type="q2:DrawTypeSelection" />
+          <xs:element minOccurs="0" name="HasDirectTestingOrders" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HasRedrawOrders" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HasUserSelectedCollectionType" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsDrawTypeNotOverridable" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsGuestAdvisedOfCollectionType" type="xs:boolean" />
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="SelectedDrawType" type="q3:DrawTypeSelection" />
+          <xs:element minOccurs="0" name="StoolSelected" type="xs:boolean" />
+          <xs:element minOccurs="0" name="SwabSelected" type="xs:boolean" />
+          <xs:element minOccurs="0" name="UrineSelected" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ConfirmOrderState" nillable="true" type="tns:ConfirmOrderState" />
+  <xs:complexType name="LabOrderSummaryState">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:StateBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Completed" type="xs:boolean" />
+          <xs:element minOccurs="0" name="IsAbnFormCollected" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LabOrderSummaryState" nillable="true" type="tns:LabOrderSummaryState" />
+</xs:schema>

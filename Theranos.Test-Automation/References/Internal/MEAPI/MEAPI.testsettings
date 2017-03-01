@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestSettings name=".MEAPI" id="190b8bbb-b270-49b1-97f1-ffddb309e9b7" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Description>.MeAPI_Alpha</Description>
+  <Deployment enabled="false" />
+  <NamingScheme baseName="MEAPI_Alpha" useDefault="false" />
+  <Execution>
+    <TestTypeSpecific>
+      <UnitTestRunConfig testTypeId="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b">
+        <AssemblyResolution>
+          <TestDirectory useLoadContext="true" />
+        </AssemblyResolution>
+      </UnitTestRunConfig>
+    </TestTypeSpecific>
+    <AgentRule name="LocalMachineDefaultRole">
+    </AgentRule>
+  </Execution>
+  <Properties />
+</TestSettings>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.GuestOrder" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model.GuestOrder" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:simpleType name="OrderType">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="short" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Anonymous" />
+      <xs:enumeration value="Electronic" />
+      <xs:enumeration value="PhysicianOrderPscTranscribed" />
+      <xs:enumeration value="PhysicianOrderLisTranscribed" />
+      <xs:enumeration value="PhysicianOrderPscCloudTranscribed" />
+      <xs:enumeration value="PhysicianOrderMeCloudTranscribed" />
+      <xs:enumeration value="Screening" />
+      <xs:enumeration value="Standing" />
+      <xs:enumeration value="Redraw" />
+      <xs:enumeration value="DirectTestingPscTranscribed" />
+      <xs:enumeration value="DirectTestingLisTranscribed" />
+      <xs:enumeration value="DirectTestingMeTranscribed" />
+      <xs:enumeration value="DirectTestingPscCloudTranscribed" />
+      <xs:enumeration value="DirectTestingMeCloudTranscribed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OrderType" nillable="true" type="tns:OrderType" />
+  <xs:complexType name="PhysicianLabOrderTranscription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CcPhysicianId" nillable="true" type="ser:guid" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="CptCodes" nillable="true" type="q1:ArrayOfCptCodeFastingHours" />
+      <xs:element minOccurs="0" name="DoctorId" type="ser:guid" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="DrawType" type="q2:DrawType" />
+      <xs:element minOccurs="0" name="FastingHours" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FastingHoursUnspecified" nillable="true" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Icd10Codes" nillable="true" type="q3:ArrayOfint" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Icd9Codes" nillable="true" type="q4:ArrayOfint" />
+      <xs:element minOccurs="0" name="IsFastingRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsStandingOrder" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LocationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PhysicianNotes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrivateContactEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrivateContactFax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProviderId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ShouldCcGuest" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShouldCcPhysician" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ShouldSendResultsToPrivateContact" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StandingOrderExpiration" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StandingOrderNumberOfTimes" type="xs:int" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="StandingOrderTimeFrame" type="q5:TimeFrame" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PhysicianLabOrderTranscription" nillable="true" type="tns:PhysicianLabOrderTranscription" />
+  <xs:complexType name="ArrayOfLabOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LabOrder" nillable="true" type="tns:LabOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLabOrder" nillable="true" type="tns:ArrayOfLabOrder" />
+  <xs:complexType name="LabOrder">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="CreatedOn" nillable="true" type="q6:DateTimeOffset">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="FastingHours" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="GuestId" type="ser:guid">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Id" type="ser:guid">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IsOrderedByUnknown" nillable="true" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="OrderDate" nillable="true" type="q7:DateTimeOffset">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OrderName" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="OrderType" type="tns:OrderType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="OrderedBy" nillable="true" type="q8:Name">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PaymentMode" type="tns:PaymentMode">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ProviderLabRequestId" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="RequestingProviderLocation" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="VisitLabOrderStatus" type="tns:VisitLabOrderStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LabOrder" nillable="true" type="tns:LabOrder" />
+  <xs:simpleType name="PaymentMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Regular" />
+      <xs:enumeration value="AdvancePay" />
+      <xs:enumeration value="FreePay" />
+      <xs:enumeration value="ClientPay" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="PaymentMode" nillable="true" type="tns:PaymentMode" />
+  <xs:simpleType name="VisitLabOrderStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Cancelled" />
+      <xs:enumeration value="Completed" />
+      <xs:enumeration value="DropOffPending" />
+      <xs:enumeration value="ReadyForProcessing" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="VisitLabOrderStatus" nillable="true" type="tns:VisitLabOrderStatus" />
+  <xs:complexType name="PscModifiableOrder">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:LabOrder">
+        <xs:sequence>
+          <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="TranscriptionAction" type="q9:TransciptionActionType">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="TranscriptionError" type="q10:TranscriptionError">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Theranos.PSC.Model" minOccurs="0" name="TranscriptionStatus" type="q11:TranscriptionStatusType">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PscModifiableOrder" nillable="true" type="tns:PscModifiableOrder" />
+</xs:schema>

@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Theranos.Automation.PSC3", "Theranos.Automation.PSC3\Theranos.Automation.PSC3.csproj", "{2344B3F2-F770-4F50-9717-574975F2355F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D9167402-B05E-401A-8BF4-819AFA7CA99D}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://srw072ca:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Theranos.Automation.PSC3\\Theranos.Automation.PSC3.csproj
+		SccProjectName1 = Theranos.Automation.PSC3
+		SccLocalPath1 = Theranos.Automation.PSC3
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2344B3F2-F770-4F50-9717-574975F2355F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2344B3F2-F770-4F50-9717-574975F2355F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2344B3F2-F770-4F50-9717-574975F2355F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2344B3F2-F770-4F50-9717-574975F2355F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

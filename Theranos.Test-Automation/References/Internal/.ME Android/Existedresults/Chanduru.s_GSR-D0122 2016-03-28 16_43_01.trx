@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="4ce6340e-4ebd-4293-b783-baee2333c84e" name="Chanduru.s@GSR-D0122 2016-03-28 16:43:01" runUser="GSRCHENNAI\Chanduru.s" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="84a578f5-6932-4b80-b785-d4d09d16bc03">
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+    <Deployment runDeploymentRoot="Chanduru.s_GSR-D0122 2016-03-28 16_43_01" />
+    <Properties />
+  </TestSettings>
+  <Times creation="2016-03-28T16:43:01.8052474+05:30" queuing="2016-03-28T16:43:02.1621403+05:30" start="2016-03-28T16:43:02.2251214+05:30" finish="2016-03-28T16:46:10.6785684+05:30" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Scenario1" storage="theranos.automation.me.android.dll" id="efed3fd1-d098-4dda-3a46-925659381346">
+      <Execution id="0c1e6cfd-fb7a-4641-b1a6-724f56143f8f" />
+      <TestMethod codeBase="C:/csampathkumar/Source/Theranos.Test-Automation/References/Internal/.ME Android/Theranos.Automation.ME.Android.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Theranos.Automation.ME.Android.Scenario, Theranos.Automation.ME.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Scenario1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="efed3fd1-d098-4dda-3a46-925659381346" executionId="0c1e6cfd-fb7a-4641-b1a6-724f56143f8f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="0c1e6cfd-fb7a-4641-b1a6-724f56143f8f" testId="efed3fd1-d098-4dda-3a46-925659381346" testName="Scenario1" computerName="GSR-D0122" duration="00:03:07.5546125" startTime="2016-03-28T16:43:02.2491142+05:30" endTime="2016-03-28T16:46:10.0767490+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0c1e6cfd-fb7a-4641-b1a6-724f56143f8f">
+      <Output>
+        <StdOut>Executing Appium Script</StdOut>
+        <ErrorInfo>
+          <Message>Test method Theranos.Automation.ME.Android.Scenario.Scenario1 threw exception: 
+OpenQA.Selenium.WebDriverException: Unexpected error. System.Net.WebException: Unable to connect to the remote server ---&gt; System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:4723
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket&amp; socket, IPAddress&amp; address, ConnectSocketState state, IAsyncResult asyncResult, Exception&amp; exception)
+   --- End of inner exception stack trace ---
+   at OpenQA.Selenium.Appium.Service.AppiumCommandExecutor.Execute(Command commandToExecute)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)</Message>
+          <StackTrace>    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.StartSession(ICapabilities desiredCapabilities)
+   at OpenQA.Selenium.Remote.RemoteWebDriver..ctor(ICommandExecutor commandExecutor, ICapabilities desiredCapabilities)
+   at OpenQA.Selenium.Appium.Android.AndroidDriver`1..ctor(Uri remoteAddress, DesiredCapabilities desiredCapabilities, TimeSpan commandTimeout)
+   at Theranos.Automation.ME.Android.TestScripts.LaunchActivity.launchapp() in c:\csampathkumar\Source\Theranos.Test-Automation\.ME Android\Theranos.Automation.ME.Android\Theranos.Automation.ME.Android\TestScripts\LaunchActivity.cs:line 87
+   at Theranos.Automation.ME.Android.Scenario.Scenario1() in c:\csampathkumar\Source\Theranos.Test-Automation\.ME Android\Theranos.Automation.ME.Android\Theranos.Automation.ME.Android\Scenario.cs:line 78
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

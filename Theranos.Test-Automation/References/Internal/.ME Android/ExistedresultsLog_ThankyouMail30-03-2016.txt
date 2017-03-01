@@ -1,0 +1,167 @@
+Log filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 1:05:16 PM
+Log start 1:05:16 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 1:05:16 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 1:05:16 PM
+Log sendmailSystem.Net.Mail.SmtpException: Failure sending mail. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.100.2.51:587
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.ServicePoint.GetConnection(PooledStream PooledStream, Object owner, Boolean async, IPAddress& address, Socket& abortSocket, Socket& abortSocket6)
+   at System.Net.PooledStream.Activate(Object owningObject, Boolean async, GeneralAsyncDelegate asyncCallback)
+   at System.Net.PooledStream.Activate(Object owningObject, GeneralAsyncDelegate asyncCallback)
+   at System.Net.ConnectionPool.GetConnection(Object owningObject, GeneralAsyncDelegate asyncCallback, Int32 creationTimeout)
+   at System.Net.Mail.SmtpConnection.GetConnection(ServicePoint servicePoint)
+   at System.Net.Mail.SmtpTransport.GetConnection(ServicePoint servicePoint)
+   at System.Net.Mail.SmtpClient.GetConnection()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at Theranos.Mailtemplate.Report.Mail.Mailtrigger.sendingmail() in c:\csampathkumar\Source\Theranos.Test-Automation\Mailtemplate\Theranos.Mailtemplate\Report.Mail\Mailtrigger.cs:line 128 1:05:59 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 2:15:26 PM
+Log start 2:15:34 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 2:15:34 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 2:15:46 PM
+Log sendmailSystem.Net.Mail.SmtpException: Failure sending mail. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.100.2.51:587
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.ServicePoint.GetConnection(PooledStream PooledStream, Object owner, Boolean async, IPAddress& address, Socket& abortSocket, Socket& abortSocket6)
+   at System.Net.PooledStream.Activate(Object owningObject, Boolean async, GeneralAsyncDelegate asyncCallback)
+   at System.Net.PooledStream.Activate(Object owningObject, GeneralAsyncDelegate asyncCallback)
+   at System.Net.ConnectionPool.GetConnection(Object owningObject, GeneralAsyncDelegate asyncCallback, Int32 creationTimeout)
+   at System.Net.Mail.SmtpConnection.GetConnection(ServicePoint servicePoint)
+   at System.Net.Mail.SmtpTransport.GetConnection(ServicePoint servicePoint)
+   at System.Net.Mail.SmtpClient.GetConnection()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at Theranos.Mailtemplate.Report.Mail.Mailtrigger.sendingmail() in c:\csampathkumar\Source\Theranos.Test-Automation\Mailtemplate\Theranos.Mailtemplate\Report.Mail\Mailtrigger.cs:line 128 2:16:32 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 2:22:32 PM
+Log start 2:22:35 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 2:22:35 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 2:22:40 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 2:55:34 PM
+Log start 2:55:38 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 2:55:38 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 2:56:32 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 3:08:17 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 3:31:23 PM
+Log start 3:31:27 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 3:31:27 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 3:31:27 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 3:34:29 PM
+Log start 3:34:31 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 3:34:31 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 3:34:31 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 3:35:25 PM
+Log start 3:35:25 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 3:35:25 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 3:35:25 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 3:38:16 PM
+Log start 3:38:20 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 3:38:20 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 3:38:20 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 3:39:17 PM
+Log start 3:39:20 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 3:39:20 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 3:39:20 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 3:42:13 PM
+Log start 3:42:14 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 3:42:14 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 3:42:14 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 4:18:33 PM
+Log start 4:18:42 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 4:18:42 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 4:18:42 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 4:21:27 PM
+Log start 4:21:28 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 4:21:28 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 4:21:28 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 4:22:24 PM
+Log start 4:22:24 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 4:22:24 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 4:22:30 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 5:32:34 PM
+Log start 5:32:38 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 5:32:38 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 5:32:40 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 5:37:09 PM
+Log start 5:37:10 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 5:37:10 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 5:37:11 PM
+Log sendmailSystem.Net.Mail.SmtpException: Failure sending mail. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.100.2.51:587
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.ServicePoint.GetConnection(PooledStream PooledStream, Object owner, Boolean async, IPAddress& address, Socket& abortSocket, Socket& abortSocket6)
+   at System.Net.PooledStream.Activate(Object owningObject, Boolean async, GeneralAsyncDelegate asyncCallback)
+   at System.Net.PooledStream.Activate(Object owningObject, GeneralAsyncDelegate asyncCallback)
+   at System.Net.ConnectionPool.GetConnection(Object owningObject, GeneralAsyncDelegate asyncCallback, Int32 creationTimeout)
+   at System.Net.Mail.SmtpConnection.GetConnection(ServicePoint servicePoint)
+   at System.Net.Mail.SmtpTransport.GetConnection(ServicePoint servicePoint)
+   at System.Net.Mail.SmtpClient.GetConnection()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at Theranos.Mailtemplate.Report.Mail.Mailtrigger.sendingmail() in c:\csampathkumar\Source\Theranos.Test-Automation\Mailtemplate\Theranos.Mailtemplate\Report.Mail\Mailtrigger.cs:line 128 5:37:40 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 8:37:31 PM
+Log start 8:37:31 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 8:37:31 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 8:37:31 PM
+Log sendmailSystem.Net.Mail.SmtpException: Failure sending mail. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.100.2.51:587
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.ServicePoint.GetConnection(PooledStream PooledStream, Object owner, Boolean async, IPAddress& address, Socket& abortSocket, Socket& abortSocket6)
+   at System.Net.PooledStream.Activate(Object owningObject, Boolean async, GeneralAsyncDelegate asyncCallback)
+   at System.Net.PooledStream.Activate(Object owningObject, GeneralAsyncDelegate asyncCallback)
+   at System.Net.ConnectionPool.GetConnection(Object owningObject, GeneralAsyncDelegate asyncCallback, Int32 creationTimeout)
+   at System.Net.Mail.SmtpConnection.GetConnection(ServicePoint servicePoint)
+   at System.Net.Mail.SmtpTransport.GetConnection(ServicePoint servicePoint)
+   at System.Net.Mail.SmtpClient.GetConnection()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at Theranos.Mailtemplate.Report.Mail.Mailtrigger.sendingmail() in c:\csampathkumar\Source\Theranos.Test-Automation\Mailtemplate\Theranos.Mailtemplate\Report.Mail\Mailtrigger.cs:line 128 8:38:03 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 8:50:33 PM
+Log start 8:50:33 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 8:50:33 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 8:50:37 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 8:55:18 PM
+Log start 8:55:18 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 8:55:18 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 8:55:18 PM
+Log sendmailSystem.Net.Mail.SmtpException: Failure sending mail. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.100.2.51:587
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.ServicePoint.GetConnection(PooledStream PooledStream, Object owner, Boolean async, IPAddress& address, Socket& abortSocket, Socket& abortSocket6)
+   at System.Net.PooledStream.Activate(Object owningObject, Boolean async, GeneralAsyncDelegate asyncCallback)
+   at System.Net.PooledStream.Activate(Object owningObject, GeneralAsyncDelegate asyncCallback)
+   at System.Net.ConnectionPool.GetConnection(Object owningObject, GeneralAsyncDelegate asyncCallback, Int32 creationTimeout)
+   at System.Net.Mail.SmtpConnection.GetConnection(ServicePoint servicePoint)
+   at System.Net.Mail.SmtpTransport.GetConnection(ServicePoint servicePoint)
+   at System.Net.Mail.SmtpClient.GetConnection()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at Theranos.Mailtemplate.Report.Mail.Mailtrigger.sendingmail() in c:\csampathkumar\Source\Theranos.Test-Automation\Mailtemplate\Theranos.Mailtemplate\Report.Mail\Mailtrigger.cs:line 128 8:56:00 PM
+Log get filenameBalaji.venkat_GSR-D0762016-03-2412_59_30 8:58:33 PM
+Log start 8:58:33 PM
+Log startC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 8:58:33 PM
+Log stopBalaji.venkat_GSR-D0762016-03-2412_59_30 8:58:33 PM
+Log sendmailSystem.Net.Mail.SmtpException: Failure sending mail. ---> System.Net.WebException: Unable to connect to the remote server ---> System.Net.Sockets.SocketException: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.100.2.51:587
+   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- End of inner exception stack trace ---
+   at System.Net.ServicePoint.GetConnection(PooledStream PooledStream, Object owner, Boolean async, IPAddress& address, Socket& abortSocket, Socket& abortSocket6)
+   at System.Net.PooledStream.Activate(Object owningObject, Boolean async, GeneralAsyncDelegate asyncCallback)
+   at System.Net.PooledStream.Activate(Object owningObject, GeneralAsyncDelegate asyncCallback)
+   at System.Net.ConnectionPool.GetConnection(Object owningObject, GeneralAsyncDelegate asyncCallback, Int32 creationTimeout)
+   at System.Net.Mail.SmtpConnection.GetConnection(ServicePoint servicePoint)
+   at System.Net.Mail.SmtpTransport.GetConnection(ServicePoint servicePoint)
+   at System.Net.Mail.SmtpClient.GetConnection()
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpClient.Send(MailMessage message)
+   at Theranos.Mailtemplate.Report.Mail.Mailtrigger.sendingmail() in c:\csampathkumar\Source\Theranos.Test-Automation\Mailtemplate\Theranos.Mailtemplate\Report.Mail\Mailtrigger.cs:line 128 8:59:19 PM

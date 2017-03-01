@@ -1,0 +1,11 @@
+logstart 12:52:16 PM
+LogappfolderpathC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 12:52:16 PM
+Log filename  12:52:16 PM
+logstart 12:56:22 PM
+LogappfolderpathC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 12:56:26 PM
+Log filename Chanduru.s_GSR-D0122 2016-03-29 12_52_15 12:56:27 PM
+logstart 12:57:36 PM
+LogappfolderpathC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 12:57:36 PM
+Log filename Chanduru.s_GSR-D0122 2016-03-29 12_52_15 12:57:37 PM
+logstart 12:58:14 PM
+LogappfolderpathC:\csampathkumar\Source\Theranos.Test-Automation\References\Internal\Mailtemplate\TestResults\ 12:58:23 PM

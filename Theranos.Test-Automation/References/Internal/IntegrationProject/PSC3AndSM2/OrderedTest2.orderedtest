@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="OrderedTest2" storage="c:\users\vbalaji\source\workspaces\theranos.test-automation\integration project\integration project\psc3andsm2\orderedtest2.orderedtest" id="05ded77e-c906-4dbf-81de-1efa42b546d9" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="b1333f76-51ff-81f8-96ec-ac82fe5e0245" name="sample" storage="..\..\..\references\internal\integrationproject\integration.project.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="OrderedTest1" storage="c:\users\omkar.krishnamurthy\source\workspaces\theranos.test-automation\.mewebnew\theranos.automation.me.web\theranos.automation.me.web\webtestscripts\all_ordertest_suits\orderedtest1.orderedtest" id="87470be0-2c00-493c-9091-6df68e64d6f6" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="3d41d9be-180f-8ed0-4e43-82c66a7fff88" name="resendvisitcode_firstname" storage="..\..\bin\debug\theranos.automation.me.web.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="9b71a6e6-bc09-f80e-9b1e-47dc1a0eeb05" name="resendvisitcode_lastname" storage="..\..\bin\debug\theranos.automation.me.web.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A465BE13-14DF-4730-9732-4DB81D614696}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Theranos.Automation.ME.Web</RootNamespace>
+    <AssemblyName>Theranos.Automation.ME.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\..\References\Internal\.ME Web\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CsvHelper">
+      <HintPath>..\..\..\References\Internal\AutoStack\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Selenium.WebDriverBackedSelenium">
+      <HintPath>..\..\..\References\Internal\.ME Android\Selenium.WebDriverBackedSelenium.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="system.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="Theranos.Automation.AutoStack">
+      <HintPath>..\..\..\References\Internal\AutoStack\Theranos.Automation.AutoStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ThoughtWorks.Selenium.Core">
+      <HintPath>..\..\..\References\Internal\.ME Android\ThoughtWorks.Selenium.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver">
+      <HintPath>..\..\..\References\Internal\.ME Android\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support">
+      <HintPath>..\..\..\References\Internal\.ME Android\WebDriver.Support.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="DataInput\ReadExcel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\StringGenerator.cs" />
+    <Compile Include="Utility\Get_Code.cs" />
+    <Compile Include="ArrangedTestsuits\Alltestcases.cs" />
+    <Compile Include="ArrangedTestsuits\LabOrders_TestSuitsforlinked.cs" />
+    <Compile Include="ArrangedTestsuits\LabOrders_TestSuitsforUnlinked.cs" />
+    <Compile Include="ArrangedTestsuits\NeedHelp_TestSuits.cs" />
+    <Compile Include="ArrangedTestsuits\Orders_Testsuits_linked.cs" />
+    <Compile Include="ArrangedTestsuits\Orders_Testsuits_unlinked.cs" />
+    <Compile Include="ArrangedTestsuits\Settings_TestSuits.cs" />
+    <Compile Include="ArrangedTestsuits\Shoppingcart_TestSuits.cs" />
+    <Compile Include="ArrangedTestsuits\Signin_TestSuits.cs" />
+    <Compile Include="ArrangedTestsuits\Signup_TestSuits.cs" />
+    <Compile Include="ArrangedTestsuits\TestMenuAll_Testsuits.cs" />
+    <Compile Include="ArrangedTestsuits\TestMenu_TestSuits_linked.cs" />
+    <Compile Include="ArrangedTestsuits\TestMenu_TestSuits_unlinked.cs" />
+    <Compile Include="TestScenario\ScenarioforLInkedAccount.cs" />
+    <Compile Include="TestScenario\ScenarioForUnlinkedAccount.cs" />
+    <Compile Include="DataInput\CSVReader.cs" />
+    <Compile Include="WebTestScripts\LabOrders\DirectOrdering_TestmenuOrders_Entervicitcode.cs" />
+    <Compile Include="WebTestScripts\LabOrders\DirectOrdering_TestmenuOrders_resendvisitcode.cs" />
+    <Compile Include="WebTestScripts\LabOrders\DirectOrdering_TestmenuOrders_UnlinkedAccount.cs" />
+    <Compile Include="WebTestScripts\LabOrders\DirectOrdering_Testmenu_MultipleOrders_LinkedAccount.cs" />
+    <Compile Include="WebTestScripts\LabOrders\MultipleOrders_ByUploadingOrders.cs" />
+    <Compile Include="WebTestScripts\LabOrders\UploadLaborder.cs" />
+    <Compile Include="WebTestScripts\LoginWeb.cs" />
+    <Compile Include="WebTestScripts\FirstTimeLogin.cs" />
+    <Compile Include="WebTestScripts\NeedHelp\NeedToHelpPageDisplay.cs" />
+    <Compile Include="WebTestScripts\NeedHelp\ResendActivationLink.cs" />
+    <Compile Include="WebTestScripts\NeedHelp\ResetPassword.cs" />
+    <Compile Include="WebTestScripts\NeedHelp\RetrieveUsername_Page.cs" />
+    <Compile Include="WebTestScripts\NeedHelp\Retriveusername_Nonactivatedaccount.cs" />
+    <Compile Include="WebTestScripts\Orders\OrerPage_DeleteOrder.cs" />
+    <Compile Include="WebTestScripts\ResendVisitcode\ResendVisitCode.cs" />
+    <Compile Include="WebTestScripts\ShoppingCart\AddingTest_ToCart_TotalTest.cs" />
+    <Compile Include="WebTestScripts\ShoppingCart\Emptyshoppingcart.cs" />
+    <Compile Include="WebTestScripts\ShoppingCart\AddRemove_From_TestCartPage.cs" />
+    <Compile Include="WebTestScripts\SignIn\ForgetPassword.cs" />
+    <Compile Include="WebTestScripts\SignUp\Provisionalaccount_PSC.cs" />
+    <Compile Include="WebTestScripts\TestMenuAll\SearchSingleTest_DisplayTest.cs" />
+    <Compile Include="WebTestScripts\TestMenu\AccountLinking_AfteraddingTesttocart.cs" />
+    <Compile Include="WebTestScripts\Orders\AccountLinking_OrdersPage_ResendCode.cs" />
+    <Compile Include="WebTestScripts\Orders\Orders_From_LinkedAccount.cs" />
+    <Compile Include="WebTestScripts\Orders\Order_From_UnlinkedaAccount.cs" />
+    <Compile Include="WebTestScripts\Settings\ChangePassword.cs" />
+    <Compile Include="WebTestScripts\Settings\Username_Unchangable.cs" />
+    <Compile Include="WebTestScripts\SignIn\Locked_Account.cs" />
+    <Compile Include="WebTestScripts\SignIn\Multiple_LoginAttempts_Lockout_Message.cs" />
+    <Compile Include="WebTestScripts\SignIn\Multiple_Login_Attempts_Warning_Message.cs" />
+    <Compile Include="WebTestScripts\SignIn\SignIn_With_Invalid_UserName.cs" />
+    <Compile Include="WebTestScripts\SignUp\ExistedUsername.cs" />
+    <Compile Include="WebTestScripts\SignUp\Multiple_Activations.cs" />
+    <Compile Include="WebTestScripts\SignUp\SignUp.cs" />
+    <Compile Include="WebTestScripts\SignUp\LogInWithOutActivaton.cs" />
+    <Compile Include="WebTestScripts\SignUp\WorkingActivationLink.cs" />
+    <Compile Include="WebTestScripts\TestMenu\AccountLinking_Settings_TesteMenu_Addtocart_Resendcode.cs" />
+    <Compile Include="WebTestScripts\TestMenu\Signup_OrderMenu_LinkAccount_InvalicVisitcode.cs" />
+    <Compile Include="WebTestScripts\TestMenu\Signup_ResultMenu_LinkAccount.cs" />
+    <Compile Include="WebTestScripts\TestMenu\Signup_ResultMenu_LinkAccount_Clickhere.cs" />
+    <Compile Include="WebTestScripts\TestMenuAll\TestMenu_Scroll_AllTestTypes.cs" />
+    <Compile Include="WebTestScripts\Working.cs" />
+    <Compile Include="Web\Scenario_Functions.cs" />
+    <Compile Include="Web\WebActionLib.cs" />
+    <Compile Include="MEWebModel\WebME.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="All_Orderedtest\LatestBoth.orderedtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.testsettings" />
+    <None Include="All_Orderedtest\LabOrderSuiteforLinked.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="All_Orderedtest\NeedHelpsuite.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="All_Orderedtest\OrderedSuite.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="All_Orderedtest\LabOrderSuiteforUnLinked.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="All_Orderedtest\newOrderedTest.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="All_Orderedtest\LatestNoUnlink.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="All_Orderedtest\ResendVisitCode.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="All_Orderedtest\Unlinked.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="All_Orderedtest\TestMenuAllSuite.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="All_Orderedtest\TestmenuSuite.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="All_Orderedtest\SignupSuite.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="All_Orderedtest\Sign_In.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="All_Orderedtest\ShoppingCartSuite.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="All_Orderedtest\SettingsSuite.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="38f4d379-b3dc-4cd1-a639-9a0e7b5dc27f" name="Chanduru.s@GSR-D0122 2016-03-29 12:52:15" runUser="GSRCHENNAI\Chanduru.s" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="50a86a3d-163f-472e-840f-e24e49116b39">
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+    <Deployment runDeploymentRoot="Chanduru.s_GSR-D0122 2016-03-29 12_52_15" />
+    <Properties />
+  </TestSettings>
+  <Times creation="2016-03-29T12:52:15.4788967+05:30" queuing="2016-03-29T12:52:15.8297914+05:30" start="2016-03-29T12:52:15.8997704+05:30" finish="2016-03-29T12:52:51.7610088+05:30" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="EmailTriggering" storage="theranos.mailtemplate.dll" id="73f3ada7-e2c2-ec7b-fb5b-b7af70399fdf">
+      <Execution id="bb1ed1d2-a0fe-4992-b582-d5f3a7e0a900" />
+      <TestMethod codeBase="C:/csampathkumar/Source/Theranos.Test-Automation/References/Internal/Mailtemplate/Theranos.Mailtemplate.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Theranos.Mailtemplate.Report.Mail.Mailtrigger, Theranos.Mailtemplate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="EmailTriggering" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="73f3ada7-e2c2-ec7b-fb5b-b7af70399fdf" executionId="bb1ed1d2-a0fe-4992-b582-d5f3a7e0a900" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="bb1ed1d2-a0fe-4992-b582-d5f3a7e0a900" testId="73f3ada7-e2c2-ec7b-fb5b-b7af70399fdf" testName="EmailTriggering" computerName="GSR-D0122" duration="00:00:35.5710101" startTime="2016-03-29T12:52:15.9207641+05:30" endTime="2016-03-29T12:52:51.7090244+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bb1ed1d2-a0fe-4992-b582-d5f3a7e0a900">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method Theranos.Mailtemplate.Report.Mail.Mailtrigger.EmailTriggering threw exception: 
+OpenQA.Selenium.NoSuchElementException: {"errorMessage":"Unable to find element with xpath 'html/body/div[2]/div/div[1]/div[2]/div/div[1]'","request":{"headers":{"Accept":"application/json, image/png","Connection":"Close","Content-Length":"91","Content-Type":"application/json;charset=utf-8","Host":"localhost:52093"},"httpVersion":"1.1","method":"POST","post":"{\"using\":\"xpath\",\"value\":\"html/body/div[2]/div/div[1]/div[2]/div/div[1]\",\"locator\":\"xpath\"}","url":"/element","urlParsed":{"anchor":"","query":"","file":"element","directory":"/","path":"/element","relative":"/element","port":"","host":"","password":"","user":"","userInfo":"","authority":"","protocol":"","source":"/element","queryKey":{},"chunks":["element"]},"urlOriginal":"/session/fa0dc900-f57e-11e5-844f-e983db448cef/element"}}</Message>
+          <StackTrace>    at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementByXPath(String xpath)
+   at OpenQA.Selenium.By.&lt;&gt;c__DisplayClasse.&lt;XPath&gt;b__c(ISearchContext context)
+   at OpenQA.Selenium.By.FindElement(ISearchContext context)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
+   at Theranos.Mailtemplate.Report.Mail.Mailtrigger.ActivateLink() in c:\csampathkumar\Source\Theranos.Test-Automation\Mailtemplate\Theranos.Mailtemplate\Report.Mail\Mailtrigger.cs:line 148
+   at Theranos.Mailtemplate.Report.Mail.Mailtrigger.EmailTemplate() in c:\csampathkumar\Source\Theranos.Test-Automation\Mailtemplate\Theranos.Mailtemplate\Report.Mail\Mailtrigger.cs:line 55
+   at Theranos.Mailtemplate.Report.Mail.Mailtrigger.sendingmail() in c:\csampathkumar\Source\Theranos.Test-Automation\Mailtemplate\Theranos.Mailtemplate\Report.Mail\Mailtrigger.cs:line 95
+   at Theranos.Mailtemplate.Report.Mail.Mailtrigger.EmailTriggering() in c:\csampathkumar\Source\Theranos.Test-Automation\Mailtemplate\Theranos.Mailtemplate\Report.Mail\Mailtrigger.cs:line 341
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

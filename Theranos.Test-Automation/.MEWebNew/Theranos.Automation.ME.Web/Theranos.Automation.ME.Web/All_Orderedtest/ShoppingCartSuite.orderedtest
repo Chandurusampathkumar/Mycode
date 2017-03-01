@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="shoppingcartsuite" storage="c:\users\omkar.krishnamurthy\source\workspaces\theranos.test-automation\.mewebnew\theranos.automation.me.web\theranos.automation.me.web\webtestscripts\all_ordertest_suits\shoppingcartsuite.orderedtest" id="38903b6d-b6d3-49fa-be20-830dca0e5ffa" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="d038d406-0c8b-b3d3-4777-27d933cc9217" name="countingCartTest_scenario" storage="..\..\bin\debug\theranos.automation.me.web.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="199ad1c7-f91a-fc60-6a0d-bfa59ea0e07c" name="AddandRemovetest_Scenario" storage="..\..\bin\debug\theranos.automation.me.web.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="4b369df9-6e2a-a818-cdc9-2e13838c6acd" name="emptyshoppingcart_Scenario" storage="..\..\bin\debug\theranos.automation.me.web.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

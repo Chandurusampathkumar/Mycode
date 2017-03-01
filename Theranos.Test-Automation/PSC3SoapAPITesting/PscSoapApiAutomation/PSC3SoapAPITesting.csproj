@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A168C43-2B1B-49E2-AD2E-BB7DA02F2557}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PscSoapApiAutomation</RootNamespace>
+    <AssemblyName>PscSoapApiAutomation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CsvHelper">
+      <HintPath>..\..\Users\flu\Source\Workspaces\Theranos.Test-Automation\References\External\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\packages\EPPlus.4.0.5\lib\net20\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Excel.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="nunit.framework, Version=3.2.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>packages\NUnit.3.2.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Theranos.Automation.AutoStack">
+      <HintPath>..\..\Users\flu\Source\Workspaces\Theranos.Test-Automation\References\Internal\AutoStack\Theranos.Automation.AutoStack.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Auth\BehaviorExtensionElement.cs" />
+    <Compile Include="Auth\CookieSetterBehavior.cs" />
+    <Compile Include="Auth\TestCaseDescription.cs" />
+    <Compile Include="Auth\TokenSetterBehavior.cs" />
+    <Compile Include="Model\CPTModel.cs" />
+    <Compile Include="Scenarios\TestScenarios.cs" />
+    <Compile Include="Scripts\TestBase.cs" />
+    <Compile Include="Scripts\VisitHelper.cs" />
+    <Compile Include="Service References\PSC3API\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Scripts\PscSoapApiAutomationTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OrderedTest.orderedtest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PSC3API\PscService.wsdl" />
+    <None Include="Service References\PSC3API\PscService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PSC3API\PscService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PSC3API\PscService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PSC3API\PscService11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PSC3API\PscService12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PSC3API\PscService13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PSC3API\PscService14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PSC3API\PscService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PSC3API\PscService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PSC3API\PscService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PSC3API\PscService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PSC3API\PscService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PSC3API\PscService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PSC3API\PscService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PSC3API\PscService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfABNFormDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfAddress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfContactInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfContainerImage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfContainerImageWithType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfContainerMetadata.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfCptDetail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfCptInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfCptSummary.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfDoctorInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfFormStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfGuestAbtractBase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfGuestAppointment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfGuestInCheckIn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfGuestInPerform.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfGuestPendingAction.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfGuestPendingActionInPerform.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfGuestPendingPerform.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfGuestSearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfGuestSearchResultInPerform.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfGuestVisitReportStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfguid.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfIcdInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfInsurance.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfInsuranceImage.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfLabOrder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfLabOrderSummary.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfLookupItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfProvider.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfProviderLocation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfPscProviderLocation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfReturnContainer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfstring.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfTranscriptionStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfVisitReportItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfVisitTime.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfArrayOfZipCodeInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfAuthenticationResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfboolean.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfCollectionTypeInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfContactIdNextOfKinId.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfdecimal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfForm.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfGuestBasicInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfGuestPhoto2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfGuestVisitReport.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfGuestVisitState.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfguid.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfint.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOflong.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfMeasurement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfPscProviderLocation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfPscProviderLocationSettings.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfReturnContainer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfstring.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfTempLogNotification.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfVisit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfVisitPaymentSummary.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PSC3API\PscSoapApiAutomation.PSC3API.ServiceResponseOfWorkflowInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PSC3API\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PSC3API\PscService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PSC3API\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PSC3API\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PSC3API\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

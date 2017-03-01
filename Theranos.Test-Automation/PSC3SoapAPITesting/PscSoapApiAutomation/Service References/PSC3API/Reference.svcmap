@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="248ee3f7-9948-468e-9cd2-4b4b3f7f9000" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PscService.xsd" MetadataType="Schema" ID="4a4a7f84-1fc3-40a7-a0cd-86d2dd129971" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd5" />
+    <MetadataFile FileName="PscService1.xsd" MetadataType="Schema" ID="e951c40e-a962-490f-a3e6-1c038631af56" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd4" />
+    <MetadataFile FileName="PscService.disco" MetadataType="Disco" ID="ffe21f99-d48b-47df-a6bf-b5bbd483ef56" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?disco" />
+    <MetadataFile FileName="PscService2.xsd" MetadataType="Schema" ID="eabe5631-809f-4f8d-bc61-33b048913230" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd6" />
+    <MetadataFile FileName="PscService3.xsd" MetadataType="Schema" ID="0b415917-23a5-4106-8d4c-9f88ab7ae4a5" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PscService4.xsd" MetadataType="Schema" ID="27e87e6d-59b8-4946-926f-92cdd68f9124" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PscService5.xsd" MetadataType="Schema" ID="3f565fda-ccb0-4051-9365-ed4ea84e1348" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd3" />
+    <MetadataFile FileName="PscService6.xsd" MetadataType="Schema" ID="fcbb7528-2915-437c-89ca-598de6259e6d" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PscService7.xsd" MetadataType="Schema" ID="4a12d927-2c24-4346-82c8-deb40c52738f" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd12" />
+    <MetadataFile FileName="PscService8.xsd" MetadataType="Schema" ID="af2965e1-3804-47a8-9be9-2a502fe2fca4" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd9" />
+    <MetadataFile FileName="PscService9.xsd" MetadataType="Schema" ID="68fcf8f4-df4c-4578-a0fe-b06b8ef7b1b8" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd8" />
+    <MetadataFile FileName="PscService10.xsd" MetadataType="Schema" ID="9783ed27-52c5-4e6d-a12a-30b3d53fb6af" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd7" />
+    <MetadataFile FileName="PscService.wsdl" MetadataType="Wsdl" ID="9c8089fc-24fd-47ba-9ff3-aed751d494c1" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?wsdl" />
+    <MetadataFile FileName="PscService11.xsd" MetadataType="Schema" ID="4befa66c-348b-4e6b-b94e-fd3098f97552" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd11" />
+    <MetadataFile FileName="PscService12.xsd" MetadataType="Schema" ID="ed6ae9e8-169a-4bce-b55c-51901e7cdc3d" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd13" />
+    <MetadataFile FileName="PscService13.xsd" MetadataType="Schema" ID="3b8ab09d-8067-4418-8231-11b6268ca89f" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd10" />
+    <MetadataFile FileName="PscService14.xsd" MetadataType="Schema" ID="90feaf14-7271-487d-85fb-3f8a0f98bb52" SourceId="1" SourceUrl="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd14" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

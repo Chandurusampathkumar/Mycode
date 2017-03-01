@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="orderedtest1" storage="c:\users\csampathkumar\source\workspaces\theranos.test-automation\integration project\integration project\psc3andsm2\orderedtest1.orderedtest" id="94b0ef08-eaf8-4866-b0e6-7ea148db012d" continueAfterFailure="true" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="1dd5100d-32b8-3102-2740-8cd7c3bbbbed" name="PSC3AndSM2ClinicianOrder" storage="..\..\..\references\internal\integrationproject\integration.project.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="82d3f0c2-07c0-5a5a-5a31-f6b3ef17c8a8" name="PSC3AndSM2WithDirectOrder" storage="..\..\..\references\internal\integrationproject\integration.project.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

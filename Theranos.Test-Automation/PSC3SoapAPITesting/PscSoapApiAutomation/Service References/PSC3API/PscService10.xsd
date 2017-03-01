@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.theranos.com/psc" elementFormDefault="qualified" targetNamespace="http://schemas.theranos.com/psc" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="https://wsx0038pa.theranos.local/QA.PSC3.Services/PscService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="PatientVisitIssues">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessionNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnyApplicationIssuesQuestionAnswered" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AnyCustomerSupportIssuesQuestionAnswered" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AnyFailedCTNsQuestionAnswered" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AnyGuestStackUpIssuesQuestionAnswered" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AnyITIssuesQuestionAnswered" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ApplicationCause" nillable="true" type="tns:ApplicationCauses" />
+      <xs:element minOccurs="0" name="CTNCollectionCause" nillable="true" type="tns:CTNCollectionCauses" />
+      <xs:element minOccurs="0" name="CTNCollectionCauses1" nillable="true" type="tns:CTNCollectionCauses" />
+      <xs:element minOccurs="0" name="CTNCollectionCauses2" nillable="true" type="tns:CTNCollectionCauses" />
+      <xs:element minOccurs="0" name="CTNCollectionCauses3" nillable="true" type="tns:CTNCollectionCauses" />
+      <xs:element minOccurs="0" name="CTNCollectionCauses4" nillable="true" type="tns:CTNCollectionCauses" />
+      <xs:element minOccurs="0" name="CTNCollectionCauses5" nillable="true" type="tns:CTNCollectionCauses" />
+      <xs:element minOccurs="0" name="CTNFailedCount" type="xs:int" />
+      <xs:element minOccurs="0" name="CTNFailureCause" nillable="true" type="tns:CTNFailureCauses" />
+      <xs:element minOccurs="0" name="CheckInTimeCause" nillable="true" type="tns:CheckInTimeCauses" />
+      <xs:element minOccurs="0" name="CheckinTechnicianName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerSupportCause" nillable="true" type="tns:CustomerSupportCauses" />
+      <xs:element minOccurs="0" name="GTT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GuestNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITCause" nillable="true" type="tns:ITCauses" />
+      <xs:element minOccurs="0" name="IsLancetUsed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsNeedletUsed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPowerPerformVisit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsReturnCustomer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsSpecialHandling" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxVisitApproveReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaxVisitApprover" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfLabOrders" type="xs:int" />
+      <xs:element minOccurs="0" name="NumberOfNeedles" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberofLancets" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObservationNote" nillable="true" type="tns:Observationscatogry" />
+      <xs:element minOccurs="0" name="PerformInTimeCause" nillable="true" type="tns:PerformInTimeCauses" />
+      <xs:element minOccurs="0" name="ReportUpdatedByUser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StackUPWaitTimeCause" nillable="true" type="tns:StackUPWaitTimeCauses" />
+      <xs:element minOccurs="0" name="StoreNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TechnicianName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TheranosSupportStaffName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VacutainerCollectionCause" nillable="true" type="tns:VacutainerCollectionCauses" />
+      <xs:element minOccurs="0" name="WAGorTNOS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PatientVisitIssues" nillable="true" type="tns:PatientVisitIssues" />
+  <xs:complexType name="ApplicationCauses">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Selected" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicationCauses" nillable="true" type="tns:ApplicationCauses" />
+  <xs:complexType name="CTNCollectionCauses">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LancetUsedColor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LotNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Selected" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="SelectedReason" type="xs:int" />
+      <xs:element minOccurs="0" name="StepNumber" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalStepCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTNCollectionCauses" nillable="true" type="tns:CTNCollectionCauses" />
+  <xs:complexType name="CTNFailureCauses">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Selected" nillable="true" type="q3:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CTNFailureCauses" nillable="true" type="tns:CTNFailureCauses" />
+  <xs:complexType name="CheckInTimeCauses">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Selected" nillable="true" type="q4:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CheckInTimeCauses" nillable="true" type="tns:CheckInTimeCauses" />
+  <xs:complexType name="CustomerSupportCauses">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Selected" nillable="true" type="q5:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomerSupportCauses" nillable="true" type="tns:CustomerSupportCauses" />
+  <xs:complexType name="ITCauses">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Selected" nillable="true" type="q6:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ITCauses" nillable="true" type="tns:ITCauses" />
+  <xs:complexType name="Observationscatogry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Selected" nillable="true" type="q7:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Observationscatogry" nillable="true" type="tns:Observationscatogry" />
+  <xs:complexType name="PerformInTimeCauses">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Selected" nillable="true" type="q8:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PerformInTimeCauses" nillable="true" type="tns:PerformInTimeCauses" />
+  <xs:complexType name="StackUPWaitTimeCauses">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Selected" nillable="true" type="q9:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StackUPWaitTimeCauses" nillable="true" type="tns:StackUPWaitTimeCauses" />
+  <xs:complexType name="VacutainerCollectionCauses">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string" />
+      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Selected" nillable="true" type="q10:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VacutainerCollectionCauses" nillable="true" type="tns:VacutainerCollectionCauses" />
+  <xs:complexType name="ABNFormDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ABNTestDetails" nillable="true" type="tns:ArrayOfABNTestDetails" />
+      <xs:element minOccurs="0" name="PatentFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatentId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PatientLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PatientMiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShouldCaptureABNFormSignature" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ABNFormDetails" nillable="true" type="tns:ABNFormDetails" />
+  <xs:complexType name="ArrayOfABNTestDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ABNTestDetails" nillable="true" type="tns:ABNTestDetails" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfABNTestDetails" nillable="true" type="tns:ArrayOfABNTestDetails" />
+  <xs:complexType name="ABNTestDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CPTCodeId" type="xs:int" />
+      <xs:element minOccurs="0" name="HCPC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ABNTestDetails" nillable="true" type="tns:ABNTestDetails" />
+</xs:schema>

@@ -1,0 +1,2181 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>appium-dotnet-driver</name>
+    </assembly>
+    <members>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.#ctor(OpenQA.Selenium.Remote.DesiredCapabilities)">
+            <summary>
+            Initializes a new instance of the AndroidDriver class. This constructor defaults proxy to http://127.0.0.1:4723/wd/hub
+            </summary>
+            <param name="desiredCapabilities">An <see cref="T:OpenQA.Selenium.Remote.DesiredCapabilities"/> object containing the desired capabilities of the browser.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.#ctor(System.Uri,OpenQA.Selenium.Remote.DesiredCapabilities)">
+            <summary>
+            Initializes a new instance of the AndroidDriver class
+            </summary>
+            <param name="remoteAddress">URI containing the address of the WebDriver remote server (e.g. http://127.0.0.1:4723/wd/hub).</param>
+            <param name="desiredCapabilities">An <see cref="T:OpenQA.Selenium.Remote.DesiredCapabilities"/> object containing the desired capabilities of the browser.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.#ctor(System.Uri,OpenQA.Selenium.Remote.DesiredCapabilities,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the AndroidDriver class using the specified remote address, desired capabilities, and command timeout.
+            </summary>
+            <param name="remoteAddress">URI containing the address of the WebDriver remote server (e.g. http://127.0.0.1:4723/wd/hub).</param>
+            <param name="desiredCapabilities">An <see cref="T:OpenQA.Selenium.Remote.DesiredCapabilities"/> object containing the desired capabilities of the browser.</param>
+            <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.StartActivity(System.String,System.String,System.String,System.String)">
+             <summary>
+             Opens an arbitrary activity during a test. If the activity belongs to
+             another application, that application is started and the activity is opened.
+            
+             This is an Android-only method.
+             </summary>
+             <param name="appPackage">The package containing the activity to start.</param>
+             <param name="appActivity">The activity to start.</param>
+             <param name="appWaitPackage">Begin automation after this package starts. Can be null or empty.</param>
+             <param name="appWaitActivity">Begin automation after this activity starts. Can be null or empty.</param>
+             <example>
+             driver.StartActivity("com.foo.bar", ".MyActivity");
+             </example>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.KeyEvent(System.Int32,System.Int32)">
+            <summary>
+            Triggers device key event with metastate for the keypress
+            </summary>
+            <param name="connectionType"></param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.ToggleLocationServices">
+            <summary>
+            Toggles Location Services.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.IsLocked">
+            <summary>
+            Check if the device is locked
+            </summary>
+            <returns>true if device is locked, false otherwise</returns>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.Android.AndroidDriver`1.CurrentActivity">
+            <summary>
+            Gets Current Device Activity.
+            </summary>
+            
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.EndTestCoverage(System.String,System.String)">
+            <summary>
+            Get test-coverage data
+            </summary>
+            <param name="intent">a string containing the intent.</param>
+            <param name="path">a string containing the path.</param>
+            <return>a base64 string containing the data</return> 
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.PushFile(System.String,System.String)">
+            <summary>
+            Pushes a File.
+            </summary>
+            <param name="pathOnDevice">path on device to store file to</param>
+            <param name="base64Data">base 64 data to store as the file</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.OpenNotifications">
+            <summary>
+            Open the notifications 
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.IgnoreUnimportantViews(System.Boolean)">
+            <summary>
+            Set "ignoreUnimportantViews" setting.
+            See: https://github.com/appium/appium/blob/master/docs/en/advanced-concepts/settings.md
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.ScrollTo(System.String)">
+            <summary>
+            Scroll forward to the element which has a description or name which contains the input text.
+            The scrolling is performed on the first scrollView present on the UI.
+            </summary>
+            <param name="text">text to look out for while scrolling</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.ScrollToExact(System.String)">
+            <summary>
+            Scroll forward to the element which has a description or name which exactly matches the input text.
+            The scrolling is performed on the first scrollView present on the UI
+            </summary>
+            <param name="text">text to look out for while scrolling</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.ScrollTo(System.String,System.String)">
+            <summary>
+            Scroll forward to the element which has a description or name which contains the input text.
+            The scrolling is performed on the first scrollView with the given resource ID.
+            </summary>
+            <param name="text">text to look out for while scrolling</param>
+            <param name="resId">resource ID of the scrollable View</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.ScrollToExact(System.String,System.String)">
+            <summary>
+            Scroll forward to the element which has a description or name which exactly matches the input text.
+            The scrolling is performed on the first scrollView present on the UI
+            </summary>
+            <param name="text">text to look out for while scrolling</param>
+            <param name="resId">resource ID of the scrollable View</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.UiScrollable(System.String,System.String)">
+            <summary>
+            Creates a new UiScrollable-string to scroll on a View to move through it until a visible item that matches
+            the selector is found.
+            </summary>
+            <param name="uiSelector">UiSelector-string to tell what to search for while scrolling</param>
+            <param name="resId">Resource-ID of a scrollable View</param>
+            <returns>UiScrollable-string that can be executed with FindElementByAndroidUIAutomator()</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.UiScrollable(System.String)">
+            <summary>
+            Creates a new UiScrollable-string to scroll on the first scrollable View in the layout to move through it until a visible item 
+            that matches the selector is found.
+            </summary>
+            <param name="uiSelector">UiSelector-string to tell what to search for while scrolling</param>
+            <returns>UiScrollable-string that can be executed with FindElementByAndroidUIAutomator()</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidElement.#ctor(OpenQA.Selenium.Remote.RemoteWebDriver,System.String)">
+            <summary>
+            Initializes a new instance of the AndroidElement class.
+            </summary>
+            <param name="parent">Driver in use.</param>
+            <param name="id">ID of the element.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.Interfaces.IAndroidDeviceActionShortcuts.KeyEvent(System.Int32,System.Int32)">
+            <summary>
+            Triggers device key event with metastate for the keypress
+            </summary>
+            <param name="connectionType"></param>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.Android.Interfaces.IHasNetworkConnection.ConnectionType">
+            <summary>
+            Get/set the Connection Type
+            </summary>
+            <returns>Connection Type of device</returns>
+            <exception cref="T:System.InvalidCastException">Thrown when object return was not able to be converted to a ConnectionType Enum</exception>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.Interfaces.IPushesFiles.PushFile(System.String,System.String)">
+            <summary>
+            Pushes a File.
+            </summary>
+            <param name="pathOnDevice">path on device to store file to</param>
+            <param name="base64Data">base 64 data to store as the file</param>
+        </member>
+        <member name="T:OpenQA.Selenium.Appium.Android.ConnectionType">
+            <summary>
+            Connection Type as described in the JSON Wire Protocol
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileBrowserType.Browser">
+            <summary>
+            It is native Android browser.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.App">
+            <summary>
+            Capability name used for the apllication setting.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.PlatformName">
+            <summary>
+            Capability name used for the target platform name setting.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.PlatformVersion">
+            <summary>
+            Capability name used for the target platform version setting.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.DeviceName">
+            <summary>
+            Capability name used for the automation name (e.g. Appium, Selendroid and so on) setting.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.NewCommandTimeout">
+            <summary>
+            Time out for the waiting for a new command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.DeviceReadyTimeout">
+            <summary>
+            Time out for the waiting for the device is ready.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.LaunchTimeout">
+            <summary>
+            Time out for the waiting for the app is launched.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.AutomationName">
+            <summary>
+            Capability name used for the automation name (e.g. Appium, Selendroid and so on) setting.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.AppiumVersion">
+            <summary>
+            Capability name used for the setting up of the required appium version.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.AppPackage">
+            <summary>
+            It is the required package name.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.AppActivity">
+            <summary>
+            It is the required activity name.
+            </summary>
+        </member>
+        <!-- Проигнорирован некорректный комментарий XML для члена "F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.AppWaitActivity" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.AppWaitPackage" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.SelendroidPort" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.AutoWebview" -->
+        <member name="T:OpenQA.Selenium.Appium.Interfaces.IContextAware">
+            <summary>
+            Some implementations of WebDriver, notably those that support native testing, need the ability
+            to switch between the native and web-based contexts. This can be achieved by using this
+            interface.
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.Interfaces.IContextAware.Context">
+            <summary>
+            Switches the focus of future commands for this driver to the context with the given name
+            AND
+            returns an opaque handle to this context that uniquely identifies it within this driver
+            instance.
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.Interfaces.IContextAware.Contexts">
+            <summary>
+            Return a list of context handles which can be used to iterate over all contexts of this
+            WebDriver instance
+            </summary>       
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IDeviceActionShortcuts.HideKeyboard">
+            <summary>
+            Hides the device keyboard.
+            </summary>
+            <param name="keyName">The button pressed by the mobile driver to attempt hiding the keyboard.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IDeviceActionShortcuts.KeyEvent(System.Int32)">
+            <summary>
+            Triggers Device Key Event.
+            </summary>
+            <param name="keyCode">an integer keycode number corresponding to a java.awt.event.KeyEvent.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IInteractsWithApps.InstallApp(System.String)">
+            <summary>
+            Installs an App.
+            </summary>
+            <param name="appPath">a string containing the file path or url of the app.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IInteractsWithApps.LaunchApp">
+            <summary>
+            Launches the current app.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IInteractsWithApps.IsAppInstalled(System.String)">
+            <summary>
+            Checks If an App Is Installed.
+            </summary>
+            <param name="appPath">a string containing the bundle id.</param>
+            <return>a bol indicating if the app is installed.</return>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IInteractsWithApps.ResetApp">
+            <summary>
+            Resets the current app.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IInteractsWithApps.BackgroundApp(System.Int32)">
+            <summary>
+            Backgrounds the current app for the given number of seconds.
+            </summary>
+            <param name="seconds">a string containing the number of seconds.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IInteractsWithApps.RemoveApp(System.String)">
+            <summary>
+            Removes an App.
+            </summary>
+            <param name="appPath">a string containing the id of the app.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IInteractsWithApps.CloseApp">
+            <summary>
+            Closes the current app.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IInteractsWithFiles.PullFile(System.String)">
+            <summary>
+            Pulls a File.
+            </summary>
+            <param name="pathOnDevice">path on device to pull</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IInteractsWithFiles.PullFolder(System.String)">
+            <summary>
+            Pulls a Folder
+            </summary>
+            <param name="remotePath">remote path to the folder to return</param>
+            <returns>a base64 encoded string representing a zip file of the contents of the folder</returns>
+        </member>
+        <member name="T:OpenQA.Selenium.Appium.Interfaces.IMobileElement`1">
+            <summary>
+            This interface extends IWebElement and defines specific behavior
+            for mobile.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IMobileElement`1.Pinch">
+            <summary>
+            Convenience method for pinching the given element.
+            "pinching" refers to the action of two appendages pressing the screen and sliding towards each other.
+            NOTE:
+            This convenience method places the initial touches around the element, if this would happen to place one of them
+            off the screen, appium with return an outOfBounds error. In this case, revert to using the IMultiAction api
+            instead of this method.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IMobileElement`1.Tap(System.Int32,System.Int32)">
+            <summary>
+            Convenience method for tapping the center of the given element
+            </summary>
+            <param name="fingers"> number of fingers/appendages to tap with </param>
+            <param name="duration">how long between pressing down, and lifting fingers/appendages</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IMobileElement`1.Zoom">
+            <summary>
+            Convenience method for "zooming in" on the given element.
+            "zooming in" refers to the action of two appendages pressing the screen and sliding away from each other.
+            NOTE:
+            This convenience method slides touches away from the element, if this would happen to place one of them
+            off the screen, appium will return an outOfBounds error. In this case, revert to using the IMultiAction api
+            instead of this method.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IPerformsTouchActions.PerformMultiAction(OpenQA.Selenium.Appium.MultiTouch.MultiAction)">
+            <summary>
+            Perform the multi action
+            </summary>
+            <param name="multiAction">multi action to perform</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IPerformsTouchActions.PerformTouchAction(OpenQA.Selenium.Appium.MultiTouch.TouchAction)">
+            <summary>
+            Perform the touch action
+            </summary>
+            <param name="touchAction">touch action to perform</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IScrollsTo`1.ScrollTo(System.String)">
+            <summary>
+            Scroll to an element which contains the given text.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IScrollsTo`1.ScrollToExact(System.String)">
+            <summary>
+            Scroll to an element with the given text.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IFindByAccessibilityId`1.FindElementByAccessibilityId(System.String)">
+            <summary>
+            Finds the first of elements that match the Accessibility Id selector supplied
+            </summary>
+            <param name="selector">an Accessibility Id selector</param>
+            <returns>IWebElement object so that you can interact that object</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IFindByAccessibilityId`1.FindElementsByAccessibilityId(System.String)">
+            <summary>
+            Finds a list of elements that match the Accessibility Id selector supplied
+            </summary>
+            <param name="selector">an Accessibility Id selector</param>
+            <returns>IWebElement object so that you can interact that object</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IFindByAndroidUIAutomator`1.FindElementByAndroidUIAutomator(System.String)">
+            <summary>
+            Finds the first element in the page that matches the Android UIAutomator selector supplied
+            </summary>
+            <param name="selector">Selector for the element.</param>
+            <returns>IWebElement object so that you can interact that object</returns>
+            <example>
+            <code>
+            IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+            IWebElement elem = driver.FindElementByAndroidUIAutomator('elements()'))
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IFindByAndroidUIAutomator`1.FindElementsByAndroidUIAutomator(System.String)">
+            <summary>
+            Finds a list of elements that match the Android UIAutomator selector supplied
+            </summary>
+            <param name="selector">Selector for the elements.</param>
+            <returns>ReadOnlyCollection of IWebElement object so that you can interact with those objects</returns>
+            <example>
+            <code>
+            IWebDriver driver = new RemoteWebDriver(DesiredCapabilities.Firefox());
+            ReadOnlyCollection<![CDATA[<IWebElement>]]> elem = driver.FindElementsByAndroidUIAutomator(elements())
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IFindByIosUIAutomation`1.FindElementByIosUIAutomation(System.String)">
+            <summary>
+            Finds the first of elements that match the Ios UIAutomation selector supplied
+            </summary>
+            <param name="selector">an Ios UIAutomation selector</param>
+            <returns>IWebElement object so that you can interact that object</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IFindByIosUIAutomation`1.FindElementsByIosUIAutomation(System.String)">
+            <summary>
+            Finds a list of elements that match the Ios UIAutomation selector supplied
+            </summary>
+            <param name="selector">an Ios UIAutomation selector</param>
+            <returns>IWebElement object so that you can interact that object</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IMultiAction.Add(OpenQA.Selenium.Appium.Interfaces.ITouchAction)">
+            <summary>
+            Add touch actions to be performed
+            </summary>
+            <param name="touchAction"></param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IMultiAction.Cancel">
+            <summary>
+            Cancels the Multi Action
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.IMultiAction.Perform">
+            <summary>
+            Performs the Multi Action
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.ITouchAction.LongPress(OpenQA.Selenium.IWebElement,System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Press at the specified location in the element until the  context menu appears.
+            </summary>
+            <param name="element">The target element.</param>
+            <param name="x">The x coordinate relative to the element.</param>
+            <param name="y">The y coordinate relative to the element.</param>
+            <returns>A self-reference to this <see cref="T:OpenQA.Selenium.Appium.Interfaces.ITouchAction"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.ITouchAction.LongPress(System.Double,System.Double)">
+            <summary>
+            Press at the specified location until the  context menu appears.
+            </summary>
+            <param name="element">The target element.</param>
+            <param name="x">The x coordinate relative to the element.</param>
+            <param name="y">The y coordinate relative to the element.</param>
+            <returns>A self-reference to this <see cref="T:OpenQA.Selenium.Appium.Interfaces.ITouchAction"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.ITouchAction.MoveTo(OpenQA.Selenium.IWebElement,System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Move to the specified location in the element.
+            </summary>
+            <param name="element">The target element.</param>
+            <param name="x">The x coordinate relative to the element.</param>
+            <param name="y">The y coordinate relative to the element.</param>
+            <returns>A self-reference to this <see cref="T:OpenQA.Selenium.Appium.Interfaces.ITouchAction"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.ITouchAction.MoveTo(System.Double,System.Double)">
+            <summary>
+            Move to the specified location.
+            </summary>
+            <param name="x">The x coordinate.</param>
+            <param name="y">The y coordinate.</param>
+            <returns>A self-reference to this <see cref="T:OpenQA.Selenium.Appium.Interfaces.ITouchAction"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.ITouchAction.Press(OpenQA.Selenium.IWebElement,System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            Press at the specified location in the element.
+            </summary>
+            <param name="element">The target element.</param>
+            <param name="x">The x coordinate relative to the element.</param>
+            <param name="y">The y coordinate relative to the element.</param>
+            <returns>A self-reference to this <see cref="T:OpenQA.Selenium.Appium.Interfaces.ITouchAction"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.ITouchAction.Press(System.Double,System.Double)">
+            <summary>
+            Press at the specified location.
+            </summary>
+            <param name="x">The x coordinate.</param>
+            <param name="y">The y coordinate.</param>
+            <returns>A self-reference to this <see cref="T:OpenQA.Selenium.Appium.Interfaces.ITouchAction"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.ITouchAction.Release">
+            <summary>
+            Release the pressure.
+            </summary>
+            <returns>A self-reference to this <see cref="T:OpenQA.Selenium.Appium.Interfaces.ITouchAction"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.ITouchAction.Tap(OpenQA.Selenium.IWebElement,System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Int64})">
+            <summary>
+            Tap at the specified location in the element.
+            </summary>
+            <param name="element">The target element.</param>
+            <param name="x">The x coordinate relative to the element.</param>
+            <param name="y">The y coordinate relative to the element.</param>
+            <param name="count">The number of times to tap.</param>
+            <returns>A self-reference to this <see cref="T:OpenQA.Selenium.Appium.Interfaces.ITouchAction"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.ITouchAction.Tap(System.Double,System.Double,System.Nullable{System.Int64})">
+            <summary>
+            Tap at the specified location.
+            </summary>
+            <param name="x">The x coordinate.</param>
+            <param name="y">The y coordinate.</param>
+            <param name="count">The number of times to tap.</param>
+            <returns>A self-reference to this <see cref="T:OpenQA.Selenium.Appium.Interfaces.ITouchAction"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.ITouchAction.Wait(System.Nullable{System.Int64})">
+            <summary>
+            Wait for the given duration.
+            </summary>
+            <param name="ms">The amount of time to wait in milliseconds.</param>
+            <returns>A self-reference to this <see cref="T:OpenQA.Selenium.Appium.Interfaces.ITouchAction"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.ITouchAction.Cancel">
+            <summary>
+            Cancels the Multi Action
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Interfaces.ITouchAction.Perform">
+            <summary>
+            Performs the Multi Action
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.iOS.Interfaces.IIOSDeviceActionShortcuts.ShakeDevice">
+            <summary>
+            Shakes the device.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.iOS.IOSDriver`1.#ctor(OpenQA.Selenium.Remote.DesiredCapabilities)">
+            <summary>
+            Initializes a new instance of the IOSDriver class. This constructor defaults proxy to http://127.0.0.1:4723/wd/hub
+            </summary>
+            <param name="desiredCapabilities">An <see cref="T:OpenQA.Selenium.Remote.DesiredCapabilities"/> object containing the desired capabilities of the browser.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.iOS.IOSDriver`1.#ctor(System.Uri,OpenQA.Selenium.Remote.DesiredCapabilities)">
+            <summary>
+            Initializes a new instance of the IOSDriver class
+            </summary>
+            <param name="remoteAddress">URI containing the address of the WebDriver remote server (e.g. http://127.0.0.1:4723/wd/hub).</param>
+            <param name="desiredCapabilities">An <see cref="T:OpenQA.Selenium.Remote.DesiredCapabilities"/> object containing the desired capabilities of the browser.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.iOS.IOSDriver`1.#ctor(System.Uri,OpenQA.Selenium.Remote.DesiredCapabilities,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the IOSDriver class using the specified remote address, desired capabilities, and command timeout.
+            </summary>
+            <param name="remoteAddress">URI containing the address of the WebDriver remote server (e.g. http://127.0.0.1:4723/wd/hub).</param>
+            <param name="desiredCapabilities">An <see cref="T:OpenQA.Selenium.Remote.DesiredCapabilities"/> object containing the desired capabilities of the browser.</param>
+            <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.iOS.IOSDriver`1.FindElementByIosUIAutomation(System.String)">
+            <summary>
+            Finds the first element that matches the iOS UIAutomation selector
+            </summary>
+            <param name="selector">UIAutomation selector</param>
+            <returns>First element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.iOS.IOSDriver`1.FindElementsByIosUIAutomation(System.String)">
+            <summary>
+            Finds a list of elements that match the iOS UIAutomation selector
+            </summary>
+            <param name="selector">UIAutomation selector</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.iOS.IOSDriver`1.ShakeDevice">
+            <summary>
+            Shakes the device.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.iOS.IOSDriver`1.HideKeyboard(System.String,System.String)">
+            <summary>
+            Hides the keyboard
+            </summary>
+            <param name="key"></param>
+            <param name="strategy"></param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.iOS.IOSDriver`1.CreateElement(System.String)">
+            <summary>
+            Create an iOS Element
+            </summary>
+            <param name="elementId">element to create</param>
+            <returns>IOSElement</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.iOS.IOSElement.#ctor(OpenQA.Selenium.Remote.RemoteWebDriver,System.String)">
+            <summary>
+            Initializes a new instance of the IOSElement class.
+            </summary>
+            <param name="parent">Driver in use.</param>
+            <param name="id">ID of the element.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.iOS.IOSElement.ScrollTo(System.String)">
+            <summary>
+            Scroll to the element whose 'text' attribute contains the input text.
+            Scrolling happens within this element
+            </summary>
+            <param name="text">input text contained in text attribute</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.iOS.IOSElement.ScrollToExact(System.String)">
+            <summary>
+            Scroll to the element whose 'text' attribute matches the input text.
+            Scrolling happens within this element
+            </summary>
+            <param name="text">input text contained in text attribute</param>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsByIOSUIAutomationAttribute.IosUIAutomation">
+            <summary>
+            Sets the target UI automation locator
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute.op_Equality(OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute,OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute)">
+            <summary>
+            Determines if two <see cref="!:FindsByAttribute"/> instances are equal.
+            </summary>
+            <param name="one">One instance to compare.</param>
+            <param name="two">The other instance to compare.</param>
+            <returns><see langword="true"/> if the two instances are equal; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute.op_Inequality(OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute,OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute)">
+            <summary>
+            Determines if two <see cref="!:FindsByAttribute"/> instances are unequal.
+            </summary>s
+            <param name="one">One instance to compare.</param>
+            <param name="two">The other instance to compare.</param>
+            <returns><see langword="true"/> if the two instances are not equal; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute.op_GreaterThan(OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute,OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute)">
+            <summary>
+            Determines if one <see cref="!:FindsByAttribute"/> instance is greater than another.
+            </summary>
+            <param name="one">One instance to compare.</param>
+            <param name="two">The other instance to compare.</param>
+            <returns><see langword="true"/> if the first instance is greater than the second; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute.op_LessThan(OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute,OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute)">
+            <summary>
+            Determines if one <see cref="!:FindsByAttribute"/> instance is less than another.
+            </summary>
+            <param name="one">One instance to compare.</param>
+            <param name="two">The other instance to compare.</param>
+            <returns><see langword="true"/> if the first instance is less than the second; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute.CompareTo(System.Object)">
+            <summary>
+            Compares the current instance with another object of the same type and returns an 
+            integer that indicates whether the current instance precedes, follows, or occurs 
+            in the same position in the sort order as the other object.
+            </summary>
+            <param name="obj">An object to compare with this instance.</param>
+            <returns>A value that indicates the relative order of the objects being compared. The return value has these meanings:
+            <list type="table">
+            <listheader>Value</listheader><listheader>Meaning</listheader>
+            <item><description>Less than zero</description><description>This instance precedes <paramref name="obj"/> in the sort order.</description></item>
+            <item><description>Zero</description><description>This instance occurs in the same position in the sort order as <paramref name="obj"/>.</description></item>
+            <item><description>Greater than zero</description><description>This instance follows <paramref name="obj"/> in the sort order. </description></item>
+            </list>
+            </returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object">Object</see> is equal 
+            to the current <see cref="T:System.Object">Object</see>.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object">Object</see> to compare with the 
+            current <see cref="T:System.Object">Object</see>.</param>
+            <returns><see langword="true"/> if the specified <see cref="T:System.Object">Object</see>
+            is equal to the current <see cref="T:System.Object">Object</see>; otherwise,
+            <see langword="false"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute.GetHashCode">
+            <summary>
+            Serves as a hash function for a particular type.
+            </summary>
+            <returns>A hash code for the current <see cref="T:System.Object">Object</see>.</returns>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute.Priority">
+            <summary>
+            Gets or sets a value indicating where this attribute should be evaluated relative to other instances
+            of this attribute decorating the same class member.
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute.ID">
+            <summary>
+            Sets the target element id
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute.ClassName">
+            <summary>
+            Sets the target element class name
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute.TagName">
+            <summary>
+            Sets the target element tag name
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute.Name">
+            <summary>
+            Sets the target element name
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute.XPath">
+            <summary>
+            Sets the target element xpath
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByUIAutomatorsAttribute.Accessibility">
+            <summary>
+            Sets the target accessibility
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsBySelendroidAttribute.LinkText">
+            <summary>
+            Sets the target element link text.
+            This locator is supported by Selendroid
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsBySelendroidAttribute.PartialLinkText">
+            <summary>
+            Sets the target element partial link text
+            This locator is supported by Selendroid
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsByAndroidUIAutomatorAttribute.AndroidUIAutomator">
+            <summary>
+            Sets the target UI automator locator
+            </summary>
+        </member>
+        <member name="T:OpenQA.Selenium.Appium.PageObjects.Attributes.MobileFindsByAllAttribute">
+            <summary>
+            Marks elements to indicate that found elements should match the criteria of
+            all <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsByAndroidUIAutomatorAttribute"/> or <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsByIOSUIAutomationAttribute"/>
+            or <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsBySelendroidAttribute"/> on the field or property.
+            </summary>
+            <remarks>
+            <para>
+            When used with a set of <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.MobileFindsByAllAttribute"/>, all criteria must be
+            matched to be returned. The criteria are used in sequence according to the
+            Priority property. Note that the behavior when setting multiple
+            <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsByAndroidUIAutomatorAttribute"/> or 
+            <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsByIOSUIAutomationAttribute"/> or <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsBySelendroidAttribute"/> Priority properties to the same value, or not
+            specifying a Priority value, is undefined.
+            </para>
+            <para>
+            <code>
+            // Will find the element with the class "SomeClass" that also has an ID
+            // attribute matching "elementId".
+            [MobileFindsByAll(Android = true)]
+            [FindsByAndroidUIAutomator(Class = "SomeClass", Priority = 0)]
+            [FindsByAndroidUIAutomator(Id = "elementId", Priority = 1)]
+            public IWebElement thisElement;
+            </code>
+            </para>
+            </remarks>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.MobileFindsByAllAttribute.Android">
+            <summary>
+            If this property is "true" then target elements should match the criteria of
+            all <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsByAndroidUIAutomatorAttribute"/>  on the field or property.
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.MobileFindsByAllAttribute.IOS">
+            <summary>
+            If this property is "true" then target elements should match the criteria of
+            all <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsByIOSUIAutomationAttribute"/>  on the field or property.
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.MobileFindsByAllAttribute.Selendroid">
+            <summary>
+            If this property is "true" then target elements should match the criteria of
+            all <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsBySelendroidAttribute"/>  on the field or property.
+            </summary>
+        </member>
+        <member name="T:OpenQA.Selenium.Appium.PageObjects.Attributes.MobileFindsBySequenceAttribute">
+            <summary>
+            Marks elements to indicate that each <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsByAndroidUIAutomatorAttribute"/> or 
+            <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsByIOSUIAutomationAttribute"/> or <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsBySelendroidAttribute"/> on the field or
+            property should be used in sequence to find the appropriate element.
+            </summary>
+            <remarks>
+            <para>
+            When used with a set of <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsByAndroidUIAutomatorAttribute"/> or 
+            <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsByIOSUIAutomationAttribute"/> or <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsBySelendroidAttribute"/>, the criteria are used
+            in sequence according to the Priority property to find child elements. Note that
+            the behavior when setting multiple <see cref="!:FindsByAttribute"/> Priority
+            properties to the same value, or not specifying a Priority value, is undefined.
+            </para>
+            <para>
+            <code>
+            // Will find the element with the ID attribute matching "elementId", then will find
+            // a child element with the ID attribute matching "childElementId".
+            [MobileFindsBySequence(Android = true)]
+            [FindsByAndroidUIAutomator(Id = "elementId", Priority = 0)]
+            [FindsByAndroidUIAutomator(Id = "childElementId", Priority = 1)]
+            public IWebElement targetElement;
+            </code>
+            </para>
+            </remarks>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.MobileFindsBySequenceAttribute.Android">
+            <summary>
+            If this property is "true" then each <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsByAndroidUIAutomatorAttribute"/>  on the field or
+            property will be used in sequence to find the appropriate element.
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.MobileFindsBySequenceAttribute.IOS">
+            <summary>
+            If this property is "true" then each <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsByIOSUIAutomationAttribute"/>  on the field or
+            property will be used in sequence to find the appropriate element.
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.MobileFindsBySequenceAttribute.Selendroid">
+            <summary>
+            If this property is "true" then each <see cref="T:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsBySelendroidAttribute"/>  on the field or
+            property will be used in sequence to find the appropriate element.
+            </summary>
+        </member>
+        <member name="T:OpenQA.Selenium.Appium.PageObjects.TimeOutDuration">
+            <summary>
+            This class stores the time of the waiting for elements.
+            It also allows to change this duration in runtime.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.PageObjects.WebDriverUnpackUtility.UnpackWebdriver(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            This method returns a wrapped IWebDriver instance 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OpenQA.Selenium.Appium.AppiumDriver`1">
+            <summary>
+            Provides a way to access Appium to run your tests by creating a AppiumDriver instance
+            </summary>
+            <remarks>
+            When the WebDriver object has been instantiated the browser will load. The test can then navigate to the URL under test and 
+            start your test.
+            </remarks>
+            <example>
+            <code>
+            [TestFixture]
+            public class Testing
+            {
+                private IWebDriver driver;
+                <para></para>
+                [SetUp]
+                public void SetUp()
+                {
+                    driver = new AppiumDriver();
+                }
+                <para></para>
+                [Test]
+                public void TestGoogle()
+                {
+                    driver.Navigate().GoToUrl("http://www.google.co.uk");
+                    /*
+                    *   Rest of the test
+                    */
+                }
+                <para></para>
+                [TearDown]
+                public void TearDown()
+                {
+                    driver.Quit();
+                    driver.Dispose();
+                } 
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.#ctor(OpenQA.Selenium.Remote.ICommandExecutor,OpenQA.Selenium.ICapabilities)">
+            <summary>
+            Initializes a new instance of the RemoteWebDriver class
+            </summary>
+            <param name="commandExecutor">An <see cref="T:OpenQA.Selenium.Remote.ICommandExecutor"/> object which executes commands for the driver.</param>
+            <param name="desiredCapabilities">An <see cref="T:OpenQA.Selenium.ICapabilities"/> object containing the desired capabilities of the browser.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.#ctor(OpenQA.Selenium.ICapabilities)">
+            <summary>
+            Initializes a new instance of the AppiumDriver class. This constructor defaults proxy to http://127.0.0.1:4723/wd/hub
+            </summary>
+            <param name="desiredCapabilities">An <see cref="T:OpenQA.Selenium.ICapabilities"/> object containing the desired capabilities of the browser.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.#ctor(System.Uri,OpenQA.Selenium.ICapabilities)">
+            <summary>
+            Initializes a new instance of the AppiumDriver class
+            </summary>
+            <param name="remoteAddress">URI containing the address of the WebDriver remote server (e.g. http://127.0.0.1:4723/wd/hub).</param>
+            <param name="desiredCapabilities">An <see cref="T:OpenQA.Selenium.ICapabilities"/> object containing the desired capabilities of the browser.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.#ctor(System.Uri,OpenQA.Selenium.ICapabilities,System.TimeSpan)">
+            <summary>
+            Initializes a new instance of the AppiumDriver class using the specified remote address, desired capabilities, and command timeout.
+            </summary>
+            <param name="remoteAddress">URI containing the address of the WebDriver remote server (e.g. http://127.0.0.1:4723/wd/hub).</param>
+            <param name="desiredCapabilities">An <see cref="T:OpenQA.Selenium.ICapabilities"/> object containing the desired capabilities of the browser.</param>
+            <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElement(OpenQA.Selenium.By)">
+            <summary>
+            Finds the first element in the page that matches the OpenQA.Selenium.By object 
+            </summary>
+            <param name="by">Mechanism to find element</param>
+            <returns>first element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElements(OpenQA.Selenium.By)">
+            <summary>
+            Find the elements on the page by using the <see cref="T:OpenQA.Selenium.By"/> object and returns a ReadonlyCollection of the Elements on the page 
+            </summary>
+            <param name="by">Mechanism to find element</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementByClassName(System.String)">
+            <summary>
+            Finds the first element in the page that matches the class name supplied
+            </summary>
+            <param name="className">CSS class name on the element</param>
+            <returns>first element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementsByClassName(System.String)">
+            <summary>
+            Finds a list of elements that match the class name supplied
+            </summary>
+            <param name="className">CSS class name on the element</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementById(System.String)">
+            <summary>
+            Finds the first element in the page that matches the ID supplied
+            </summary>
+            <param name="id">ID of the element</param>
+            <returns>First element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementsById(System.String)">
+            <summary>
+            Finds a list of elements that match the ID supplied
+            </summary>
+            <param name="id">ID of the element</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementByCssSelector(System.String)">
+            <summary>
+            Finds the first element matching the specified CSS selector
+            </summary>
+            <param name="cssSelector">The CSS selector to match</param>
+            <returns>First element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementsByCssSelector(System.String)">
+            <summary>
+            Finds a list of elements that match the CSS selector
+            </summary>
+            <param name="cssSelector">The CSS selector to match</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementByLinkText(System.String)">
+            <summary>
+            Finds the first of elements that match the link text supplied
+            </summary>
+            <param name="linkText">Link text of element</param>
+            <returns>First element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementsByLinkText(System.String)">
+            <summary>
+            Finds a list of elements that match the link text supplied
+            </summary>
+            <param name="linkText">Link text of element</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementByName(System.String)">
+            <summary>
+            Finds the first of elements that match the name supplied
+            </summary>
+            <param name="name">Name of the element on the page</param>
+            <returns>First element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementsByName(System.String)">
+            <summary>
+            Finds a list of elements that match the name supplied
+            </summary>
+            <param name="name">Name of the element on the page</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementByPartialLinkText(System.String)">
+            <summary>
+            Finds the first of elements that match the part of the link text supplied
+            </summary>
+            <param name="partialLinkText">Part of the link text</param>
+            <returns>First element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementsByPartialLinkText(System.String)">
+            <summary>
+            Finds a list of elements that match the part of the link text supplied
+            </summary>
+            <param name="partialLinkText">Part of the link text</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementByTagName(System.String)">
+            <summary>
+            Finds the first of elements that match the DOM Tag supplied
+            </summary>
+            <param name="tagName">DOM tag name of the element being searched</param>
+            <returns>First element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementsByTagName(System.String)">
+            <summary>
+            Finds a list of elements that match the DOM Tag supplied
+            </summary>
+            <param name="tagName">DOM tag name of the element being searched</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementByXPath(System.String)">
+            <summary>
+            Finds the first of elements that match the XPath supplied
+            </summary>
+            <param name="xpath">xpath to the element</param>
+            <returns>First element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementsByXPath(System.String)">
+            <summary>
+            Finds a list of elements that match the XPath supplied
+            </summary>
+            <param name="xpath">xpath to the element</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementByAccessibilityId(System.String)">
+            <summary>
+            Finds the first element that match the accessibility id supplied
+            </summary>
+            <param name="selector">accessibility id</param>
+            <returns>First element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.FindElementsByAccessibilityId(System.String)">
+            <summary>
+            Finds a list of elements that match the accessibillity id supplied
+            </summary>
+            <param name="selector">accessibility id</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.LockDevice(System.Int32)">
+            <summary>
+            Locks the device.
+            </summary>
+            <param name="seconds">The number of seconds during which the device need to be locked for.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.KeyEvent(System.Int32)">
+            <summary>
+            Triggers Device Key Event.
+            </summary>
+            <param name="keyCode">an integer keycode number corresponding to a java.awt.event.KeyEvent.</param>
+        </member>
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:OpenQA.Selenium.Appium.AppiumDriver`1.Rotate(System.Collections.Generic.Dictionary{System.String,System.Int32})" -->
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.InstallApp(System.String)">
+            <summary>
+            Installs an App.
+            </summary>
+            <param name="appPath">a string containing the file path or url of the app.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.RemoveApp(System.String)">
+            <summary>
+            Removes an App.
+            </summary>
+            <param name="appPath">a string containing the id of the app.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.IsAppInstalled(System.String)">
+            <summary>
+            Checks If an App Is Installed.
+            </summary>
+            <param name="appPath">a string containing the bundle id.</param>
+            <return>a bol indicating if the app is installed.</return>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.PullFile(System.String)">
+            <summary>
+            Pulls a File.
+            </summary>
+            <param name="pathOnDevice">path on device to pull</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.PullFolder(System.String)">
+            <summary>
+            Pulls a Folder
+            </summary>
+            <param name="remotePath">remote path to the folder to return</param>
+            <returns>a base64 encoded string representing a zip file of the contents of the folder</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.LaunchApp">
+            <summary>
+            Launches the current app.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.CloseApp">
+            <summary>
+            Closes the current app.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.ResetApp">
+            <summary>
+            Resets the current app.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.BackgroundApp(System.Int32)">
+            <summary>
+            Backgrounds the current app for the given number of seconds.
+            </summary>
+            <param name="seconds">a string containing the number of seconds.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.GetAppStrings(System.String)">
+            <summary>
+            Gets the App Strings.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.HideKeyboard(System.String,System.String)">
+            <summary>
+            Hide the keyboard
+            </summary>
+            <param name="strategy"></param>
+            <param name="key"></param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.HideKeyboard">
+            <summary>
+            Hides the device keyboard.
+            </summary>
+            <param name="keyName">The button pressed by the mobile driver to attempt hiding the keyboard.</param>
+        </member>
+        <!-- Проигнорирован некорректный комментарий XML для члена "P:OpenQA.Selenium.Appium.AppiumDriver`1.Location" -->
+        <member name="P:OpenQA.Selenium.Appium.AppiumDriver`1.Orientation">
+            <summary>
+            Sets/Gets the Orientation
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.GetIMEAvailableEngines">
+            <summary>
+            Get a list of IME engines available on the device
+            </summary>
+            <returns>List of available </returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.GetIMEActiveEngine">
+            <summary>
+            Get the currently active IME Engine on the device
+            </summary>
+            <returns>Active IME Engine</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.IsIMEActive">
+            <summary>
+            Is the IME active on the device (NOTE: on Android, this is always true)
+            </summary>
+            <returns>true if IME is active, false otherwise</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.ActivateIMEEngine(System.String)">
+            <summary>
+            Activate the given IME on Device
+            </summary>
+            <param name="imeEngine">IME to activate</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.DeactiveIMEEngine">
+            <summary>
+            Deactivate the currently Active IME Engine on device
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.PerformMultiAction(OpenQA.Selenium.Appium.MultiTouch.MultiAction)">
+            <summary>
+            Perform the multi action
+            </summary>
+            <param name="multiAction">multi action to perform</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.PerformTouchAction(OpenQA.Selenium.Appium.MultiTouch.TouchAction)">
+            <summary>
+            Perform the touch action
+            </summary>
+            <param name="touchAction">touch action to perform</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.GetSettings">
+            <summary>
+            Get appium settings currently set for the session
+            See: https://github.com/appium/appium/blob/master/docs/en/advanced-concepts/settings.md
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.UpdateSetting(System.String,System.Object)">
+            <summary>
+            Update an appium Setting, on the session
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.CreateTap(OpenQA.Selenium.IWebElement,System.Int32)">
+            <summary>
+            Creates a tap on an element for a given time
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.CreateTap(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a tap on x-y-coordinates for a given time
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.Tap(System.Int32,OpenQA.Selenium.IWebElement,System.Int32)">
+            <summary>
+            Convenience method for tapping the center of an element on the screen
+            </summary>
+            <param name="fingers">number of fingers/appendages to tap with</param>
+            <param name="element">element to tap</param>
+            <param name="duration">how long between pressing down, and lifting fingers/appendages</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.Tap(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Convenience method for tapping a position on the screen
+            </summary>
+            <param name="fingers">number of fingers/appendages to tap with</param>
+            <param name="x">x coordinate</param>
+            <param name="y">y coordinate</param>
+            <param name="duration">how long between pressing down, and lifting fingers/appendages</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.Swipe(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Convenience method for swiping across the screen
+            </summary>
+            <param name="startx">starting x coordinate</param>
+            <param name="starty">starting y coordinate</param>
+            <param name="endx">ending x coordinate</param>
+            <param name="endy">ending y coordinate</param>
+            <param name="duration">amount of time in milliseconds for the entire swipe action to take</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.Pinch(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Convenience method for pinching an element on the screen.
+            "pinching" refers to the action of two appendages Pressing the screen and sliding towards each other.
+            NOTE:
+            driver convenience method places the initial touches around the element, if driver would happen to place one of them
+            off the screen, appium with return an outOfBounds error. In driver case, revert to using the MultiAction api
+            instead of driver method.
+            </summary>
+            <param name="el">The element to pinch</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.Pinch(System.Int32,System.Int32)">
+            <summary>
+            Convenience method for pinching an element on the screen.
+            "pinching" refers to the action of two appendages Pressing the screen and sliding towards each other.
+            NOTE:
+            driver convenience method places the initial touches around the element at a distance, if driver would happen to place
+            one of them off the screen, appium will return an outOfBounds error. In driver case, revert to using the
+            MultiAction api instead of driver method.
+            </summary>
+            <param name="x">x coordinate to terminate the pinch on</param>
+            <param name="y">y coordinate to terminate the pinch on></param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.Zoom(System.Int32,System.Int32)">
+            <summary>
+            Convenience method for "zooming in" on an element on the screen.
+            "zooming in" refers to the action of two appendages Pressing the screen and sliding away from each other.
+            NOTE:
+            driver convenience method slides touches away from the element, if driver would happen to place one of them
+            off the screen, appium will return an outOfBounds error. In driver case, revert to using the MultiAction api
+            instead of driver method.
+            <param name="x">x coordinate to terminate the zoom on</param>
+            <param name="y">y coordinate to terminate the zoom on></param>
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.Zoom(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Convenience method for "zooming in" on an element on the screen.
+            "zooming in" refers to the action of two appendages Pressing the screen and sliding away from each other.
+            NOTE:
+            driver convenience method slides touches away from the element, if driver would happen to place one of them
+            off the screen, appium will return an outOfBounds error. In driver case, revert to using the MultiAction api
+            instead of driver method.
+            <param name="el">The element to pinch</param>
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.InternalExecute(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Executes commands with the driver 
+            </summary>
+            <param name="driverCommandToExecute">Command that needs executing</param>
+            <param name="parameters">Parameters needed for the command</param>
+            <returns>WebDriver Response</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.PrepareEnvironment">
+            <summary>
+            In derived classes, the <see cref="M:OpenQA.Selenium.Appium.AppiumDriver`1.PrepareEnvironment"/> method prepares the environment for test execution.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.GetElementFromResponse(OpenQA.Selenium.Remote.Response)">
+            <summary>
+            Find the element in the response
+            </summary>
+            <param name="response">Response from the browser</param>
+            <returns>Element from the page</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.GetElementsFromResponse(OpenQA.Selenium.Remote.Response)">
+            <summary>
+            Finds the elements that are in the response
+            </summary>
+            <param name="response">Response from the browser</param>
+            <returns>Collection of elements</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1._AddAppiumCommands(OpenQA.Selenium.Remote.CommandInfoRepository)">
+            <summary>
+            Add the set of appium commands
+            </summary>
+        </member>
+        <member name="T:OpenQA.Selenium.Appium.AppiumDriver`1._Commands">
+            <summary>
+            Container class for the command tuple
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriver`1._Commands.CommandType">
+            <summary>
+            command type 
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriver`1._Commands.Command">
+            <summary>
+            Command 
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriver`1._Commands.ApiEndpoint">
+            <summary>
+            API Endpoint
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1._Commands.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="commandType">type of command (get/post/delete)</param>
+            <param name="command">Command</param>
+            <param name="apiEndpoint">api endpoint</param>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.ShakeDevice">
+            <summary>
+            Represents the Shake Device Mapping command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.LockDevice">
+            <summary>
+            Represents the Lock Device Mapping command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.IsLocked">
+            <summary>
+            Represents the Is Device Locked Mapping command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.ToggleAirplaneMode">
+            <summary>
+            Toggle's the Airplane Mode ("Flight Safe Mode") Command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.AirplaneMode">
+            <summary>
+            Represents the Airplane Mode ("Flight Safe Mode") Command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.KeyEvent">
+            <summary>
+            Press Key Event Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.Rotate">
+            <summary>
+            Rotate Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.GetCurrentActivity">
+            <summary>
+            Get CurrentActivity Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.InstallApp">
+            <summary>
+            Install App Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.RemoveApp">
+            <summary>
+            Remove App Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.IsAppInstalled">
+            <summary>
+            Is App Installed Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.PushFile">
+            <summary>
+            Push File Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.PullFile">
+            <summary>
+            Pull File Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.PullFolder">
+            <summary>
+            Pull Folder Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.ToggleWiFi">
+            <summary>
+            Toggle Wifi Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.ToggleLocationServices">
+            <summary>
+            Toggle Location Services Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.LaunchApp">
+            <summary>
+            Launch App Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.CloseApp">
+            <summary>
+            Close App Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.ResetApp">
+            <summary>
+            Reset App Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.BackgroundApp">
+            <summary>
+             Background App Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.EndTestCoverage">
+            <summary>
+             End Test Coverage Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.GetAppStrings">
+            <summary>
+             Get App Strings Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.SetImmediateValue">
+            <summary>
+             Set Immediate Value Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.HideKeyboard">
+            <summary>
+            Represents the Hide Keyboard command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.OpenNotifications">
+            <summary>
+             Open Notifications Command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.StartActivity">
+            <summary>
+            The Start Activity command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.SetLocation">
+            <summary>
+            Set GPS Location Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.GetLocation">
+            <summary>
+            Get GPS Location Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.TouchActionV2Perform">
+            <summary>
+            Perform touch action
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.MultiActionV2Perform">
+            <summary>
+            Perform multi touch action
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.Contexts">
+            <summary>
+            Represents the Contexts command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.GetContext">
+            <summary>
+            Represents the Get Context command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.SetContext">
+            <summary>
+            Represents the Set Context command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.GetOrientation">
+            <summary>
+            Represents the Get Orientation Command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.SetOrientation">
+            <summary>
+            Represents the Set Orientation Command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.GetConnectionType">
+            <summary>
+            Represents the Get Network Connection Command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.SetConnectionType">
+            <summary>
+            Represents the Set Network Connection Command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.GetAvailableEngines">
+            <summary>
+            Represents the Get Available Engines Command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.GetActiveEngine">
+            <summary>
+            Represents the Get Active Engine Command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.IsIMEActive">
+            <summary>
+            Represents the is IME active Command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.ActivateEngine">
+            <summary>
+            Represents the Activate Engine Command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.DeactivateEngine">
+            <summary>
+            Represents the Deactivate Engine Command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.GetScreenshot">
+            <summary>
+            Represents the Screenshot Command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.GetSettings">
+            <summary>
+            Represents the GetSettings Command
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.UpdateSettings">
+            <summary>
+            Represents the UpdateSettings Command
+            </summary>
+        </member>
+        <member name="T:OpenQA.Selenium.Appium.AppiumWebElement">
+            <summary>
+            AppiumWebElement allows you to have access to specific items that are found on the page.
+            </summary>
+            <seealso cref="T:OpenQA.Selenium.IWebElement"/>
+            <seealso cref="T:OpenQA.Selenium.ILocatable"/>
+            <example>
+            <code>
+            [Test]
+            public void TestGoogle()
+            {
+                driver = new AppiumDriver();
+                AppiumWebElement elem = driver.FindElement(By.Name("q"));
+                elem.SendKeys("Cheese please!");
+            }
+            </code>
+            </example>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.#ctor(OpenQA.Selenium.Remote.RemoteWebDriver,System.String)">
+            <summary>
+            Initializes a new instance of the AppiumWebElement class.
+            </summary>
+            <param name="parent">Driver in use.</param>
+            <param name="id">ID of the element.</param>
+        </member>
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:OpenQA.Selenium.Appium.AppiumWebElement.Rotate(System.Collections.Generic.Dictionary{System.String,System.Int32})" -->
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.SetImmediateValue(System.String)">
+            <summary>
+            Sets Immediate Value.
+            </summary>
+            <param name="value">the value</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.FindElement(OpenQA.Selenium.By)">
+            <summary>
+            Finds the first element in the page that matches the OpenQA.Selenium.By object 
+            </summary>
+            <param name="by">Mechanism to find element</param>
+            <returns>first element found</returns>
+        </member>
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:OpenQA.Selenium.Appium.AppiumWebElement.FindElements(OpenQA.Selenium.By)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:OpenQA.Selenium.Appium.AppiumWebElement.FindElementByClassName(System.String)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:OpenQA.Selenium.Appium.AppiumWebElement.FindElementsByClassName(System.String)" -->
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.FindElementById(System.String)">
+            <summary>
+            Finds the first element in the page that matches the ID supplied
+            </summary>
+            <param name="id">ID of the element</param>
+            <returns>First element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.FindElementsById(System.String)">
+            <summary>
+            Finds a list of elements that match the ID supplied
+            </summary>
+            <param name="id">ID of the element</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.FindElementByCssSelector(System.String)">
+            <summary>
+            Finds the first element matching the specified CSS selector
+            </summary>
+            <param name="cssSelector">The CSS selector to match</param>
+            <returns>First element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.FindElementsByCssSelector(System.String)">
+            <summary>
+            Finds a list of elements that match the CSS selector
+            </summary>
+            <param name="cssSelector">The CSS selector to match</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.FindElementByLinkText(System.String)">
+            <summary>
+            Finds the first of elements that match the link text supplied
+            </summary>
+            <param name="linkText">Link text of element</param>
+            <returns>First element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.FindElementsByLinkText(System.String)">
+            <summary>
+            Finds a list of elements that match the link text supplied
+            </summary>
+            <param name="linkText">Link text of element</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.FindElementByName(System.String)">
+            <summary>
+            Finds the first of elements that match the name supplied
+            </summary>
+            <param name="name">Name of the element on the page</param>
+            <returns>First element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.FindElementsByName(System.String)">
+            <summary>
+            Finds a list of elements that match the name supplied
+            </summary>
+            <param name="name">Name of the element on the page</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.FindElementByPartialLinkText(System.String)">
+            <summary>
+            Finds the first of elements that match the part of the link text supplied
+            </summary>
+            <param name="partialLinkText">Part of the link text</param>
+            <returns>First element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.FindElementsByPartialLinkText(System.String)">
+            <summary>
+            Finds a list of elements that match the part of the link text supplied
+            </summary>
+            <param name="partialLinkText">Part of the link text</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.FindElementByTagName(System.String)">
+            <summary>
+            Finds the first of elements that match the DOM Tag supplied
+            </summary>
+            <param name="tagName">DOM tag name of the element being searched</param>
+            <returns>First element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.FindElementsByTagName(System.String)">
+            <summary>
+            Finds a list of elements that match the DOM Tag supplied
+            </summary>
+            <param name="tagName">DOM tag name of the element being searched</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.FindElementByXPath(System.String)">
+            <summary>
+            Finds the first of elements that match the XPath supplied
+            </summary>
+            <param name="xpath">xpath to the element</param>
+            <returns>First element found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.FindElementsByXPath(System.String)">
+            <summary>
+            Finds a list of elements that match the XPath supplied
+            </summary>
+            <param name="xpath">xpath to the element</param>
+            <returns>ReadOnlyCollection of elements found</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.Pinch">
+            <summary>
+            Convenience method for pinching the given element.
+            "pinching" refers to the action of two appendages pressing the screen and sliding towards each other.
+            NOTE:
+            This convenience method places the initial touches around the element, if this would happen to place one of them
+            off the screen, appium with return an outOfBounds error. In this case, revert to using the IMultiAction api
+            instead of this method.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.Tap(System.Int32,System.Int32)">
+            <summary>
+            Convenience method for tapping the center of the given element
+            </summary>
+            <param name="fingers"> number of fingers/appendages to tap with </param>
+            <param name="duration">how long between pressing down, and lifting fingers/appendages</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumWebElement.Zoom">
+            <summary>
+            Convenience method for "zooming in" on the given element.
+            "zooming in" refers to the action of two appendages pressing the screen and sliding away from each other.
+            NOTE:
+            This convenience method slides touches away from the element, if this would happen to place one of them
+            off the screen, appium will return an outOfBounds error. In this case, revert to using the IMultiAction api
+            instead of this method.
+            </summary>
+        </member>
+        <member name="T:OpenQA.Selenium.Appium.ByAccessibilityId">
+            <summary>
+            Finds element when the Accessibility Id selector has the specified value.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ByAccessibilityId.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OpenQA.Selenium.Appium.ByAccessibilityId"/> class.
+            </summary>
+            <param name="selector">The selector to use in finding the element.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ByAccessibilityId.FindElement(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Find a single element.
+            </summary>
+            <param name="context">Context used to find the element.</param>
+            <returns>The element that matches</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ByAccessibilityId.FindElements(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Finds many elements
+            </summary>
+            <param name="context">Context used to find the element.</param>
+            <returns>A readonly collection of elements that match.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ByAccessibilityId.ToString">
+            <summary>
+            Writes out a description of this By object.
+            </summary>
+            <returns>Converts the value of this instance to a <see cref="T:System.String"/></returns>
+        </member>
+        <member name="T:OpenQA.Selenium.Appium.ByAndroidUIAutomator">
+            <summary>
+            Finds element when the Android UIAutomator selector has the specified value.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ByAndroidUIAutomator.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OpenQA.Selenium.Appium.ByAndroidUIAutomator"/> class.
+            </summary>
+            <param name="elementIdentifier">The selector to use in finding the element.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ByAndroidUIAutomator.FindElement(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Find a single element.
+            </summary>
+            <param name="context">Context used to find the element.</param>
+            <returns>The element that matches</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ByAndroidUIAutomator.FindElements(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Finds many elements
+            </summary>
+            <param name="context">Context used to find the element.</param>
+            <returns>A readonly collection of elements that match.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ByAndroidUIAutomator.ToString">
+            <summary>
+            Writes out a description of this By object.
+            </summary>
+            <returns>Converts the value of this instance to a <see cref="T:System.String"/></returns>
+        </member>
+        <member name="T:OpenQA.Selenium.Appium.ByIosUIAutomation">
+            <summary>
+            Finds element when the Ios UIAutomation selector has the specified value.
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ByIosUIAutomation.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:OpenQA.Selenium.Appium.ByIosUIAutomation"/> class.
+            </summary>
+            <param name="elementIdentifier">The selector to use in finding the element.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ByIosUIAutomation.FindElement(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Find a single element.
+            </summary>
+            <param name="context">Context used to find the element.</param>
+            <returns>The element that matches</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ByIosUIAutomation.FindElements(OpenQA.Selenium.ISearchContext)">
+            <summary>
+            Finds many elements
+            </summary>
+            <param name="context">Context used to find the element.</param>
+            <returns>A readonly collection of elements that match.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ByIosUIAutomation.ToString">
+            <summary>
+            Writes out a description of this By object.
+            </summary>
+            <returns>Converts the value of this instance to a <see cref="T:System.String"/></returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.CommandExecutorFactory.GetHttpCommandExecutor(System.Uri,System.TimeSpan)">
+            <summary>
+            Creates an HttpCommandExecutor (an internal class from WebDriver assembly) if able to through reflection 
+            </summary>
+            <param name="remoteAddress">URI containing the address of the WebDriver remote server (e.g. http://127.0.0.1:4444/wd/hub).</param>
+            <param name="commandTimeout">The maximum amount of time to wait for each command.</param>
+            <returns>HttpCommandExecutor object if possible, otherwise null</returns>
+        </member>
+        <member name="T:OpenQA.Selenium.Appium.ScreenOrientationExtensions">
+            <summary>
+            Extension methods to convert to/from ScreenOrientation enum
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ScreenOrientationExtensions.JSONWireProtocolString(OpenQA.Selenium.ScreenOrientation)">
+            <summary>
+            Converts the Screen Orientation to the string needed by the JSON Wire Protocol
+            </summary>
+            <param name="orientation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ScreenOrientationExtensions.ConvertToScreenOrientation(System.String)">
+            <summary>
+            Converts the string to a screen orientation if possible, else throws ArgumentOutOfRangeException 
+            </summary>
+            <param name="orientation"></param>
+            <returns>Screen Orientation</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.MultiTouch.MultiAction.#ctor(OpenQA.Selenium.Appium.Interfaces.IPerformsTouchActions)">
+            <summary>
+            Initializes a new instance of the <see cref="!:MultiTouchAction"/> class.
+            </summary>
+            <param name="driver">The <see cref="T:OpenQA.Selenium.IWebDriver"/> the driver to be used.</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.MultiTouch.MultiAction.Add(OpenQA.Selenium.Appium.Interfaces.ITouchAction)">
+            <summary>
+            Add touch actions to be performed
+            </summary>
+            <param name="touchAction"></param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.MultiTouch.MultiAction.GetParameters">
+            <summary>
+            Gets the actions parameter dictionary for this multi touch action
+            </summary>
+            <returns>empty dictionary if no actions found, else dictionary of actions</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.MultiTouch.MultiAction.Cancel">
+            <summary>
+            Cancels the Multi Action
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.MultiTouch.MultiAction.Perform">
+            <summary>
+            Executes the Multi Action
+            </summary>
+        </member>
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:OpenQA.Selenium.Appium.MultiTouch.TouchAction.LongPress(OpenQA.Selenium.IWebElement,System.Nullable{System.Double},System.Nullable{System.Double})" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:OpenQA.Selenium.Appium.MultiTouch.TouchAction.LongPress(System.Double,System.Double)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:OpenQA.Selenium.Appium.MultiTouch.TouchAction.MoveTo(OpenQA.Selenium.IWebElement,System.Nullable{System.Double},System.Nullable{System.Double})" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:OpenQA.Selenium.Appium.MultiTouch.TouchAction.MoveTo(System.Double,System.Double)" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:OpenQA.Selenium.Appium.MultiTouch.TouchAction.Press(OpenQA.Selenium.IWebElement,System.Nullable{System.Double},System.Nullable{System.Double})" -->
+        <!-- Проигнорирован некорректный комментарий XML для члена "M:OpenQA.Selenium.Appium.MultiTouch.TouchAction.Press(System.Double,System.Double)" -->
+        <member name="M:OpenQA.Selenium.Appium.MultiTouch.TouchAction.Release">
+            <summary>
+            Release the pressure.
+            </summary>
+            <returns>A self-reference to this <see cref="T:OpenQA.Selenium.Appium.Interfaces.ITouchAction"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.MultiTouch.TouchAction.Tap(OpenQA.Selenium.IWebElement,System.Nullable{System.Double},System.Nullable{System.Double},System.Nullable{System.Int64})">
+            <summary>
+            Tap at the specified location in the element.
+            </summary>
+            <param name="element">The target element.</param>
+            <param name="x">The x coordinate relative to the element.</param>
+            <param name="y">The y coordinate relative to the element.</param>
+            <param name="count">The number of times to tap.</param>
+            <returns>A self-reference to this <see cref="T:OpenQA.Selenium.Appium.Interfaces.ITouchAction"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.MultiTouch.TouchAction.Tap(System.Double,System.Double,System.Nullable{System.Int64})">
+            <summary>
+            Tap at the specified location.
+            </summary>
+            <param name="x">The x coordinate relative to the element.</param>
+            <param name="y">The y coordinate relative to the element.</param>
+            <param name="count">The number of times to tap.</param>
+            <returns>A self-reference to this <see cref="T:OpenQA.Selenium.Appium.Interfaces.ITouchAction"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.MultiTouch.TouchAction.Wait(System.Nullable{System.Int64})">
+            <summary>
+            Wait for the given duration.
+            </summary>
+            <param name="ms">The amount of time to wait in milliseconds.</param>
+            <returns>A self-reference to this <see cref="T:OpenQA.Selenium.Appium.Interfaces.ITouchAction"/>.</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.MultiTouch.TouchAction.Cancel">
+            <summary>
+            Cancels the Touch Action
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.MultiTouch.TouchAction.Perform">
+            <summary>
+            Executes the Touch Action
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ITouchShortcuts.Tap(System.Int32,OpenQA.Selenium.IWebElement,System.Int32)">
+            <summary>
+            Convenience method for tapping the center of an element on the screen
+            </summary>
+            <param name="fingers">number of fingers/appendages to tap with</param>
+            <param name="element">element to tap</param>
+            <param name="duration">how long between pressing down, and lifting fingers/appendages</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ITouchShortcuts.Tap(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Convenience method for tapping a position on the screen
+            </summary>
+            <param name="fingers">number of fingers/appendages to tap with</param>
+            <param name="x">x coordinate</param>
+            <param name="y">y coordinate</param>
+            <param name="duration">how long between pressing down, and lifting fingers/appendages</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ITouchShortcuts.Swipe(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Convenience method for swiping across the screen
+            </summary>
+            <param name="startx">starting x coordinate</param>
+            <param name="starty">starting y coordinate</param>
+            <param name="endx">ending x coordinate</param>
+            <param name="endy">ending y coordinate</param>
+            <param name="duration">amount of time in milliseconds for the entire swipe action to take</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ITouchShortcuts.Pinch(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Convenience method for pinching an element on the screen.
+            "pinching" refers to the action of two appendages Pressing the screen and sliding towards each other.
+            NOTE:
+            driver convenience method places the initial touches around the element, if driver would happen to place one of them
+            off the screen, appium with return an outOfBounds error. In driver case, revert to using the MultiAction api
+            instead of driver method.
+            </summary>
+            <param name="el">The element to pinch</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ITouchShortcuts.Pinch(System.Int32,System.Int32)">
+            <summary>
+            Convenience method for pinching an element on the screen.
+            "pinching" refers to the action of two appendages Pressing the screen and sliding towards each other.
+            NOTE:
+            driver convenience method places the initial touches around the element at a distance, if driver would happen to place
+            one of them off the screen, appium will return an outOfBounds error. In driver case, revert to using the
+            MultiAction api instead of driver method.
+            </summary>
+            <param name="x">x coordinate to terminate the pinch on</param>
+            <param name="y">y coordinate to terminate the pinch on></param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ITouchShortcuts.Zoom(System.Int32,System.Int32)">
+            <summary>
+            Convenience method for "zooming in" on an element on the screen.
+            "zooming in" refers to the action of two appendages Pressing the screen and sliding away from each other.
+            NOTE:
+            driver convenience method slides touches away from the element, if driver would happen to place one of them
+            off the screen, appium will return an outOfBounds error. In driver case, revert to using the MultiAction api
+            instead of driver method.
+            <param name="x">x coordinate to terminate the zoom on</param>
+            <param name="y">y coordinate to terminate the zoom on></param>
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.ITouchShortcuts.Zoom(OpenQA.Selenium.IWebElement)">
+            <summary>
+            Convenience method for "zooming in" on an element on the screen.
+            "zooming in" refers to the action of two appendages Pressing the screen and sliding away from each other.
+            NOTE:
+            driver convenience method slides touches away from the element, if driver would happen to place one of them
+            off the screen, appium will return an outOfBounds error. In driver case, revert to using the MultiAction api
+            instead of driver method.
+            <param name="el">The element to pinch</param>
+            </summary>
+        </member>
+        <member name="T:Appium.Interfaces.Generic.SearchContext.IGenericFindsByClassName`1">
+            <summary>
+            Defines the interface through which the user finds elements by their CSS class.
+            </summary>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericFindsByClassName`1.FindElementByClassName(System.String)">
+            <summary>
+            Finds the first element matching the specified CSS class.
+            </summary>
+            <param name="className">The CSS class to match.</param>
+            <returns>The first <see cref="T:OpenQA.Selenium.IWebElement"/> matching the criteria.</returns>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericFindsByClassName`1.FindElementsByClassName(System.String)">
+            <summary>
+            Finds all elements matching the specified CSS class.
+            </summary>
+            <param name="className">The CSS class to match.</param>
+            <returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1"/> containing all
+            <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
+        </member>
+        <member name="T:Appium.Interfaces.Generic.SearchContext.IGenericFindsByCssSelector`1">
+            <summary>
+            Defines the interface through which the user finds elements by their cascading style sheet (CSS) selector.
+            </summary>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericFindsByCssSelector`1.FindElementByCssSelector(System.String)">
+            <summary>
+            Finds the first element matching the specified CSS selector.
+            </summary>
+            <param name="cssSelector">The id to match.</param>
+            <returns>The first <see cref="T:OpenQA.Selenium.IWebElement"/> matching the criteria.</returns>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericFindsByCssSelector`1.FindElementsByCssSelector(System.String)">
+            <summary>
+            Finds all elements matching the specified CSS selector.
+            </summary>
+            <param name="cssSelector">The CSS selector to match.</param>
+            <returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1"/> containing all
+            <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
+        </member>
+        <member name="T:Appium.Interfaces.Generic.SearchContext.IGenericFindsById`1">
+            <summary>
+            Defines the interface through which the user finds elements by their ID.
+            </summary>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericFindsById`1.FindElementById(System.String)">
+            <summary>
+            Finds the first element matching the specified id.
+            </summary>
+            <param name="id">The id to match.</param>
+            <returns>The first <see cref="T:OpenQA.Selenium.IWebElement"/> matching the criteria.</returns>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericFindsById`1.FindElementsById(System.String)">
+            <summary>
+            Finds all elements matching the specified id.
+            </summary>
+            <param name="id">The id to match.</param>
+            <returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1"/> containing all
+            <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
+        </member>
+        <member name="T:Appium.Interfaces.Generic.SearchContext.IGenericFindsByLinkText`1">
+            <summary>
+            Defines the interface through which the user finds elements by their link text.
+            </summary>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericFindsByLinkText`1.FindElementByLinkText(System.String)">
+            <summary>
+            Finds the first element matching the specified link text.
+            </summary>
+            <param name="linkText">The link text to match.</param>
+            <returns>The first <see cref="T:OpenQA.Selenium.IWebElement"/> matching the criteria.</returns>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericFindsByLinkText`1.FindElementsByLinkText(System.String)">
+            <summary>
+            Finds all elements matching the specified link text.
+            </summary>
+            <param name="linkText">The link text to match.</param>
+            <returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1"/> containing all
+            <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
+        </member>
+        <member name="T:Appium.Interfaces.Generic.SearchContext.IGenericFindsByName`1">
+            <summary>
+            Defines the interface through which the user finds elements by their name.
+            </summary>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericFindsByName`1.FindElementByName(System.String)">
+            <summary>
+            Finds the first element matching the specified name.
+            </summary>
+            <param name="name">The name to match.</param>
+            <returns>The first <see cref="T:OpenQA.Selenium.IWebElement"/> matching the criteria.</returns>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericFindsByName`1.FindElementsByName(System.String)">
+            <summary>
+            Finds all elements matching the specified name.
+            </summary>
+            <param name="name">The name to match.</param>
+            <returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1"/> containing all
+            <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
+        </member>
+        <member name="T:Appium.Interfaces.Generic.SearchContext.IGenericFindsByPartialLinkText`1">
+            <summary>
+            Defines the interface through which the user finds elements by a partial match on their link text.
+            </summary>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericFindsByPartialLinkText`1.FindElementByPartialLinkText(System.String)">
+            <summary>
+            Finds the first element matching the specified partial link text.
+            </summary>
+            <param name="partialLinkText">The partial link text to match.</param>
+            <returns>The first <see cref="T:OpenQA.Selenium.IWebElement"/> matching the criteria.</returns>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericFindsByPartialLinkText`1.FindElementsByPartialLinkText(System.String)">
+            <summary>
+            Finds all elements matching the specified partial link text.
+            </summary>
+            <param name="partialLinkText">The partial link text to match.</param>
+            <returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1"/> containing all
+            <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
+        </member>
+        <member name="T:Appium.Interfaces.Generic.SearchContext.IGenericFindsByTagName`1">
+            <summary>
+            Defines the interface through which the user finds elements by their tag name.
+            </summary>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericFindsByTagName`1.FindElementByTagName(System.String)">
+            <summary>
+            Finds the first element matching the specified tag name.
+            </summary>
+            <param name="tagName">The tag name to match.</param>
+            <returns>The first <see cref="T:OpenQA.Selenium.IWebElement"/> matching the criteria.</returns>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericFindsByTagName`1.FindElementsByTagName(System.String)">
+            <summary>
+            Finds all elements matching the specified tag name.
+            </summary>
+            <param name="tagName">The tag name to match.</param>
+            <returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1"/> containing all
+            <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
+        </member>
+        <member name="T:Appium.Interfaces.Generic.SearchContext.IGenericFindsByXPath`1">
+            <summary>
+            Defines the interface through which the user finds elements by XPath.
+            </summary>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericFindsByXPath`1.FindElementByXPath(System.String)">
+            <summary>
+            Finds the first element matching the specified XPath query.
+            </summary>
+            <param name="xpath">The XPath query to match.</param>
+            <returns>The first <see cref="T:OpenQA.Selenium.IWebElement"/> matching the criteria.</returns>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericFindsByXPath`1.FindElementsByXPath(System.String)">
+            <summary>
+            Finds all elements matching the specified XPath query.
+            </summary>
+            <param name="xpath">The XPath query to match.</param>
+            <returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1"/> containing all
+            <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> matching the criteria.</returns>
+        </member>
+        <member name="T:Appium.Interfaces.Generic.SearchContext.IGenericSearchContext`1">
+            <summary>
+            Defines the interface used to search for elements.
+            </summary>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericSearchContext`1.FindElement(OpenQA.Selenium.By)">
+            <summary>
+            Finds the first <see cref="T:OpenQA.Selenium.IWebElement"/> using the given method. 
+            </summary>
+            <param name="by">The locating mechanism to use.</param>
+            <returns>The first matching <see cref="T:OpenQA.Selenium.IWebElement"/> on the current context.</returns>
+            <exception cref="T:OpenQA.Selenium.NoSuchElementException">If no element matches the criteria.</exception>
+        </member>
+        <member name="M:Appium.Interfaces.Generic.SearchContext.IGenericSearchContext`1.FindElements(OpenQA.Selenium.By)">
+            <summary>
+            Finds all <see cref="T:OpenQA.Selenium.IWebElement">IWebElements</see> within the current context 
+            using the given mechanism.
+            </summary>
+            <param name="by">The locating mechanism to use.</param>
+            <returns>A <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1"/> of all <see cref="T:OpenQA.Selenium.IWebElement">WebElements</see>
+            matching the current criteria, or an empty list if nothing matches.</returns>
+        </member>
+    </members>
+</doc>

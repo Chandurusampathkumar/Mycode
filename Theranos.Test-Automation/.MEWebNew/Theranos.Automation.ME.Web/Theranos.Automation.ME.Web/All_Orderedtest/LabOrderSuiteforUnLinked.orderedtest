@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="LabOrderSuiteforUnLinked" storage="c:\users\omkar.krishnamurthy\source\workspace\theranos.test-automation\.me web\theranos.automation.me.web\theranos.automation.me.web\webtestscripts\all_ordertest_suits\labordersuiteforunlinked.orderedtest" id="33307b0d-6eea-4c0d-875d-0c31e6dffae9" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="15d56226-7539-e340-cc52-dfead46dc98f" name="labordertestsuits_Unlinked" storage="..\..\bin\debug\theranos.automation.me.web.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="selfv1" storage="c:\users\selangovan\source\workspaces\theranos.test-automation\psc3\theranos.automation.psc3\theranos.automation.psc3\scenarios\checkinscenario\selfv1.orderedtest" id="b1a82081-bd6b-4a0f-9330-8663eb1a333b" continueAfterFailure="true" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="86d60d15-3a99-ea2e-7198-fcfcaee04795" name="InitializePricingSuite" storage="..\bin\debug\theranos.automation.psc3.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="8cc83bbe-f12d-eb24-a963-49ab0041969d" name="SelfV1PricingTest" storage="..\bin\debug\theranos.automation.psc3.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="8cc83bbe-f12d-eb24-a963-49ab0041969d" name="SelfV1PricingTest" storage="..\..\bin\debug\theranos.automation.psc3.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="8cc83bbe-f12d-eb24-a963-49ab0041969d" name="SelfV1PricingTest" storage="..\bin\debug\theranos.automation.psc3.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>
