@@ -1,0 +1,4 @@
+IsFastingRequired,FastingHours,IsStandingOrder,StandingOrderRecurrence,StandingOrderFrequency,CollectionType
+YES,8,YES,5,Week,
+YES,,YES,1,Day,Fingerstick
+NO,,NO,,,Venous

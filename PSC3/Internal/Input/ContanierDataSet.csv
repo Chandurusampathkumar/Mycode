@@ -1,0 +1,33 @@
+LabOrderNo,CPTCode,CPTName,Gender,PatientPreference,PhysicianPreference,ProviderLocationPreference,PayorPreference,PaymentMethod,Redraw,Container
+1,80055,Obstetric Panel,Any,None,None,None,None,Any,No,Venous
+2,80053,Comprehensive Metabolic Panel (CMP),Any,None,None,None,None,Any,No,Fingerstick
+3,81001,Urinalysis,Any,None,None,None,None,Any,No,Urine
+4,T700276,"Chlamydia/Gonorrhea, DNA Qualitative",F,None,None,None,None,Any,No,Swab
+5,T700276,"Chlamydia/Gonorrhea, DNA Qualitative",M,None,None,None,None,Any,No,Urine
+6,87046,Stool Culture,Any,None,None,None,None,Any,No,Stool
+7,80055,Obstetric Panel,Any,None,None,None,None,Any,No,Venous
+7,80053,Comprehensive Metabolic Panel (CMP),Any,None,None,None,None,Any,No,Venous
+8,80055,Obstetric Panel,Any,None,None,None,None,Any,No,"Venous,Urine"
+8,81001, Urinalysis,Any,None,None,None,None,Any,No,"Venous,Urine"
+9,80053, Comprehensive Metabolic Panel (CMP),Any,None,None,None,None,Any,No,"Fingerstick,Urine"
+9,81001, Urinalysis,Any,None,None,None,None,Any,No,"Fingerstick,Urine"
+10,T700276,"Chlamydia/Gonorrhea, DNA Qualitative",F,None,None,None,None,Any,No,"Swab,Urine"
+10,81001,Urinalysis,F,None,None,None,None,Any,No,"Swab,Urine"
+11,87046,Stool Culture,Any,None,None,None,None,Any,No,"Stool,Urine"
+11,81001,Urinalysis,Any,None,None,None,None,Any,No,"Stool,Urine"
+12,80055,Obstetric Panel,F,None,None,None,None,Any,No,"Venous,Swab"
+12,T700276,"Chlamydia/Gonorrhea, DNA Qualitative",F,None,None,None,None,Any,No,"Venous,Swab"
+13,80053,Comprehensive Metabolic Panel (CMP),F,None,None,None,None,Any,No,"Fingerstick,Swab"
+13,T700276,"Chlamydia/Gonorrhea, DNA Qualitative",F,None,None,None,None,Any,No,"Fingerstick,Swab"
+14,87046,Stool Culture,F,None,None,None,None,Any,No,"Stool,Swab"
+14,T700276,"Chlamydia/Gonorrhea, DNA Qualitative",F,None,None,None,None,Any,No,"Stool,Swab"
+15,80055,Obstetric Panel,Any,None,None,None,None,Any,No,"Venous,Stool"
+15,87046,Stool Culture,Any,None,None,None,None,Any,No,"Venous,Stool"
+16,80053,Comprehensive Metabolic Panel (CMP),Any,None,None,None,None,Any,No,Fingerstick,Stool
+16,87046,Stool Culture,Any,None,None,None,None,Any,No,Fingerstick,Stool
+17,80055,Obstetric Panel,F,None,None,None,None,Any,No,"Venous,Urine,Swab,Stool"
+17,80053,Comprehensive Metabolic Panel (CMP),F,None,None,None,None,Any,No,"Venous,Urine,Swab,Stool"
+17,81001,Urinalysis,F,None,None,None,None,Any,No,"Venous,Urine,Swab,Stool"
+17,T700276,"Chlamydia/Gonorrhea, DNA Qualitative",F,None,None,None,None,Any,No,"Venous,Urine,Swab,Stool"
+17,87046,Stool Culture,F,None,None,None,None,Any,No,"Venous,Urine,Swab,Stool"
+18,80053,Comprehensive Metabolic Panel (CMP),Any,Venous,None,None,None,Any,No,Venous

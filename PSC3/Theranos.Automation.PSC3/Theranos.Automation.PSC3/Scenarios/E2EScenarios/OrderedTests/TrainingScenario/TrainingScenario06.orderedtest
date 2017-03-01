@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="TrainingScenario06" storage="c:\users\selangovan\source\workspaces\theranos.test-automation\psc3\theranos.automation.psc3\theranos.automation.psc3\scenarios\e2escenarios\orderedtests\trainingscenario\trainingscenario06.orderedtest" id="d2e3e758-2ffb-4062-94c3-41a0120da141" continueAfterFailure="true" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="7f8e8e36-ea91-1657-5c01-eb48b3347f51" name="SwitchToFingerstick" storage="..\..\..\..\bin\debug\theranos.automation.psc3.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="3a8a1351-e1ef-fdb8-73b3-d5fb8425b716" name="SwitchToVenousDraw" storage="..\..\..\..\bin\debug\theranos.automation.psc3.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

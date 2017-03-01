@@ -1,0 +1,6 @@
+UserName,Password,Name,CredentialsType
+test@test.com,Theranos,Test,INVALID
+Test1@dummy.com,32@#$@SDAFSsfnd,Dummy,INVALID
+gsrcheckin@theranos.com,GSRTest@123,GSR Checkin,VALID
+gsrperform@theranos.com,FSFser@@!11,GSR Perform,INVALID PASSWORD
+invalidusername@theranos.com,GSRTest#123,GSR Checkin,INVALID USERNAME

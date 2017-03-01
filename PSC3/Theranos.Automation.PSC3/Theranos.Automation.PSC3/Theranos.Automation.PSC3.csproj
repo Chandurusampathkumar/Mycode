@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2344B3F2-F770-4F50-9717-574975F2355F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Theranos.Automation.PSC3</RootNamespace>
+    <AssemblyName>Theranos.Automation.PSC3</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\References\Internal\PSC3\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="appium-dotnet-driver">
+      <HintPath>..\..\..\References\Internal\.ME Android\appium-dotnet-driver.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\References\External\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\References\External\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\References\Internal\.ME Android\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Selenium.WebDriverBackedSelenium">
+      <HintPath>..\..\..\References\Internal\.ME Android\Selenium.WebDriverBackedSelenium.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperMario2">
+      <HintPath>..\..\..\References\Internal\SuperMario2\SuperMario2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TestStack.White, Version=0.13.0.0, Culture=neutral, PublicKeyToken=2672efbf3e161801, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\References\External\Test Stack\TestStack.White.dll</HintPath>
+    </Reference>
+    <Reference Include="Theranos.Automation.AutoStack, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\References\Internal\AutoStack\Theranos.Automation.AutoStack.dll</HintPath>
+    </Reference>
+    <Reference Include="Theranos.Automation.AutoStack.Android">
+      <HintPath>..\..\..\References\Internal\.ME Android\Theranos.Automation.AutoStack.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="Theranos.Automation.ME.Android">
+      <HintPath>..\..\..\References\Internal\.ME Android\Theranos.Automation.ME.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="ThoughtWorks.Selenium.Core">
+      <HintPath>..\..\..\References\Internal\.ME Android\ThoughtWorks.Selenium.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WebDriver">
+      <HintPath>..\..\..\References\Internal\.ME Android\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support">
+      <HintPath>..\..\..\References\Internal\.ME Android\WebDriver.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Models\CheckIn\AddGuestInfo\AddGuestModel.cs" />
+    <Compile Include="Models\CheckIn\AddGuestInfo\AddMoreContactDetailsModel.cs" />
+    <Compile Include="Models\CheckIn\AddGuestInfo\BasicInfoModel.cs" />
+    <Compile Include="Models\CheckIn\AddGuestInfo\AddressModel.cs" />
+    <Compile Include="Models\CheckIn\AddGuestInfo\ContactModel.cs" />
+    <Compile Include="Models\CheckIn\AddGuestInfo\InsuranceModel.cs" />
+    <Compile Include="Models\CheckIn\AddGuestInfo\SampleBasicInfoModel.cs" />
+    <Compile Include="Models\CheckIn\AddGuestInfo\SampleModel.cs" />
+    <Compile Include="Models\CheckIn\AddLabOrder\AddLabOrderModel.cs" />
+    <Compile Include="Models\CheckIn\AddLabOrder\ClinicianModel.cs" />
+    <Compile Include="Models\CheckIn\AddLabOrder\CPTModel.cs" />
+    <Compile Include="Models\CheckIn\AddLabOrder\ICD10Model.cs" />
+    <Compile Include="Models\CheckIn\AddLabOrder\ICDModel.cs" />
+    <Compile Include="Models\CheckIn\AddLabOrder\OrderInstructionsModel.cs" />
+    <Compile Include="Models\CheckIn\CheckInModel.cs" />
+    <Compile Include="Models\CheckIn\ConfirmOrdersModel.cs" />
+    <Compile Include="Models\CheckIn\GuestFormsModel.cs" />
+    <Compile Include="Models\CheckIn\PaymentModel.cs" />
+    <Compile Include="Models\CheckIn\SummaryModel.cs" />
+    <Compile Include="Models\DashboardModel.cs" />
+    <Compile Include="Models\Features\PricingModel.cs" />
+    <Compile Include="Models\Perform\ContainerModelOld.cs" />
+    <Compile Include="Models\Perform\PerformModel.cs" />
+    <Compile Include="Models\Perform\PerformCollection\Nanotainers\NanotainersSampleCollection.cs" />
+    <Compile Include="Models\Perform\PerformCollection\Nanotainers\NanotainersScanCollection.cs" />
+    <Compile Include="Models\Perform\PerformCollection\Nanotainers\PrescanNanotainers.cs" />
+    <Compile Include="Models\Perform\PerformCollection\OtherContainers\PrintAttachLabels.cs" />
+    <Compile Include="Models\Perform\PerformCollection\OtherContainers\ScanCollection.cs" />
+    <Compile Include="Models\Perform\PerformCollection\Vacutainers\PrintAndAttachLabels.cs" />
+    <Compile Include="Models\Perform\PerformCollection\Vacutainers\VacutainerScanCollection.cs" />
+    <Compile Include="Models\Perform\PerformCollection\Vacutainers\VacutainersSampleCollection.cs" />
+    <Compile Include="Models\Perform\PrepareContainers.cs" />
+    <Compile Include="Models\Perform\VerifyIdentification.cs" />
+    <Compile Include="Models\Perform\VisitReportModel.cs" />
+    <Compile Include="Models\Perform\VisitSummaryModel.cs" />
+    <Compile Include="Models\PSC3Model.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\Features\ContainerModel.cs" />
+    <Compile Include="Models\PSC3_ME_Android_Model.cs" />
+    <Compile Include="Scenarios\CheckinScenario\CheckInScenario1.cs" />
+    <Compile Include="Scenarios\CheckinScenario\CheckInScenario3.cs" />
+    <Compile Include="Scenarios\CheckinScenario\CheckInScenarioAparna.cs" />
+    <Compile Include="Scenarios\CheckinScenario\ContainerScenario.cs" />
+    <Compile Include="Scenarios\CheckinScenario\FastingRequirement.cs" />
+    <Compile Include="Scenarios\CheckinScenario\CheckInScenario2.cs" />
+    <Compile Include="Scenarios\CheckinScenario\PricingScenarioSet1.cs" />
+    <Compile Include="Scenarios\CheckinScenario\PricingScenarioSet2.cs" />
+    <Compile Include="Scenarios\E2EScenarios\AssayMapping.cs" />
+    <Compile Include="Scenarios\E2EScenarios\OtherContainers.cs" />
+    <Compile Include="Scenarios\E2EScenarios\PerformPhase1.cs" />
+    <Compile Include="Scenarios\E2EScenarios\PerformPhase2.cs" />
+    <Compile Include="Scenarios\E2EScenarios\PerformPhase3.cs" />
+    <Compile Include="Scenarios\E2EScenarios\SmokeTestScenarios.cs" />
+    <Compile Include="Scenarios\E2EScenarios\TrainingScenario\TrainingScenario1.cs" />
+    <Compile Include="Scenarios\E2EScenarios\TrainingScenario\CancelVisitScenario.cs" />
+    <Compile Include="Scenarios\E2EScenarios\TrainingScenario\EditVisitScenario.cs" />
+    <Compile Include="Scenarios\E2EScenarios\TrainingScenario\GTTScenarios.cs" />
+    <Compile Include="Scenarios\E2EScenarios\TrainingScenario\HeightRequirementScenario.cs" />
+    <Compile Include="Scenarios\E2EScenarios\TrainingScenario\RemoveOrders.cs" />
+    <Compile Include="Scenarios\E2EScenarios\TrainingScenario\RemoveTests.cs" />
+    <Compile Include="Scenarios\E2EScenarios\Vacutainers.cs" />
+    <Compile Include="TestCases\CheckIn\AddGuestInfo\AddressTests.cs" />
+    <Compile Include="TestCases\CheckIn\AddGuestInfo\BasicInfoTests.cs" />
+    <Compile Include="TestCases\CheckIn\AddGuestInfo\ContactTests.cs" />
+    <Compile Include="TestCases\CheckIn\AddGuestInfo\InsuranceTests.cs" />
+    <Compile Include="TestCases\CheckIn\AddLabOrder\ClinicianTests.cs" />
+    <Compile Include="TestCases\CheckIn\AddLabOrder\CPTTests.cs" />
+    <Compile Include="TestCases\CheckIn\AddLabOrder\ICD10Tests.cs" />
+    <Compile Include="TestCases\CheckIn\AddLabOrder\ICDTests.cs" />
+    <Compile Include="TestCases\CheckIn\AddLabOrder\OrderInstructionsTests.cs" />
+    <Compile Include="TestCases\CheckIn\CheckInTests.cs" />
+    <Compile Include="TestCases\CheckIn\ConfirmOrdersTests.cs" />
+    <Compile Include="TestCases\CheckIn\GuestFormsTests.cs" />
+    <Compile Include="TestCases\CheckIn\PaymentTests.cs" />
+    <Compile Include="TestCases\CheckIn\SummaryTests.cs" />
+    <Compile Include="TestCases\FeaturesTests\PricingTests.cs" />
+    <Compile Include="TestCases\Perform\PerformCollection\NanotainersTests\NanotainersSampleCollectionTests.cs" />
+    <Compile Include="TestCases\Perform\PerformCollection\NanotainersTests\NanotainersScanCollectionTests.cs" />
+    <Compile Include="TestCases\Perform\PerformCollection\NanotainersTests\NanotainersPreScanTests.cs" />
+    <Compile Include="TestCases\Perform\PerformCollection\OtherContainersTests\OtherPrintAndAttachLabelsTests.cs" />
+    <Compile Include="TestCases\Perform\PerformCollection\OtherContainersTests\OtherScanCollectionTests.cs" />
+    <Compile Include="TestCases\Perform\PerformCollection\VacutainersTests\VacutainersPrintAndAttachLabelsTests.cs" />
+    <Compile Include="TestCases\Perform\PerformCollection\VacutainersTests\VacutainersSampleCollectionTests.cs" />
+    <Compile Include="TestCases\Perform\PerformCollection\VacutainersTests\VacutainersScanCollectionTests.cs" />
+    <Compile Include="TestCases\Perform\PerformTests.cs" />
+    <Compile Include="TestCases\Perform\PrepareContainersTests.cs" />
+    <Compile Include="TestCases\Perform\VerifyIdentificationTests.cs" />
+    <Compile Include="TestCases\Perform\VisitReportTests.cs" />
+    <Compile Include="TestCases\Perform\VisitSummaryTests.cs" />
+    <Compile Include="TestCases\FeaturesTests\ContainerTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="TestCases\CheckIn\AddLabOrder\AddLabOrderTests.cs" />
+    <Compile Include="TestCases\DashboardTests.cs" />
+    <Compile Include="TestCases\LoginTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TestCases\.ME\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Ordered_Suites\CheckIn.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Ordered_Suites\AssayMapping.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Ordered_Suites\SmokeTests.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Ordered_Suites\Training.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Ordered_Suites\Perform.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PSC3.testsettings">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\CheckinScenario\OrderedTests\Container.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\CheckinScenario\OrderedTests\CheckInScenario1.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\CheckinScenario\OrderedTests\CheckInScenario2.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\CheckinScenario\OrderedTests\FastingRequirement.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\CheckinScenario\OrderedTests\OrderedTest1.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\CheckinScenario\OrderedTests\PricingScenarioSet2.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\CheckinScenario\OrderedTests\PricingScenarioSet1.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\CheckinScenario\OrderedTests\SelfV1.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\CheckinScenario\OrderedTests\SelfV2.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\SmokeTestScenarios.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\OtherContainers.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\PerformPhase2.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\PerformPhase1.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\AssayMapping.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\TrainingScenario\TrainingScenario04B.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\TrainingScenario\TrainingScenario14.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\TrainingScenario\TrainingScenario11.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\TrainingScenario\TrainingScenario10.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\TrainingScenario\TrainingScenario07.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\TrainingScenario\TrainingScenario09.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\TrainingScenario\TrainingScenario06.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\TrainingScenario\TrainingScenario04A.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\TrainingScenario\TrainingScenario03.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\TrainingScenario\TrainingScenario02.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\TrainingScenario\TrainingScenario01.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scenarios\E2EScenarios\OrderedTests\Vacutainers.orderedtest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

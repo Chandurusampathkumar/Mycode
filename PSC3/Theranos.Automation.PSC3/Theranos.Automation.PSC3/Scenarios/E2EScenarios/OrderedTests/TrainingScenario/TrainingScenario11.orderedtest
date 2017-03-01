@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="TrainingScenario11" storage="c:\users\vignesh.k\source\workspaces\theranos.test-automation\psc3\theranos.automation.psc3\theranos.automation.psc3\scenarios\e2escenarios\orderedtests\trainingscenario\trainingscenario11.orderedtest" id="0d5998c8-2483-4635-86a5-7bfa45797c0e" continueAfterFailure="true" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="f3ab8fd9-215f-b72d-4759-6acf41a1357f" name="EditVisit01" storage="..\..\..\..\bin\debug\theranos.automation.psc3.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="797aa548-2481-3e1d-0f5a-d8d3d2e474e9" name="EditVisit02" storage="..\..\..\..\bin\debug\theranos.automation.psc3.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="d2282c79-aff0-08e4-240b-34b624c7deff" name="EditVisit03" storage="..\..\..\..\bin\debug\theranos.automation.psc3.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="8fa6afdc-6b5f-bd4e-37aa-349d4d1b58a8" name="EditVisit04" storage="..\..\..\..\bin\debug\theranos.automation.psc3.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<OrderedTest name="smoketestscenarios" storage="c:\users\selangovan\source\workspaces\theranos.test-automation\psc3\theranos.automation.psc3\theranos.automation.psc3\scenarios\e2escenarios\orderedtests\smoketestscenarios.orderedtest" id="d95c8c15-48a3-4a42-8cbb-d1472ad7dd50" continueAfterFailure="true" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestLinks>
+    <TestLink id="c38547f0-a54a-c8f2-28b8-30474f19ae0b" name="SmokeTestScenario1" storage="..\..\..\bin\debug\theranos.automation.psc3.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="80aa5fa0-2f94-b27a-78a0-b9b8f0a9fee5" name="SmokeTestScenario2" storage="..\..\..\bin\debug\theranos.automation.psc3.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="d4fb9e92-8f45-ea22-e736-2bdcff6be391" name="SmokeTestScenario3" storage="..\..\..\bin\debug\theranos.automation.psc3.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <TestLink id="d1a1c342-2ee4-03e6-bd5b-48b0b34196a2" name="SmokeTestScenario4" storage="..\..\..\bin\debug\theranos.automation.psc3.dll" type="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestElement, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.ObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  </TestLinks>
+</OrderedTest>
